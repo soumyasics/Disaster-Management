@@ -1,0 +1,19 @@
+.volunteer-files input{
+  height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 20px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+
+    transition: all 0.3s ease;
+}
+
+.volunteer-files label{
+    color: #757575 ;
+   
+    padding-top: .5rem;
+    padding-bottom: .2rem;
+    padding-left: 1.4rem;
+}

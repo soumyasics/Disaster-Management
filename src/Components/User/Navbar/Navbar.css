@@ -1,0 +1,31 @@
+#common-home-navbar {
+    padding: 0 50px;
+    height: 80px;
+  border-bottom: 1px solid #fff;
+    background-color: #191933 !important;
+  }
+
+  
+
+  #common-home-navbar a:hover {
+    color: violet !important;
+    font-weight: bold;
+  }
+
+.appname h1{
+color: #fff;
+  font-size: 20px;
+
+}
+
+.usernav-links{
+    padding-left: 42.3rem;
+    margin-top: 12px;
+}
+
+  .usernav-links a{
+    font-weight: 600;
+    color:#fff;
+    text-decoration: none;
+   padding-left: 30px;
+  }

@@ -1,0 +1,68 @@
+#signup{
+   
+    padding:0 5rem;
+}
+.signup-user{
+    padding-top: 5rem;
+}
+
+.userregsignupform h1{
+padding-bottom: 3rem;
+}
+.user-regimg img{
+    height:35rem;
+    width: 35rem;
+}
+
+.userreg-input{
+    padding-top: 1rem;
+}
+
+.userreg-input input{
+    height: 2.5rem;
+    width: 100%;
+    outline: none;
+    padding: 0 20px;
+    
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #c7bebe;
+    border-top-width: 1.9px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.radiobtn{
+    padding-top: 1rem;
+    display: flex;
+   
+}
+
+.radiobtn label{
+     color: #757575;;
+}
+
+.radiobtn-input{
+
+    padding-left: 7rem;
+
+}
+
+
+.radiobtn-input label{
+    padding-left: .5rem;
+    color: #757575;
+}
+
+.user-regbtn{
+    padding-top: 1rem;
+text-align: center;
+}
+.user-regbtn button{
+    height: 35px;
+    width: 110px;
+color: #fff;
+background-color: #3383ff;
+border: none;
+}
