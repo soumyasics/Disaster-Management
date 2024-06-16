@@ -1,0 +1,38 @@
+.user-footer{
+    background-color: #016A71;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.logo-text-style{
+    font-family: 'Outfit', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27.72px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    color: white;
+    padding-left: 100px;
+}
+.list-style{
+    list-style-type: none;
+}
+.footer-heading{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.07px;
+    text-align: left;
+    color: #FFFFFF;
+}
+.footer-sub-heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #FFFFFF;
+    padding-top: 24px;
+}
+.second-user-footer{
+    background-color: #025D63;
+}
