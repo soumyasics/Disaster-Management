@@ -1,164 +1,81 @@
 import React from 'react';
-import signupimg from "../../../Assets/12953573_Data_security_05.jpg"
+import fireimg from "../../../Assets/fire-image.png";
+import logo from '../../../Assets/WebGuard-Logo.png'
+import Navbar from '../../User/Navbar/Navbar';
+import Footer from '../../User/Footer/Footer';
+import { Link } from 'react-router-dom';
 
 
 function RescueTeamReg() {
   return (
-    <div id='signup' >
-
-    <div className='row signup-user'>
-
-        <div className='user-regimg col-6'>
-            <img src={signupimg} alt='Signup image' />
+    <div>
+        <Navbar/>
+      <div className='user-login-header'>
+        “Communities rising together from disaster”
+      </div>
+      <div className='row login-row-style'>
+        <div className='col-lg-5 col-md-3 col-sm-12'>
+            <div className='image-stack'>
+                <img src={fireimg} className='image first-image' alt='Fire 1' />
+            </div>
         </div>
-        <div className='col-6 volunteerregsignupform'>
-            <h1>Rescue Person Register</h1>
-
-            <div className='user-form row'>
-                <div className='user_registration col-6'>
-
-                    <div className='userreg-input'>
-                        <input type='text' placeholder='First name' />
-                    </div>
-
-
+        <div className='col-lg-7 col-md-6 col-sm-12'>
+          <div className='box-style-vol-signup'>
+            <form>
+                <div className='logo-section'>
+                    <img src={logo}/>
+                    <p>Sign Up</p>
                 </div>
-
-                <div className='user_registration col-6'>
-
-                    <div className='userreg-input'>
-                        <input type='text' placeholder='Last name' />
+            <div className='col-12 pb-3'>
+                <div className='row'>
+                    <div className='col-6'>
+                        <p className='signinuser'>Name:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Name' name='name'/>
                     </div>
-
-
+                    <div className='col-6'>
+                        <p className='signinuser'>Age:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Age' name='age'/>
+                    </div>
                 </div>
-            </div>
-
-            <div className='user-form  row'>
-
-                <div className='user_registration radiobtn col-12'>
-
-                    <label>Gender</label>
-                    <div className='radiobtn-input'>
-                    <input type='radio' value="male" />
-                    <label>Male</label>
+                <div className='row'>
+                    <div className='col-6'>
+                        <p className='signinuser'>Gender:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Your Gender' name='gender'/>
                     </div>
-                    <div className='radiobtn-input'>
-                    <input type='radio' value="female" />
-                    <label>Female</label>
+                    <div className='col-6'>
+                        <p className='signinuser'>Phone Number:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Phone Number' name='contact'/>
                     </div>
-                    <div className='radiobtn-input'>
-                    <input type='radio' value="others" />
-                    <label>Others</label>
-
-                    </div>
-                    
-                    
-                    
                 </div>
-
-            </div>
-
-            <div className='user-form row'>
-
-                <div className='user_registration col-6'>
-
-                    <div className='userreg-input'>
-
-                    <input type='text' placeholder='Age' />
-
+                <div className='row'>
+                <div className='col-12'>
+                        <p className='signinuser'>Email Id:</p>
+                        <input type='email' className='form-control signup-input-type-change' placeholder='Enter Email Id' name='email'/>
                     </div>
-
-                   
-                    <div className='userreg-input'>
-
-                    <input type='text' placeholder='City' />
-
-                    </div>
-
-                   
-
-                    <div className='userreg-input'>
-
-                    <input type='text' placeholder='State' />
-
-                    </div>
-
-                   
-                    <div className='userreg-input'>
-
-                    <input type='email' placeholder='Email' />
-
-                    </div>
-
-                    <div className="volunteer-files">
-
-<label>Profile Image</label>
-<input type="file" name="profilePicture" />
-
-</div>
-
-
-                   
-
-                    <div className='userreg-input'>
-                    <input type='password' placeholder='Password' />
-                    </div>
-
-                
                 </div>
-
-                <div className='user_registration col-6'>
-
-                    <div className='userreg-input'>
-                    <input type='text' placeholder='Street' />
-                    </div>
-
-                   
-
-                    <div className='userreg-input'>
-                    <input type='text' placeholder='Pincode' />
-                    </div>
-
-                   
-
-                    <div className='userreg-input'>
-                    <input type='text' placeholder='Nationaity' />
-                    </div>
-
-                    
-
-                    <div className='userreg-input'>
-                    <input type='text' placeholder='Contact' />
-                    </div>
-
-                    <div className="volunteer-files">
-
-              <label>Aadhaar Image</label>
-              <input type="file" name="profilePicture" />
-
-            </div>
-           
-
-                    
-
-                    <div className='userreg-input'>
-                    <input type='password' placeholder='Confirm Password' />
-                    </div>
-
-
+                <div className='col-12'>
+                        <p className='signinuser'>Address:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Address' name='address'/>
                 </div>
+                <div className='row'>
+                    <div className='col-6'>
+                        <p className='signinuser'>Password:</p>
+                        <input type='password' className='form-control signup-input-type-change' placeholder='Enter Password' name='password'/>
+                    </div>
+                    <div className='col-6'>
+                        <p className='signinuser'>Conform Password:</p>
+                        <input type='password' className='form-control signup-input-type-change' placeholder='Re-enter Password' name='conformpassword'/>
+                    </div>
+                </div>
+                <button className='btn btn-primary button-style'>Register</button>
             </div>
+            <p className='p-style-user'>Already Have an account? <Link className='link-style-change-user'>Login</Link></p>
 
-            <div className='user-regbtn'>
-                <button>Register</button>
-            </div>
-
+            </form>
+          </div>
         </div>
+      </div><Footer/>
     </div>
-
-
-</div>
   )
 }
 
