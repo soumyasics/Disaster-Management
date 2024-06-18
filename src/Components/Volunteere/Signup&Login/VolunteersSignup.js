@@ -7,6 +7,7 @@ import Footer from '../../User/Footer/Footer';
 import { Link } from 'react-router-dom';
 
 function VolunteersSignup() {
+    
   return (
     <div>
 <Navbar/>
@@ -48,15 +49,32 @@ function VolunteersSignup() {
                     </div>
                 </div>
                 <div className='row'>
+                    <div className='col-6'>
+                        <p className='signinuser'>Address:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Address' name='address'/>
+                    </div>
+                    <div className='col-6'>
+                        <p className='signinuser'>City:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter City' name='city'/>
+                    </div>
+                </div>
+                <div className='row'>
+                <div className='col-6'>
+                        <p className='signinuser'>State:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter State' name='state'/>
+                    </div>
+                    <div className='col-6'>
+                        <p className='signinuser'>Skills/Expertise:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Skills/Expertise' name='skills'/>
+                    </div>
+                </div>
+                <div className='row'>
                 <div className='col-12'>
                         <p className='signinuser'>Email Id:</p>
                         <input type='email' className='form-control signup-input-type-change' placeholder='Enter Email Id' name='email'/>
                     </div>
                 </div>
-                <div className='col-12'>
-                        <p className='signinuser'>Address:</p>
-                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Address' name='address'/>
-                </div>
+                
                 <div className='row'>
                     <div className='col-6'>
                         <p className='signinuser'>Password:</p>
