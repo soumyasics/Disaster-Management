@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'
-import fireimg from "../../../Assets/fire-image.png";
+import fireimg from "../../../Assets/rescue.png";
 import logo from '../../../Assets/WebGuard-Logo.png'
 import "./RescueTeamLogin.css"
 import Navbar from '../../User/Navbar/Navbar';
@@ -18,14 +18,14 @@ function RescueTeamLogin() {
       <div className='row res-login-row-style'>
         <div className='col-lg-5 col-md-3 col-sm-12'>
             <div className='image-stack'>
-                <img src={fireimg} className='image first-image' alt='Fire 1' />
+                <img src={fireimg} className='image first-image1' alt='Fire 1' />
             </div>
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>
           <div className='box-style-login-res'>
             <form>
                 <div className='res-logo-section'>
-                    <img src={logo}/>
+                    <img src={logo} />
                     <p>Login</p>
                 </div>
             <div className='col-12 pb-3'>

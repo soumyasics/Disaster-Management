@@ -17,6 +17,7 @@ import Footer from "./Components/User/Footer/Footer";
 import Navbar from "./Components/User/Navbar/Navbar";
 import ForgotPassword from "./Components/Common/ForgotPassword";
 import ResetPassword from "./Components/Common/ResetPassword";
+import FooterSecond from "./Components/Common/FooterSecond";
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
           />
 
           {/* Common */}
-          <Route path="/user_footer" element={<Footer/>} />
+          <Route path="/user_footer" element={[<Footer/>,<FooterSecond/>]} />
           <Route path="/user_navbar" element={<Navbar/>} />
           <Route path="/forgot-passsword" element={<ForgotPassword/>}/>
           <Route path="/reset-passsword" element={<ResetPassword/>}/>
