@@ -3,7 +3,7 @@ import './ForgotPassword.css'
 import Navbar from '../User/Navbar/Navbar'
 import Footer from '../User/Footer/Footer'
 import { Link } from 'react-router-dom'
-import fireimg from "../../Assets/fire-image.png";
+import fireimg from "../../Assets/resetpassword.png";
 import logo from '../../Assets/WebGuard-Logo.png'
 
 function ForgotPassword() {
@@ -16,7 +16,7 @@ function ForgotPassword() {
       <div className='row login-row-style'>
         <div className='col-lg-5 col-md-3 col-sm-12'>
             <div className='image-stack'>
-                <img src={fireimg} className='image first-image' alt='Fire 1' />
+                <img src={fireimg} className='image first-image image-stylechange' alt='Fire 1' />
             </div>
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import fireimg from "../../../Assets/fire-image.png";
+import fireimg from "../../../Assets/volunteer-signup.png";
 import logo from '../../../Assets/WebGuard-Logo.png'
 import "./VolunteersSignup.css"
 import Navbar from '../../User/Navbar/Navbar';
@@ -130,19 +130,44 @@ function VolunteersSignup() {
         formData.append(key, data[key]);
       }
   
+    //   try {
+    //     console.log(data)
+    //     const res = await axiosInstance.post('/registervolunteer', formData);
+    //     if (res.data.status === 200) {
+    //       alert('Volunteer registered successfully');
+    //     } else if(res.data.status === 11000) {
+    //       alert(`Volunteer Registration Failed: ${res.data.msg}`);
+    //     }
+    //     else{
+    //         alert("Registration Failed")
+    //     }
+    //   } catch (error) {
+    //     console.error('There was an error!', error);
+    //     alert('Error');
+    //   }
       try {
-        console.log(data)
-        const res = await axiosInstance.post('/registervolunteer', formData);
-        if (res.data.status === 200) {
-          alert('Volunteer registered successfully');
+      console.log(data);
+      const res = await axiosInstance.post('/registervolunteer', formData);
+      if (res.data.status === 200) {
+        alert('Volunteer registered successfully');
+      } else if (res.data.status === 11000) {
+        alert(`Volunteer Registration Failed: ${res.data.msg}`);
+      } else {
+        alert("Registration Failed");
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+      if (error.response && error.response.data) {
+        const { status, msg } = error.response.data;
+        if (status === 11000) {
+          alert(`Volunteer Registration Failed: ${msg}`);
         } else {
-          alert(`Volunteer Registration Failed: ${res.data.msg}`);
+          alert('Registration Failed');
         }
-      } catch (error) {
-        console.error('There was an error!', error);
+      } else {
         alert('Error');
       }
-      
+    }
     }
   };
   
@@ -155,7 +180,7 @@ function VolunteersSignup() {
       <div className='row login-row-style'>
         <div className='col-lg-5 col-md-3 col-sm-12'>
             <div className='image-stack'>
-                <img src={fireimg} className='image first-image' alt='Fire 1' />
+                <img src={fireimg} className='image first-image vol-signup-img' alt='Fire 1' />
             </div>
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>
@@ -237,7 +262,7 @@ function VolunteersSignup() {
                     <button className='btn btn-primary btn-style-change' type='submit'>Register</button>
                   </div>
                   <div className='text-center pt-3'>
-                  <p className='p-style-vol'>Already Have an account? <Link className='link-style-change-volen'>Login</Link></p>
+                  <p className='p-style-vol'>Already Have an account? <Link to='/volunteers_login' className='link-style-change-volen'>Login</Link></p>
                   </div>
                 </div>
             </form>
