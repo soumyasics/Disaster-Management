@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './VolunteersLogin.css'
-import fireimg from "../../../Assets/fire-image.png";
-import logo from '../../../Assets/WebGuard-Logo.png'
+import fireimg from "../../Assets/volunteers-login.png";
+import logo from '../../Assets/WebGuard-Logo.png'
 import { Link } from 'react-router-dom';
-import Navbar from '../../User/Navbar/Navbar';
-import Footer from '../../User/Footer/Footer';
-import axiosInstance from '../../Constants/Baseurl';
+import Navbar from '../Common/NavBar/Navbar';
+import Footer from '../Common/Footer/Footer';
+import FooterSecond from '../Common/Footer/FooterSecond';
+import axiosInstance from '../Constants/Baseurl';
 
 function VolunteersLogin() {
     const [data, setData] = useState({ email: '', password: '' });
@@ -91,9 +92,11 @@ const handleSubmit = (event) => {
                     className='form-control input-type-change-vol' 
                     placeholder='Enter Username' 
                     name='email'
-                    value={data.name}
+                    value={data.email}
                     onChange={handleChange}
                     />
+                    {errors.email && <div className="text-danger">{errors.email}</div>}
+
                     </div>
                     <div className='col-12 pb-3'>
                     <p className='login-vol'>Password:</p>
@@ -104,6 +107,8 @@ const handleSubmit = (event) => {
                     value={data.name}
                     onChange={handleChange}
                     />
+                    {errors.password && <div className="text-danger">{errors.password}</div>}
+
                     <div className='div-left-vol'>
                         <Link className='link-style-change-vol'>Forgot Password?</Link>
                     </div>
@@ -111,11 +116,11 @@ const handleSubmit = (event) => {
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary vol-btn-style-change' type='submit'>Login</button>
                     </div>
-                    <p className='p-style-vol'>Don't Have an account? <Link className='link-style-change-volen'>Sign Up</Link></p>
+                    <p className='p-style-vol'>Don't Have an account? <Link to='/volunteers_signup' className='link-style-change-volen'>Sign Up</Link></p>
             </form>
           </div>
         </div>
-      </div><Footer/>
+      </div><Footer/><FooterSecond/>
     </div>
   )
 }

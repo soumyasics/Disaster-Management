@@ -1,13 +1,14 @@
-import React from 'react'
-import "./SignUp.css"
-import fireimg from "../../../Assets/fire-image.png";
-import logo from '../../../Assets/WebGuard-Logo.png'
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import React from 'react';
+import fireimg from "../../Assets/fire-image.png";
+import logo from '../../Assets/WebGuard-Logo.png'
 import { Link } from 'react-router-dom';
-function SignUp() {
-    return (
-        <div >
+import Navbar from '../Common/NavBar/Navbar';
+import Footer from '../Common/Footer/Footer';
+
+
+function RescueTeamReg() {
+  return (
+    <div>
         <Navbar/>
       <div className='user-login-header'>
         “Communities rising together from disaster”
@@ -19,7 +20,7 @@ function SignUp() {
             </div>
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>
-          <div className='box-style-user-signup'>
+          <div className='box-style-vol-signup'>
             <form>
                 <div className='logo-section'>
                     <img src={logo}/>
@@ -28,11 +29,21 @@ function SignUp() {
             <div className='col-12 pb-3'>
                 <div className='row'>
                     <div className='col-6'>
-                        <p className='loginuser'>Name:</p>
+                        <p className='signinuser'>Name:</p>
                         <input type='text' className='form-control signup-input-type-change' placeholder='Enter Name' name='name'/>
                     </div>
                     <div className='col-6'>
-                        <p className='loginuser'>Phone Number:</p>
+                        <p className='signinuser'>Age:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Age' name='age'/>
+                    </div>
+                </div>
+                <div className='row'>
+                    <div className='col-6'>
+                        <p className='signinuser'>Gender:</p>
+                        <input type='text' className='form-control signup-input-type-change' placeholder='Enter Your Gender' name='gender'/>
+                    </div>
+                    <div className='col-6'>
+                        <p className='signinuser'>Phone Number:</p>
                         <input type='text' className='form-control signup-input-type-change' placeholder='Enter Phone Number' name='contact'/>
                     </div>
                 </div>
@@ -64,9 +75,8 @@ function SignUp() {
           </div>
         </div>
       </div><Footer/>
-
-        </div>
-    )
+    </div>
+  )
 }
 
-export default SignUp
+export default RescueTeamReg

@@ -1,0 +1,16 @@
+.second-footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #025D63;
+    color: white;
+    font-family: 'Poppins', Courier, monospace;
+    width: 100%;
+    padding-left: 50px;
+}
+.main-text{
+    font-family: 'Noto Sans', sans-serif;
+}
+.second-footer-style{
+    text-align: right;
+    padding-right: 50px;
+}
