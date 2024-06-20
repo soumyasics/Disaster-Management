@@ -4,8 +4,8 @@ import "./AdminLogin.css"
 import fireimg from "../../Assets/fire-image.png";
 import logo from '../../Assets/WebGuard-Logo.png'
 import { Link } from 'react-router-dom';
-import Footer from '../User/Footer/Footer';
-import Navbar from '../User/Navbar/Navbar';
+import Footer from '../Common/Footer/Footer';
+import Navbar from '../Common/NavBar/Navbar';
 
 function AdminLogin() {
   return (
