@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Common/FooterSecond.css'
+import './FooterSecond.css'
 
 function FooterSecond() {
   return (
@@ -9,13 +9,13 @@ function FooterSecond() {
         <div className='col-6 main-text'>
         © Webguard.com.All rights reserved.
         </div>
-        <div className='col-2'>
+        <div className='col-2 second-footer-style'>
         Terms of Service
         </div>
-        <div className='col-2'>
+        <div className='col-2 second-footer-style'>
         Privacy Policy
         </div>
-        <div className='col-2'>
+        <div className='col-2 second-footer-style add-padding'>
         Cookies
         </div>
         </div>

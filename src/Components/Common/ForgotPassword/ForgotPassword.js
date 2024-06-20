@@ -1,10 +1,11 @@
 import React from 'react'
 import './ForgotPassword.css'
-import Navbar from '../User/Navbar/Navbar'
-import Footer from '../User/Footer/Footer'
 import { Link } from 'react-router-dom'
-import fireimg from "../../Assets/resetpassword.png";
-import logo from '../../Assets/WebGuard-Logo.png'
+import fireimg from "../../../Assets/resetpassword.png";
+import logo from '../../../Assets/WebGuard-Logo.png'
+import Navbar from '../NavBar/Navbar';
+import Footer from '../Footer/Footer';
+import FooterSecond from '../Footer/FooterSecond';
 
 function ForgotPassword() {
   return (
@@ -30,15 +31,13 @@ function ForgotPassword() {
                     <p className='forgottext'>Email Id:</p>
                     <input type='text' className='form-control forgot-input-type-change' placeholder='Enter Email Id' name='email'/>
                  </div>
-                   
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary forgot-btn-style-change' type='submit'>Submit</button>
                     </div>
-
             </form>
           </div>
         </div>
-      </div><Footer/>
+      </div><Footer/><FooterSecond/>
     </div>
   )
 }

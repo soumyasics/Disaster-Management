@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../NavBar/Navbar'
 import "./Home.css"
 import image from "../../../Assets/Screenshot (41).png"
 import features from "../../../Assets/image1.jpg"

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './VolunteersLogin.css'
-import fireimg from "../../../Assets/volunteers-login.png";
-import logo from '../../../Assets/WebGuard-Logo.png'
+import fireimg from "../../Assets/volunteers-login.png";
+import logo from '../../Assets/WebGuard-Logo.png'
 import { Link } from 'react-router-dom';
-import Navbar from '../../User/Navbar/Navbar';
-import Footer from '../../User/Footer/Footer';
-import axiosInstance from '../../Constants/Baseurl';
+import Navbar from '../Common/NavBar/Navbar';
+import Footer from '../Common/Footer/Footer';
+import FooterSecond from '../Common/Footer/FooterSecond';
+import axiosInstance from '../Constants/Baseurl';
 
 function VolunteersLogin() {
     const [data, setData] = useState({ email: '', password: '' });
@@ -119,7 +120,7 @@ const handleSubmit = (event) => {
             </form>
           </div>
         </div>
-      </div><Footer/>
+      </div><Footer/><FooterSecond/>
     </div>
   )
 }

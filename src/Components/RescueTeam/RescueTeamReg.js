@@ -1,9 +1,9 @@
 import React from 'react';
-import fireimg from "../../../Assets/fire-image.png";
-import logo from '../../../Assets/WebGuard-Logo.png'
-import Navbar from '../../User/Navbar/Navbar';
-import Footer from '../../User/Footer/Footer';
+import fireimg from "../../Assets/fire-image.png";
+import logo from '../../Assets/WebGuard-Logo.png'
 import { Link } from 'react-router-dom';
+import Navbar from '../Common/NavBar/Navbar';
+import Footer from '../Common/Footer/Footer';
 
 
 function RescueTeamReg() {

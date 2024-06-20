@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
 import "./SignUp.css"
-import fireimg from "../../../Assets/fire-image.png";
-import logo from '../../../Assets/WebGuard-Logo.png'
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import fireimg from "../../Assets/fire-image.png";
+import logo from '../../Assets/WebGuard-Logo.png'
+import Navbar from '../Common/NavBar/Navbar';
+import Footer from '../Common/Footer/Footer';
 import { Link } from 'react-router-dom';
-import axiosInstance from '../../Constants/Baseurl';
+import axiosInstance from '../Constants/Baseurl';
+import FooterSecond from '../Common/Footer/FooterSecond';
+import { FiEdit2, FiEye, FiEyeOff } from "react-icons/fi";
+
 
 function SignUp() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
     const [data,setData]=useState({
         name:'',
         phone:'',
@@ -25,6 +31,14 @@ function SignUp() {
         password:'',
         confirmPassword: ''
     })
+
+    const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
+    };
+  
+    const toggleConfirmPasswordVisibility = () => {
+      setShowConfirmPassword(!showConfirmPassword);
+    };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -86,6 +100,8 @@ function SignUp() {
         errors.email = validateEmail('Email', data.email);
         errors.address = validateField('Address', data.address);
         errors.password = validateField('Password', data.password);
+        errors.confirmPassword = data.password !== data.confirmPassword ? 'Passwords do not match' : '';
+
 
         setErrors(errors);
 
@@ -111,17 +127,16 @@ function SignUp() {
                 alert(`User Registration Failed: ${res.data.msg}`);
               }
             } catch (error) {
-            console.error('There was an error!', error);
-            if (error.response && error.response.data) {
-                const { status, msg } = error.response.data;
-                if (status === 11000) {
-                alert(`Volunteer Registration Failed: ${msg}`);
+              console.error('There was an error!', error);
+              if (error.response) { 
+                if (error.response.status === 409) { 
+                  alert(`Validation Error: ${error.response.data.msg}`); 
                 } else {
-                alert('Registration Failed');
+                  alert(`Error: ${error.response.data.msg}`); 
                 }
-            } else {
+              } else {
                 alert('Error');
-            }
+              }
             }
             
           }
@@ -200,29 +215,39 @@ function SignUp() {
 
                 </div>
                 <div className='row'>
-                    <div className='col-6'>
+                    <div className='col-6 position-relative'>
                         <p className='signinuser'>Password:</p>
-                        <input type='password' 
+                        <div className="input-wrapper wrapper-style">
+                        <input 
+                        type={showPassword ? "text" : "password"}
                         className='form-control signup-input-type-change' 
                         placeholder='Enter Password' 
                         name='password'
                         value={data.password}
                         onChange={handleChange}
                         />
-                    {errors.password && <div className="text-danger">{errors.password}</div>}
-
+                        <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                            {showPassword ? <FiEyeOff /> : <FiEye />}
+                        </div>
+                        </div>
+                      {errors.password && <div className="text-danger">{errors.password}</div>}
                     </div>
-                    <div className='col-6'>
+                    <div className='col-6 position-relative'>
                         <p className='signinuser'>Conform Password:</p>
-                        <input type='password' 
+                        <div className="input-wrapper position-relative">
+                        <input type={showConfirmPassword ? "text" : "password"}
                         className='form-control signup-input-type-change' 
                         placeholder='Re-enter Password' 
                         name='confirmPassword'
                         value={data.confirmPassword}
                         onChange={handleChange}
                         />
-                    {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
+                    <div className="password-toggle-icon" onClick={toggleConfirmPasswordVisibility}>
+                      {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
+                    </div>
 
+                    {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
+                  </div>
                     </div>
                 </div>
                 <button className='btn btn-primary button-style'>Register</button>
@@ -232,7 +257,7 @@ function SignUp() {
             </form>
           </div>
         </div>
-      </div><Footer/>
+      </div><Footer/><FooterSecond/>
 
         </div>
     )

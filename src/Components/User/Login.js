@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import "./Login.css";
-import fireimg from "../../../Assets/fire-image.png";
-import logo from '../../../Assets/WebGuard-Logo.png'
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import fireimg from "../../Assets/fire-image.png";
+import logo from '../../Assets/WebGuard-Logo.png'
+import Navbar from '../Common/NavBar/Navbar';
+import Footer from '../Common/Footer/Footer';
 import { Link } from 'react-router-dom';
-import axiosInstance from '../../Constants/Baseurl';
+import axiosInstance from '../Constants/Baseurl';
+import FooterSecond from '../Common/Footer/FooterSecond';
+import { FiEdit2, FiEye, FiEyeOff } from "react-icons/fi";
 
 function Login() {
     const [data, setData] = useState({ email: '', password: '' });
     const [errors, setErrors] = useState({ email: '', password: '' });
     const [formIsValid, setFormIsValid] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
+    };  
 
     const handleChange = (event) => {
       const { name, value } = event.target;
@@ -96,19 +103,23 @@ const handleSubmit = (event) => {
 
                     </div>
                     <div className='col-12 pb-3'>
-                    <p className='loginuser'>Password:</p>
-                    <input type='password' 
-                    className='form-control input-type-change' 
-                    placeholder='Enter password' 
-                    name='password'
-                    value={data.password}
-                    onChange={handleChange}
-                    />
-                    {errors.password && <div className="text-danger">{errors.password}</div>}
-
-                    <div className='div-left'>
-                        <Link className='link-style-change'>Forgot Password?</Link>
-                    </div>
+                      <div className="mb-3 position-relative">
+                        <p className='loginuser'>Password:</p>
+                        <div className="input-wrapper wrapper-style">
+                          <input
+                            type={showPassword ? "text" : "password"}
+                            className='form-control input-type-change'
+                            placeholder='Enter password'
+                            name='password'
+                            value={data.password}
+                            onChange={handleChange}
+                          />
+                          <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                            {showPassword ? <FiEyeOff /> : <FiEye />}
+                          </div>
+                        </div>
+                        {errors.password && <div className="text-danger">{errors.password}</div>}
+                      </div>
                     </div>
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary btn-style-change' type='submit'>Login</button>
@@ -118,7 +129,7 @@ const handleSubmit = (event) => {
             </form>
           </div>
         </div>
-      </div><Footer/>
+      </div><Footer/><FooterSecond/>
     </div>
   );
 }
