@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ForgotPassword.css'
 import { Link } from 'react-router-dom'
 import fireimg from "../../../Assets/resetpassword.png";
@@ -6,8 +6,34 @@ import logo from '../../../Assets/WebGuard-Logo.png'
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
 import FooterSecond from '../Footer/FooterSecond';
+import axiosInstance from '../../Constants/Baseurl';
 
 function ForgotPassword() {
+  const [email,setEmail]=useState({})
+  const changefn=((e)=>{
+    setEmail({
+      ...email,[e.target.name]:e.target.value
+    })
+  })
+  console.log(email);
+
+  const submitfn=((a)=>{
+    a.preventDefault()
+    axiosInstance.post(`forgotPWDsentMail`,email)
+    .then((res)=>{
+      console.log(res);
+      if(res.data.status==200){
+        alert("Password reset email has been sent to your  email.")
+        window.location.reload()
+      }
+      if(res.data.status==500){
+        alert(res.data.msg)
+      }
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  })
   return (
     <div>
         <Navbar/>
@@ -22,14 +48,14 @@ function ForgotPassword() {
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>
           <div className='box-style-forgot'>
-            <form>
+            <form onSubmit={submitfn}>
                 <div className='forgot-logo-section'>
                     <img src={logo}/>
                     <p>Forgot Password</p>
                 </div>
                 <div className='col-12 pb-3'>
                     <p className='forgottext'>Email Id:</p>
-                    <input type='text' className='form-control forgot-input-type-change' placeholder='Enter Email Id' name='email'/>
+                    <input type='email' className='form-control forgot-input-type-change' placeholder='Enter Email Id' name='email' value={email.email} onChange={changefn}/>
                  </div>
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary forgot-btn-style-change' type='submit'>Submit</button>

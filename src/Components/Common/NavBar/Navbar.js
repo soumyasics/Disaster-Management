@@ -12,7 +12,7 @@ function Navbar() {
       <div>
         <div className='nav-logo-text-style'>
           <img src={logo} alt='WebGaurd-Logo'/>
-          &nbsp; WEB GAURD
+          &nbsp; WEB GUARD
         </div>
       </div>
       <div>
