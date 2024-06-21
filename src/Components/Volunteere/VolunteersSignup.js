@@ -146,6 +146,7 @@ function VolunteersSignup() {
       try {
         console.log(data)
         const res = await axiosInstance.post('/registervolunteer', formData);
+        console.log(res);
         if (res.data.status === 200) {
           alert('Volunteer registered successfully');
         } else if(res.data.status === 11000) {
