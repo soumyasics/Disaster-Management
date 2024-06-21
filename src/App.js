@@ -41,7 +41,7 @@ function App() {
           <Route path="/user_footer" element={[<Footer/>,<FooterSecond/>]} />
           <Route path="/user_navbar" element={<Navbar/>} />
           <Route path="/forgot-passsword" element={<ForgotPassword/>}/>
-          <Route path="/reset-passsword" element={<ResetPassword/>}/>
+          <Route path="/reset-passsword/:id" element={<ResetPassword/>}/>
 
           {/* RescueTeam */}
           <Route path="/rescueperson_signup" element={<RescueTeamReg />} />

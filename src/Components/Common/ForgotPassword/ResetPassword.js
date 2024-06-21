@@ -1,82 +1,140 @@
-import React, { useState } from 'react'
-import './ResetPassword.css'
+import React, { useState } from 'react';
+import './ResetPassword.css';
 import fireimg from "../../../Assets/resetpassword.png";
-import logo from '../../../Assets/WebGuard-Logo.png'
-import {FiEye, FiEyeOff } from "react-icons/fi";
+import logo from '../../../Assets/WebGuard-Logo.png';
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
 import FooterSecond from '../Footer/FooterSecond';
-
+import { useNavigate, useParams } from 'react-router-dom';
+import axiosInstance from '../../Constants/Baseurl'; // Make sure this path is correct
 
 function ResetPassword() {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
+
+
+  const navigate=useNavigate()
+
+  const { id } = useParams();
+  
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword(!showConfirmPassword);
-  };
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+  const validatePassword = () => {
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters long.');
+      return false;
+    }
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return false;
+    }
+    setError('');
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validatePassword()) {
+      return;
+    }
+
+    try {
+      const response = await axiosInstance.post(`/volunteerforgotpassword/${id}`, { password });
+      console.log(response);
+      setSuccess('Password reset successfully.');
+      setError('');
+      navigate("/volunteers_login")
+      
+    } catch (err) {
+      setError('Failed to reset password. Please try again.');
+      setSuccess('');
+    }
+  };
 
   return (
     <div>
-        <Navbar/>
+      <Navbar/>
       <div className='forgot-header'>
         “Communities rising together from disaster”
       </div>
       <div className='row login-row-style'>
         <div className='col-lg-5 col-md-3 col-sm-12'>
-            <div className='image-stack'>
-                <img src={fireimg} className='image first-image image-stylechange' alt='Fire 1' />
-            </div>
+          <div className='image-stack'>
+            <img src={fireimg} className='image first-image image-stylechange' alt='Fire 1' />
+          </div>
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>
           <div className='box-style-reset'>
-            <form>
-                <div className='reset-logo-section'>
-                    <img src={logo}/>
-                    <p>Reset Password</p>
-                </div>
-                <div className='col-12 pb-3 position-relative'>
-                    <p className='forgottext'>New Password:</p>
-                    <div className="input-wrapper wrapper-style">
-                    <input 
+            <form onSubmit={handleSubmit}>
+              <div className='reset-logo-section'>
+                <img src={logo} alt='Logo'/>
+                <p>Reset Password</p>
+              </div>
+              {error && <div className="alert alert-danger">{error}</div>}
+              {success && <div className="alert alert-success">{success}</div>}
+              <div className='col-12 pb-3 position-relative'>
+                <p className='forgottext'>New Password:</p>
+                <div className="input-wrapper wrapper-style">
+                  <input 
                     type={showPassword ? "text" : "password"}
                     className='form-control forgot-input-type-change' 
                     placeholder='Enter New Password' 
                     name='password'
-                    />
-                    <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
-                            {showPassword ? <FiEyeOff /> : <FiEye />}
-                    </div>
+                    value={password}
+                    onChange={handlePasswordChange}
+                  />
+                  <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                    {showPassword ? <FiEyeOff /> : <FiEye />}
+                  </div>
                 </div>
-                 </div>
-                 <div className='col-12 pb-3 position-relative'>
-                    <p className='forgottext'>Conform Password:</p>
-                    <div className="input-wrapper position-relative">
-                    <input 
+              </div>
+              <div className='col-12 pb-3 position-relative'>
+                <p className='forgottext'>Confirm Password:</p>
+                <div className="input-wrapper position-relative">
+                  <input 
                     type={showConfirmPassword ? "text" : "password"} 
                     className='form-control forgot-input-type-change' 
-                    placeholder='Re Enter Password' 
+                    placeholder='Re-enter Password' 
                     name='reenterpassword'
-                    />
-                    <div className="password-toggle-icon-reenter-forgot" onClick={toggleConfirmPasswordVisibility}>
-                      {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
-                    </div>
+                    value={confirmPassword}
+                    onChange={handleConfirmPasswordChange}
+                  />
+                  <div className="password-toggle-icon-reenter-forgot" onClick={toggleConfirmPasswordVisibility}>
+                    {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
+                  </div>
                 </div>
-                 </div>
-                   
-                    <div className='col-12 pb-3'>
-                        <button className='btn btn-primary forgot-btn-style-change' type='submit'>Reset</button>
-                    </div>
+              </div>
+              <div className='col-12 pb-3'>
+                <button className='btn btn-primary forgot-btn-style-change' type='submit'>Reset</button>
+              </div>
             </form>
           </div>
         </div>
-      </div><Footer/><FooterSecond/>
+      </div>
+      <Footer/>
+      <FooterSecond/>
     </div>
-  )
+  );
 }
 
-export default ResetPassword
+export default ResetPassword;
