@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import fireimg from "../../Assets/volunteer-signup.png";
 import logo from '../../Assets/WebGuard-Logo.png'
 import "./VolunteersSignup.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../Constants/Baseurl';
 import Navbar from '../Common/NavBar/Navbar';
 import Footer from '../Common/Footer/Footer';
@@ -13,6 +13,7 @@ import {FiEye, FiEyeOff } from "react-icons/fi";
 function VolunteersSignup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate=useNavigate()
 
   const [data, setData] = useState({
     name: '',
@@ -149,6 +150,7 @@ function VolunteersSignup() {
         console.log(res);
         if (res.data.status === 200) {
           alert('Volunteer registered successfully');
+          navigate("/volunteers_login")
         } else if(res.data.status === 11000) {
           alert(`Volunteer Registration Failed: ${res.data.msg}`);
         }

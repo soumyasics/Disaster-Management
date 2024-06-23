@@ -4,7 +4,7 @@ import fireimg from "../../Assets/fire-image.png";
 import logo from '../../Assets/WebGuard-Logo.png'
 import Navbar from '../Common/NavBar/Navbar';
 import Footer from '../Common/Footer/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../Constants/Baseurl';
 import FooterSecond from '../Common/Footer/FooterSecond';
 import { FiEdit2, FiEye, FiEyeOff } from "react-icons/fi";
@@ -22,7 +22,7 @@ function SignUp() {
         password:'',
         confirmPassword: ''
     })
-
+const navigate=useNavigate()
     const [errors,setErrors]=useState({
         name:'',
         phone:'',
@@ -123,6 +123,7 @@ function SignUp() {
               const res = await axiosInstance.post('/registeruser', formData);
               if (res.data.status === 200) {
                 alert('User registered successfully');
+                navigate("/user_login")
               } else {
                 alert(`User Registration Failed: ${res.data.msg}`);
               }

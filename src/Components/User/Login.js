@@ -64,7 +64,7 @@ const handleSubmit = (event) => {
                   // localStorage.setItem('junioradvocateId',response.data.data._id)
               } else {
                   console.log("Login Failed");
-                  alert("Login Failed");
+                  alert(response.data.msg);
               }
           })
           .catch(error => {
