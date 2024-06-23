@@ -59,7 +59,7 @@ const handleSubmit = (event) => {
                   // localStorage.setItem('junioradvocateId',response.data.data._id)
               } else {
                   console.log("Login Failed");
-                  alert("Login Failed");
+                  alert(response.data.msg);
               }
           })
           .catch(error => {
@@ -110,7 +110,7 @@ const handleSubmit = (event) => {
                     {errors.password && <div className="text-danger">{errors.password}</div>}
 
                     <div className='div-left-vol'>
-                        <Link className='link-style-change-vol'>Forgot Password?</Link>
+                        <Link to="/forgot-passsword" className='link-style-change-vol'>Forgot Password?</Link>
                     </div>
                     </div>
                     <div className='col-12 pb-3'>
