@@ -15,6 +15,7 @@ import RescueTeamReg from "./Components/RescueTeam/RescueTeamReg";
 import RescueTeamLogin from "./Components/RescueTeam/RescueTeamLogin";
 import ForgotPassword from "./Components/Common/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/Common/ForgotPassword/ResetPassword";
+import LandingPage2 from "./Components/Common/LandingPage/LandingPage2";
 
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
           <Route path="/user_navbar" element={<Navbar/>} />
           <Route path="/forgot-passsword" element={<ForgotPassword/>}/>
           <Route path="/reset-passsword/:id" element={<ResetPassword/>}/>
+          <Route path="/landingpage" element={<LandingPage2/>}/>
+
 
           {/* RescueTeam */}
           <Route path="/rescueperson_signup" element={<RescueTeamReg />} />
