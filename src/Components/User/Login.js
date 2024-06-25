@@ -120,6 +120,10 @@ const handleSubmit = (event) => {
                         </div>
                         {errors.password && <div className="text-danger">{errors.password}</div>}
                       </div>
+                      <div className='div-left-vol'>
+                        <Link to="/forgot-passsword" className='link-style-change-vol'>Forgot Password?</Link>
+                    </div>
+
                     </div>
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary btn-style-change' type='submit'>Login</button>
