@@ -21,7 +21,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto padding-links">
               <li className="nav-item">
-                <Link className="nav-link list-items-style" to="">Home</Link>
+                <Link className="nav-link list-items-style" to="/landingpage">Home</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">

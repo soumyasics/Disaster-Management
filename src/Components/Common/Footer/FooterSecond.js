@@ -4,7 +4,7 @@ import './FooterSecond.css'
 function FooterSecond() {
   return (
     <div>
-    <div className='second-footer'>
+    <div className='second-footer container-fluid'>
         <div className='row'>
         <div className='col-6 main-text'>
         © Webguard.com.All rights reserved.
