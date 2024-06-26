@@ -7,6 +7,7 @@ import Navbar from '../Common/NavBar/Navbar';
 import FooterSecond from '../Common/Footer/FooterSecond';
 import Footer from '../Common/Footer/Footer';
 import { FiEdit2, FiEye, FiEyeOff } from "react-icons/fi";
+import axiosInstance from '../Constants/Baseurl';
 
 
 function RescueTeamLogin() {
@@ -15,6 +16,65 @@ function RescueTeamLogin() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const [data, setData] = useState({ email: '', password: '' });
+  const [errors, setErrors] = useState({ email: '', password: '' });
+  const [formIsValid, setFormIsValid] = useState(true);
+
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setData(prevData => ({
+        ...prevData,
+        [name]: value
+    }));
+    setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: ''
+    }));
+};
+
+const validateField = (fieldName, value) => {
+  if (!value.trim()) {
+      setFormIsValid(false);
+      return `${fieldName} is required`;
+  }
+  return '';
+};
+
+const handleSubmit = (event) => {
+event.preventDefault();
+let errors = {};
+let formIsValid = true;
+
+errors.email = validateField('Email', data.email);
+if (errors.email) formIsValid = false;
+
+errors.password = validateField('Password', data.password);
+if (errors.password) formIsValid = false;
+
+setErrors(errors);
+setFormIsValid(formIsValid);
+
+if (formIsValid) {
+    console.log("data", data);
+    axiosInstance.post('/rescuememberslogin', data)
+        .then(response => {
+            console.log("Response:", response);
+            if (response.data.status === 200) {
+                console.log("Login Successful");
+                alert("Login Successful");
+                // localStorage.setItem('junioradvocateId',response.data.data._id)
+            } else {
+                console.log("Login Failed");
+                alert(response.data.msg);
+            }
+        })
+        .catch(error => {
+            console.error("There was an error!", error);
+        });
+}
+};
+
     return (
       
         <div>
@@ -30,7 +90,7 @@ function RescueTeamLogin() {
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>
           <div className='box-style-login-res'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='res-logo-section'>
                     <img src={logo} />
                     <p>Login</p>
@@ -41,7 +101,11 @@ function RescueTeamLogin() {
                     className='form-control input-type-change-res' 
                     placeholder='Enter Username' 
                     name='email'
+                    value={data.email}
+                    onChange={handleChange}
                     />
+                    {errors.email && <div className="text-danger">{errors.email}</div>}
+                    
                     </div>
                     <div className='col-12 pb-3'>
                     <p className='login-res'>Password:</p>
@@ -50,18 +114,24 @@ function RescueTeamLogin() {
                     className='form-control input-type-change-res' 
                     placeholder='Enter password' 
                     name='password'
+                    value={data.name}
+                    onChange={handleChange}
                     />
+                    {errors.password && <div className="text-danger">{errors.password}</div>}
+
                     <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
                             {showPassword ? <FiEyeOff /> : <FiEye />}
                         </div>
                     </div>
                     <div className='div-left-res'>
-                        <Link className='link-style-change-res'>Forgot Password?</Link>
+                        <Link className='link-style-change-res' to="/forgot-passsword">Forgot Password?</Link>
                     </div>
                     </div>
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary res-btn-style-change' type='submit'>Login</button>
                     </div>
+                    <p className='p-style-vol'>Don't Have an account? <Link to='/rescueperson_signup' className='link-style-change-volen'>Sign Up</Link></p>
+
             </form>
           </div>
         </div>

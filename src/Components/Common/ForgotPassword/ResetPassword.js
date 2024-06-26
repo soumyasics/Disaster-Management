@@ -16,11 +16,9 @@ function ResetPassword() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [userCategory, setUserCategory] = useState('');
 
-
-
-  const navigate=useNavigate()
-
+  const navigate = useNavigate();
   const { id } = useParams();
   
   const togglePasswordVisibility = () => {
@@ -39,7 +37,15 @@ function ResetPassword() {
     setConfirmPassword(e.target.value);
   };
 
+  const handleUserCategoryChange = (e) => {
+    setUserCategory(e.target.value);
+  };
+
   const validatePassword = () => {
+    if (userCategory === '') {
+      setError('Please select a user category.');
+      return false;
+    }
     if (password.length < 8) {
       setError('Password must be at least 8 characters long.');
       return false;
@@ -59,12 +65,27 @@ function ResetPassword() {
     }
 
     try {
-      const response = await axiosInstance.post(`/volunteerforgotpassword/${id}`, { password });
+      let apiEndpoint;
+      if (userCategory === 'User') {
+        apiEndpoint = `/userforgotpswd/${id}`;
+      } else if (userCategory === 'Volunteer') {
+        apiEndpoint = `/volunteerforgotpassword/${id}`;
+      } else if (userCategory === 'RescueMember') {
+        apiEndpoint = `/resetPwdrescue/${id}`;
+      }
+      const response = await axiosInstance.post(apiEndpoint, { password });
       console.log(response);
-      setSuccess('Password reset successfully.');
+      setSuccess(response.data.msg);
       setError('');
-      navigate("/volunteers_login")
-      
+
+      if (userCategory === 'User') {
+        navigate("/user_login");
+      } else if (userCategory === 'Volunteer') {
+         navigate("/volunteers_login");
+      }else if(userCategory === 'RescueMember'){
+        navigate("/rescueperson_login")
+      }
+
     } catch (err) {
       setError('Failed to reset password. Please try again.');
       setSuccess('');
@@ -77,7 +98,7 @@ function ResetPassword() {
       <div className='forgot-header'>
         “Communities rising together from disaster”
       </div>
-      <div className='row login-row-style'>
+      <div className='row login-row-style' style={{paddingTop:"40px"}}>
         <div className='col-lg-5 col-md-3 col-sm-12'>
           <div className='image-stack'>
             <img src={fireimg} className='image first-image image-stylechange' alt='Fire 1' />
@@ -92,6 +113,18 @@ function ResetPassword() {
               </div>
               {error && <div className="alert alert-danger">{error}</div>}
               {success && <div className="alert alert-success">{success}</div>}
+              <div className='col-12 pb-3 position-relative'>
+                <p className='forgottext'>Select User Category :</p>
+                <div className="input-wrapper wrapper-style">
+                  <select value={userCategory} onChange={handleUserCategoryChange}>
+                    <option hidden>Select User</option>
+                    <option value="User">User</option>
+                    <option value="Volunteer">Volunteer</option>
+                    <option value="RescueMember">Rescue Member</option>
+                  </select>
+                </div>
+              </div>
+
               <div className='col-12 pb-3 position-relative'>
                 <p className='forgottext'>New Password:</p>
                 <div className="input-wrapper wrapper-style">

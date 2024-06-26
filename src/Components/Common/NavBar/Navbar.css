@@ -20,5 +20,12 @@
   padding-right: 50px;
 }
 .dropment{
-  margin-left: -100px;
+  margin-left: -40px;
+}
+.dropmentli{
+  font-size: 17px;
+  font-weight: bold;
+}
+.dropmentli :hover{
+  background-color: rgb(164, 181, 192);
 }
