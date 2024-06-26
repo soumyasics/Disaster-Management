@@ -65,10 +65,14 @@ function ResetPassword() {
     }
 
     try {
-      const apiEndpoint = userCategory === 'User' 
-        ? `/userforgotpswd/${id}` 
-        : `/volunteerforgotpassword/${id}`;
-
+      let apiEndpoint;
+      if (userCategory === 'User') {
+        apiEndpoint = `/userforgotpswd/${id}`;
+      } else if (userCategory === 'Volunteer') {
+        apiEndpoint = `/volunteerforgotpassword/${id}`;
+      } else if (userCategory === 'RescueMember') {
+        apiEndpoint = `/resetPwdrescue/${id}`;
+      }
       const response = await axiosInstance.post(apiEndpoint, { password });
       console.log(response);
       setSuccess(response.data.msg);
@@ -78,6 +82,8 @@ function ResetPassword() {
         navigate("/user_login");
       } else if (userCategory === 'Volunteer') {
          navigate("/volunteers_login");
+      }else if(userCategory === 'RescueMember'){
+        navigate("/rescueperson_login")
       }
 
     } catch (err) {
@@ -114,7 +120,7 @@ function ResetPassword() {
                     <option hidden>Select User</option>
                     <option value="User">User</option>
                     <option value="Volunteer">Volunteer</option>
-                    <option value="Rescue Member">Rescue Member</option>
+                    <option value="RescueMember">Rescue Member</option>
                   </select>
                 </div>
               </div>

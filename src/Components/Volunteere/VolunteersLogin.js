@@ -7,11 +7,17 @@ import Navbar from '../Common/NavBar/Navbar';
 import Footer from '../Common/Footer/Footer';
 import FooterSecond from '../Common/Footer/FooterSecond';
 import axiosInstance from '../Constants/Baseurl';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 function VolunteersLogin() {
     const [data, setData] = useState({ email: '', password: '' });
     const [errors, setErrors] = useState({ email: '', password: '' });
     const [formIsValid, setFormIsValid] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
+    };  
+
 
 
     const handleChange = (event) => {
@@ -100,13 +106,20 @@ const handleSubmit = (event) => {
                     </div>
                     <div className='col-12 pb-3'>
                     <p className='login-vol'>Password:</p>
-                    <input type='password' 
-                    className='form-control input-type-change-vol' 
+                    <div className='input-wrapper wrapper-style'>
+                    <input 
+                            type={showPassword ? "text" : "password"}
+                            className='form-control input-type-change-vol' 
                     placeholder='Enter password' 
                     name='password'
                     value={data.name}
                     onChange={handleChange}
                     />
+                         <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                          {showPassword ? <FiEyeOff /> : <FiEye />}
+                          </div>
+                          </div>
+
                     {errors.password && <div className="text-danger">{errors.password}</div>}
 
                     <div className='div-left-vol'>
