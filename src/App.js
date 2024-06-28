@@ -18,16 +18,19 @@ import ResetPassword from "./Components/Common/ForgotPassword/ResetPassword";
 import LandingPage from "./Components/Common/LandingPage/LandingPage";
 import AdminSidebar from "./Components/Admin/AdminSidebar";
 import AdminMain from "./Components/Admin/AdminMain";
+import Adminnav from "./Components/Common/NavBar/Adminnav";
+import Viewalerts from "./Components/Admin/AdminDashboard/Viewalerts";
 
 function App() {
   return (
-    <BrowserRouter basename="/WebQuard">
+    <BrowserRouter basename="/web_guard">
       <div>
         <Routes>
           {/* Admin */}
 
           <Route path="/Admin" element={<AdminLogin />} />
-          <Route path="/Adminmain" element={<AdminMain />} />
+          <Route path="/Adminmain" element={[<Adminnav/>,<AdminMain />]} />
+          <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
 
  
 
