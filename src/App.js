@@ -19,7 +19,7 @@ import LandingPage2 from "./Components/Common/Landingpage/LandingPage2"
 
 function App() {
   return (
-    <BrowserRouter basename="/WebQuard">
+    <BrowserRouter basename="/web_guard">
       <div>
         <Routes>
           {/* Admin */}
