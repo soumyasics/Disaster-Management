@@ -15,7 +15,9 @@ import RescueTeamReg from "./Components/RescueTeam/RescueTeamReg";
 import RescueTeamLogin from "./Components/RescueTeam/RescueTeamLogin";
 import ForgotPassword from "./Components/Common/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/Common/ForgotPassword/ResetPassword";
-import LandingPage2 from "./Components/Common/Landingpage/LandingPage2"
+import LandingPage from "./Components/Common/LandingPage/LandingPage";
+import AdminSidebar from "./Components/Admin/AdminSidebar";
+import AdminMain from "./Components/Admin/AdminMain";
 
 function App() {
   return (
@@ -25,10 +27,13 @@ function App() {
           {/* Admin */}
 
           <Route path="/Admin" element={<AdminLogin />} />
+          <Route path="/Adminmain" element={<AdminMain />} />
+
+ 
 
           {/* User */}
 
-          <Route path="/" element={<LandingPage2 />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/user_signup" element={<SignUp />} />
           <Route path="/user_login" element={[<Login />]} />
 

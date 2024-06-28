@@ -1,13 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import loginimg from "../../Assets/12832600_5057942.jpg"
 import "./AdminLogin.css"
 import fireimg from "../../Assets/fire-image.png";
 import logo from '../../Assets/WebGuard-Logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Common/Footer/Footer';
 import Navbar from '../Common/NavBar/Navbar';
+import { FiEdit2, FiEye, FiEyeOff } from "react-icons/fi";
+
 
 function AdminLogin() {
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const [admin, setAdmin] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
+
+  const correctEmail = "Admin";
+  const correctPassword = "Admin@123";
+
+  const handleChange = (e) => {
+    setAdmin({
+      ...admin,
+      [e.target.name]: e.target.value
+    });
+    console.log(admin);
+  };
+
+  const handleSubmit = (a) => {
+    a.preventDefault();
+    if (correctEmail === admin.email) {
+      if (correctPassword === admin.password) {
+        alert("Login Success")
+        localStorage.setItem("adminid", 1);
+        navigate("/Adminmain");
+      } else {
+        alert("Password Wrong")
+      }
+    } else {
+      alert("Invalid username")
+    }
+  };
+
   return (
     <div>
         <Navbar/>
@@ -22,18 +60,27 @@ function AdminLogin() {
         </div>
         <div className='col-lg-7 col-md-6 col-sm-12'>
           <div className='box-style-admin-login'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='admin-logo-section'>
                     <img src={logo}/>
                     <p>Login</p>
                 </div>
             <div className='col-12 pb-3'>
                     <p className='admin-login'>UserName:</p>
-                    <input type='text' className='form-control admin-input-type-change' placeholder='Enter Username' name='email'/>
+                    <input type='text' className='form-control admin-input-type-change' placeholder='Enter Username' name='email'
+                    value={admin.email}
+                    onChange={handleChange}/>
                     </div>
                     <div className='col-12 pb-3'>
                     <p className='admin-login'>Password:</p>
-                    <input type='password' className='form-control admin-input-type-change' placeholder='Enter password' name='password'/>
+                    <div className="input-wrapper wrapper-style">
+                    <input type={showPassword ? "text" : "password"}  className='form-control admin-input-type-change' placeholder='Enter password' name='password'
+                    value={admin.password}
+                    onChange={handleChange}/>
+                    <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                            {showPassword ? <FiEyeOff /> : <FiEye />}
+                        </div>
+                      </div>
                     </div>
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary admin-btn-style-change' type='submit'>Login</button>
