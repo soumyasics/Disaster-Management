@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './LandingPage2.css'
+import './LandingPage.css'
 import Navbar from '../NavBar/Navbar'
 import Footer from '../Footer/Footer'
 import FooterSecond from '../Footer/FooterSecond'
@@ -14,13 +14,14 @@ import doimg1 from '../../../Assets/home-rescueteam.png'
 import doimg2 from '../../../Assets/home_rescueteam.png'
 import { IoIosWarning } from "react-icons/io";
 
-function LandingPage2() {
+function LandingPage() {
+
     const texts = [
         'Warning of heavy rains in Thiruvananthapuram.',
         ' yellow alert for eight districts of the state.',
         'Warnings for severe weather conditions such as floods & Storms.',
         ' total of 14 people have died due to flood.'
-      ];
+      ]; 
     
       const [currentIndex, setCurrentIndex] = useState(0);
     
@@ -31,10 +32,9 @@ function LandingPage2() {
     
         return () => clearInterval(intervalId);
       }, [texts.length]);
-    
   return (
     <div>
-        <Navbar/>
+<Navbar/>
       <div className='admin-login-header'>
         “Communities rising together from disaster”
       </div>
@@ -158,4 +158,4 @@ function LandingPage2() {
   )
 }
 
-export default LandingPage2
+export default LandingPage
