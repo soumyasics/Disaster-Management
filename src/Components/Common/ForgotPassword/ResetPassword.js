@@ -7,7 +7,7 @@ import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
 import FooterSecond from '../Footer/FooterSecond';
 import { useNavigate, useParams } from 'react-router-dom';
-import axiosInstance from '../../Constants/Baseurl'; // Make sure this path is correct
+import axiosInstance from '../../Constants/Baseurl'; 
 
 function ResetPassword() {
   const [password, setPassword] = useState('');

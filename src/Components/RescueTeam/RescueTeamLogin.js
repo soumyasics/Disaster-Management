@@ -96,10 +96,10 @@ if (formIsValid) {
                     <p>Login</p>
                 </div>
             <div className='col-12 pb-3'>
-                    <p className='login-res'>UserName:</p>
+                    <p className='login-res'>Email:</p>
                     <input type='text' 
                     className='form-control input-type-change-res' 
-                    placeholder='Enter Username' 
+                    placeholder='Enter Email' 
                     name='email'
                     value={data.email}
                     onChange={handleChange}
