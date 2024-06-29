@@ -13,6 +13,7 @@ import profile3 from '../../../Assets/profile-takerisk.png'
 import doimg1 from '../../../Assets/home-rescueteam.png'
 import doimg2 from '../../../Assets/home_rescueteam.png'
 import { IoIosWarning } from "react-icons/io";
+import { Link } from 'react-router-dom'
 
 function LandingPage() {
 
@@ -52,17 +53,17 @@ function LandingPage() {
             <div className='col-md-4 col-sm-12'>
                  <img src={profile1} className='img-fluid first-div-profile'></img>
                  <p>Are You Suffering From Disaster?</p>
-                 <button className='btn btn-secondary'> Login Now</button>
+                 <Link to="/user_login"><button className='btn btn-secondary'> Login Now</button></Link>
             </div>
             <div className='col-md-4 col-sm-12'>
             <img src={profile2} className='img-fluid first-div-profile'></img>
             <p>Are You Ready to Volunteering?</p>
-            <button className='btn btn-secondary'> Login Now</button>
+            <Link to="/volunteers_login"><button className='btn btn-secondary'> Login Now</button></Link>
             </div>
             <div className='col-md-4 col-sm-12'>
             <img src={profile3} className='img-fluid first-div-profile'></img>
             <p>Are You Ready to Take Risk?</p>
-            <button className='btn btn-secondary'> Login Now</button>
+            <Link to="/rescueperson_login"><button className='btn btn-secondary'> Login Now</button></Link>
             </div>
         </div>
       </div>

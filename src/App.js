@@ -31,6 +31,7 @@ function App() {
           <Route path="/Admin" element={<AdminLogin />} />
           <Route path="/Adminmain" element={[<Adminnav/>,<AdminMain />]} />
           <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
+          <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
 
  
 
