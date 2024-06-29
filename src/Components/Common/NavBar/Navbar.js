@@ -21,7 +21,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto padding-links">
               <li className="nav-item">
-                <Link className="nav-link list-items-style" to="/landingpage">Home</Link>
+                <Link className="nav-link list-items-style" to="/">Home</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
@@ -42,9 +42,11 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu dropment" aria-labelledby="navbarDropdown">
                   {/* <li><Link className="dropdown-item" to="/login">Login</Link></li> */}
+                  <li className='dropmentli'><Link className="dropdown-item" to="/Admin">Admin</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to="/user_login">User</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to="/volunteers_login">Volunteer</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to="/rescueperson_login">Rescue Member</Link></li>
+                  
                 </ul>
               </li>
             </ul>

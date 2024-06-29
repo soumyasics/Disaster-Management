@@ -8,6 +8,7 @@ import { AiOutlineAlert } from "react-icons/ai";
 import { MdOutlinePrivacyTip } from "react-icons/md";
 import { MdOutlineBarChart } from "react-icons/md";
 import { LuLogOut } from "react-icons/lu";
+import { Link } from 'react-router-dom';
 
 function AdminSidebar() {
     const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -53,7 +54,7 @@ function AdminSidebar() {
             <div className='admin_dash_div'>
                 <button className="dashboard_sub_button">
                     <span className="icon"> <AiOutlineAlert className='admin_sub_icon'/></span>
-                    <span className="text admin_sub_text">Emergency Alerts</span>
+                   <Link to="/admin-viewalerts" style={{textDecoration:"none",color:"white"}}><span className="text admin_sub_text">Emergency Alerts</span></Link> 
                 </button>
             </div>
             <div className='admin_dash_div'>

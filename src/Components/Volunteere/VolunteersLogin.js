@@ -93,10 +93,10 @@ const handleSubmit = (event) => {
                     <p>Login</p>
                 </div>
             <div className='col-12 pb-3'>
-                    <p className='login-vol'>UserName:</p>
+                    <p className='login-vol'>Email:</p>
                     <input type='text' 
                     className='form-control input-type-change-vol' 
-                    placeholder='Enter Username' 
+                    placeholder='Enter Email' 
                     name='email'
                     value={data.email}
                     onChange={handleChange}
