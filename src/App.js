@@ -14,12 +14,12 @@ import VolunteersLogin from "./Components/Volunteere/VolunteersLogin";
 import RescueTeamReg from "./Components/RescueTeam/RescueTeamReg";
 import RescueTeamLogin from "./Components/RescueTeam/RescueTeamLogin";
 import ForgotPassword from "./Components/Common/ForgotPassword/ForgotPassword";
-import ResetPassword from "./Components/Common/ForgotPassword/ResetPassword";
 import LandingPage from "./Components/Common/LandingPage/LandingPage";
-import AdminSidebar from "./Components/Admin/AdminSidebar";
 import AdminMain from "./Components/Admin/AdminMain";
 import Adminnav from "./Components/Common/NavBar/Adminnav";
 import Viewalerts from "./Components/Admin/AdminDashboard/Viewalerts";
+import ResetPassword from "./Components/Common/ForgotPassword/ResetPassword";
+import Addalerts from "./Components/User/Alerts/Addalerts";
 
 function App() {
   return (
@@ -40,6 +40,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/user_signup" element={<SignUp />} />
           <Route path="/user_login" element={[<Login />]} />
+          <Route path="/user_addalerts" element={<Addalerts/>}/>
 
           {/* Volunteers */}
 

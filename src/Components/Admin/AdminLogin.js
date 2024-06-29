@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Common/Footer/Footer';
 import Navbar from '../Common/NavBar/Navbar';
 import { FiEdit2, FiEye, FiEyeOff } from "react-icons/fi";
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function AdminLogin() {
@@ -35,14 +37,17 @@ function AdminLogin() {
     a.preventDefault();
     if (correctEmail === admin.email) {
       if (correctPassword === admin.password) {
-        alert("Login Success")
+        // alert("Login Success")
+        toast.success("Login Successful")
         localStorage.setItem("adminid", 1);
         navigate("/Adminmain");
       } else {
-        alert("Password Wrong")
+        // alert("Password Wrong")
+        toast.error("Password is wrong")
       }
     } else {
-      alert("Invalid username")
+      // alert("Invalid username")
+      toast.error("Invalid Username")
     }
   };
 
@@ -85,7 +90,7 @@ function AdminLogin() {
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary admin-btn-style-change' type='submit'>Login</button>
                     </div>
-            </form>
+            </form><ToastContainer/>
           </div>
         </div>
       </div><Footer/>
