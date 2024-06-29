@@ -14,9 +14,7 @@ import VolunteersLogin from "./Components/Volunteere/VolunteersLogin";
 import RescueTeamReg from "./Components/RescueTeam/RescueTeamReg";
 import RescueTeamLogin from "./Components/RescueTeam/RescueTeamLogin";
 import ForgotPassword from "./Components/Common/ForgotPassword/ForgotPassword";
-import ResetPassword from "./Components/Common/ForgotPassword/ResetPassword";
 import LandingPage from "./Components/Common/LandingPage/LandingPage";
-import AdminSidebar from "./Components/Admin/AdminSidebar";
 import AdminMain from "./Components/Admin/AdminMain";
 
 function App() {
