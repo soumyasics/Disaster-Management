@@ -130,16 +130,7 @@ function Addalerts() {
             </div>
             <div className='col-5'>
               <div className='addalert_title_div'>
-                <p>Date & Time</p>
-                <input 
-                  type='datetime-local' 
-                  className={`form-control addalert-input-type-change ${errors.date ? 'is-invalid' : ''}`} 
-                  placeholder='DD/MM/YYYY   &   00:00 AM / PM' 
-                  name='date' 
-                  value={data.date} 
-                  onChange={handleInputChange}
-                />
-                {errors.date && <div className="invalid-feedback">{errors.date}</div>}
+
               </div>
             </div>
           </div>
