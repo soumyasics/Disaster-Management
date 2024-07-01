@@ -40,7 +40,7 @@ function AdminLogin() {
         // alert("Login Success")
         toast.success("Login Successful")
         localStorage.setItem("adminid", 1);
-        navigate("/Adminmain");
+        navigate("/admin-dash");
       } else {
         // alert("Password Wrong")
         toast.error("Password is wrong")

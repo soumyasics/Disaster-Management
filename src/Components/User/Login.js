@@ -62,9 +62,9 @@ const handleSubmit = (event) => {
               console.log("Response:", response);
               if (response.data.status === 200) {
                   console.log("Login Successful");
+                  localStorage.setItem("usersId", response.data.data._id);
                   alert("Login Successful");
-                  navigate("/usernav");
-                  localStorage.setItem("usersId", response.data._id);
+                  navigate("/user-home");
               } else {
                   console.log("Login Failed");
                   alert(response.data.msg);

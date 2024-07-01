@@ -1,0 +1,19 @@
+.viewmore-dashboxacptbtn{
+    border-radius: 12px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    width: 80px;
+    gap: 30px;
+}
+.viewmore-dashboxrjtbtn{
+    border-radius: 12px;
+    border: none;
+    background-color: rgb(219, 26, 26);
+    color: white;
+    font-weight: 600;
+    width: 80px;
+    gap: 30px;
+
+}

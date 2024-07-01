@@ -1,0 +1,42 @@
+.homelanding-warning .p{
+    color: #016169;
+font-family: Outfit;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.homelanding-warning span{
+    color: #DD581F;
+font-family: Outfit;
+font-size: 18px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+}
+.homelanding-image img{
+    margin: 30px;
+    margin-top: 30px;
+}
+.homelanding-imagetext h6{
+    padding-top: 150px;
+    color: #FF5B00;
+font-family: "Noto Sans";
+font-size: 25.667px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.homelanding-imagetext p{
+    overflow: hidden;
+    color: #014C56;
+    text-overflow: ellipsis;
+    font-family: "Noto Sans";
+    font-size: 22.965px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 54.035px; /* 235.294% */display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+align-self: stretch;
+}
