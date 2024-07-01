@@ -37,6 +37,7 @@ function Addalerts() {
                           className='form-control addalert-input-type-change' 
                           placeholder='DD/MM/YYYY   &   00:00 AM / PM' 
                           name='name'
+                          
                           />
               </div>
             </div>
