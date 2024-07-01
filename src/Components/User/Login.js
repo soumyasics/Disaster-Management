@@ -4,7 +4,7 @@ import fireimg from "../../Assets/fire-image.png";
 import logo from '../../Assets/WebGuard-Logo.png'
 import Navbar from '../Common/NavBar/Navbar';
 import Footer from '../Common/Footer/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../Constants/Baseurl';
 import FooterSecond from '../Common/Footer/FooterSecond';
 import { FiEdit2, FiEye, FiEyeOff } from "react-icons/fi";
@@ -14,6 +14,8 @@ function Login() {
     const [errors, setErrors] = useState({ email: '', password: '' });
     const [formIsValid, setFormIsValid] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
+
+    const navigate=useNavigate();
 
     const togglePasswordVisibility = () => {
       setShowPassword(!showPassword);
@@ -61,7 +63,8 @@ const handleSubmit = (event) => {
               if (response.data.status === 200) {
                   console.log("Login Successful");
                   alert("Login Successful");
-                  // localStorage.setItem('junioradvocateId',response.data.data._id)
+                  navigate("/usernav");
+                  localStorage.setItem("usersId", response.data._id);
               } else {
                   console.log("Login Failed");
                   alert(response.data.msg);

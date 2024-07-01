@@ -29,3 +29,11 @@
 .dropmentli :hover{
   background-color: rgb(164, 181, 192);
 }
+
+.custom-dropdown-toggle::after {
+  display: none !important;
+}
+
+.profile_icon{
+  color: #014E57;
+}
