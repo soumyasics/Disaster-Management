@@ -24,7 +24,10 @@ function Viewalerts() {
       <div className="admindash-viewalert col-12">
         <div className="admindash-shrink">Emergency Alerts</div>
         <div className="row d-flex">
-          {alerts.map((alert, index) => (
+
+        {alerts && alerts.length ? (
+          alerts.map((alert,index) => {
+            return (
             <div key={index} className="col-3">
               <div className="admin-alert-boxinside">
                 <div className="admin-alert-content">
@@ -36,7 +39,11 @@ function Viewalerts() {
                 <div className="viewmore-dashbox"><p>View More</p></div>
               </div>
             </div>
-          ))}
+);
+})
+) : (
+<div style={{color:"red",fontSize:"20px"}}>No Requests Available</div>
+)}
         </div>
       </div>
     </div>
