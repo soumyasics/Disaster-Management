@@ -1,137 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../AdminDashboard/Viewalerts.css";
-import { Link } from "react-router-dom";
+import axiosInstance from "../../Constants/Baseurl";
 
 function Viewalerts() {
+  const [alerts, setAlerts] = useState([]);
+
+  useEffect(() => {
+    axiosInstance.post('/viewemergencyforadmin')
+      .then(response => {
+        if (response.data.status === 200) {
+          setAlerts(response.data.data);
+        } else {
+          console.error('Failed to fetch data');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <div className="adminmaindash-container">
-        
       <div className="admindash-viewalert col-12">
         <div className="admindash-shrink">Emergency Alerts</div>
         <div className="row d-flex">
-          {/* <div className="col-12 "> */}
-
-            <div className="col-3">
+          {alerts.map((alert, index) => (
+            <div key={index} className="col-3">
               <div className="admin-alert-boxinside">
                 <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span>Critical</span></p>
+                  <p>{alert.title}</p>
+                  <p>{new Date(alert.date).toLocaleDateString()}</p>
+                  <p>{alert.discription}</p>
+                  <p>Security Level : <span className={alert.securitylevel.toLowerCase() === 'critical' ? 'critical-admin-alert' : ''}>{alert.securitylevel}</span></p>
                 </div>
                 <div className="viewmore-dashbox"><p>View More</p></div>
               </div>
             </div>
-            <div className="col-3">
-              <div className="admin-alert-boxinside">
-                <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span>Critical</span></p>
-                </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
-              </div>
-            </div>
-
-            <div className="col-3">
-              <div className="admin-alert-boxinside">
-                <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span>Critical</span></p>
-                </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
-              </div>
-            </div>
-            <div className="col-3">
-              <div className="admin-alert-boxinside">
-                <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span>Critical</span></p>
-                </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
-              </div>
-            </div>
-             <div className="col-3">
-              <div className="admin-alert-boxinside">
-                <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span>Critical</span></p>
-                </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
-              </div>
-            </div> 
-            <div className="col-3">
-              <div className="admin-alert-boxinside">
-                <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span>Critical</span></p>
-                </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
-              </div>
-            </div> 
-            <div className="col-3">
-              <div className="admin-alert-boxinside">
-                <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span>Critical</span></p>
-                </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
-              </div>
-            </div> 
-            <div className="col-3">
-              <div className="admin-alert-boxinside">
-                <div className="admin-alert-content">
-                <p>Flood In Kollam</p>
-                <p>22/07/2024</p>
-                <p>Severe Weather Alert issued for 
-                Kollam . Please take necessary 
-                safety precautions. 
-                </p>
-                <p>Security Level :<span className="critical-admin-alert">Critical</span></p>
-                </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
-              </div>
-            </div> 
-
-          </div>
+          ))}
         </div>
-      {/* </div> */}
-
-
-
-
+      </div>
     </div>
   );
 }
