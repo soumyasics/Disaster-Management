@@ -191,7 +191,7 @@ function RescueTeamReg() {
           <form onSubmit={handleSubmit}>
                 <div className='logo-section'>
                     <img src={logo} alt="Logo"/>
-                    <p>Sign Up</p>
+                    <p>Sign Up Rescue Team</p>
                 </div>
                 <div className='col-12 pb-3'>
                   <div className='row'>

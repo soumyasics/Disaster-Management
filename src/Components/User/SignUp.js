@@ -160,7 +160,7 @@ const navigate=useNavigate()
             <form onSubmit={handleSubmit}>
                 <div className='logo-section'>
                     <img src={logo}/>
-                    <p>Sign Up</p>
+                    <p>Sign Up User</p>
                 </div>
             <div className='col-12 pb-3'>
                 <div className='row'>

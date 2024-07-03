@@ -50,7 +50,7 @@ function UserNavbar() {
                 </li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li className="nav-item">
-                  <Link className="nav-link list-items-style" to="">Emergency Alerts</Link>
+                  <Link className="nav-link list-items-style" to="/user-viewalert">Emergency Alerts</Link>
                 </li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li className="nav-item">
@@ -58,7 +58,7 @@ function UserNavbar() {
                 </li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li className="nav-item">
-                  <Link className="nav-link list-items-style" to="">Rescue Status</Link>
+                  <Link className="nav-link list-items-style" to="/user-viewreqstatus">Rescue Status</Link>
                 </li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li className="nav-item">

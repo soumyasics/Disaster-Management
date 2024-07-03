@@ -33,6 +33,7 @@ padding-left: 20px;
 .admin-alert-boxinside {
     width: 260px;
     height: 290px;
+    /* max-height: max-content; */
     flex-shrink: 0;
     border-radius: 5px 5px 0px 0px;
     background: #FFF;
@@ -77,6 +78,14 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: 1.54px;
 padding: 10px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+  
 }
 .admin-alert-content span{
     color: #DC0D00;

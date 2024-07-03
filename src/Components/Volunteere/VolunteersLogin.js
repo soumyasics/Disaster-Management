@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './VolunteersLogin.css'
 import fireimg from "../../Assets/volunteers-login.png";
 import logo from '../../Assets/WebGuard-Logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Common/NavBar/Navbar';
 import Footer from '../Common/Footer/Footer';
 import FooterSecond from '../Common/Footer/FooterSecond';
@@ -18,7 +18,7 @@ function VolunteersLogin() {
       setShowPassword(!showPassword);
     };  
 
-
+    const navigate=useNavigate()
 
     const handleChange = (event) => {
       const { name, value } = event.target;
@@ -62,7 +62,8 @@ const handleSubmit = (event) => {
               if (response.data.status === 200) {
                   console.log("Login Successful");
                   alert("Login Successful");
-                  // localStorage.setItem('junioradvocateId',response.data.data._id)
+                   localStorage.setItem('volunteerId',response.data.data._id)
+                   navigate("/volunteers_home")
               } else {
                   console.log("Login Failed");
                   alert(response.data.msg);
