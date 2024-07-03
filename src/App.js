@@ -24,6 +24,14 @@ import Addalerts from "./Components/User/Alerts/Addalerts";
 import UserNavbar from "./Components/User/Navbar/UserNavbar";
 import Userhome from "./Components/User/Userhome";
 import Userprofile from "./Components/User/Profile/Userprofile";
+import Acptrjtreq from "./Components/Admin/Requests/Acptrjtreq";
+import Rescuehome from "./Components/RescueTeam/Rescuehome";
+import RescueNav from "./Components/RescueTeam/RescueNav";
+import Viewemrgalert from "./Components/RescueTeam/Alerts/Viewemrgalert";
+import Volnavbar from "./Components/Volunteere/Navbar/Volnavbar";
+import Volviewemgalert from "./Components/Volunteere/Alerts/Volviewemgalert";
+import Userviewallalert from "./Components/User/Alerts/Userviewallalert";
+import Rescuestatus from "./Components/User/Alerts/Rescuestatus";
 
 function App() {
   return (
@@ -39,6 +47,7 @@ function App() {
 
           <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
+          <Route path="/admin-acptrjtreq" element={[<Acptrjtreq />]} />
 
  
 
@@ -48,14 +57,17 @@ function App() {
           <Route path="/user_signup" element={<SignUp />} />
           <Route path="/user_login" element={[<Login />]} />
           <Route path="/user_addalerts" element={[<UserNavbar/>,<Addalerts/>]}/>
-          {/* <Route path="/usernav" element={<UserNavbar/>}/> */}
           <Route path="/user-home" element={<Userhome/>}/>
-          <Route path="/user-profile" element={<Userprofile/>}/>
+          <Route path="/user-viewalert" element={[<UserNavbar/>,<Userviewallalert/>]}/>
+          <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
 
           {/* Volunteers */}
 
           <Route path="/volunteers_signup" element={<VolunteersSignup />} />
           <Route path="/volunteers_login" element={<VolunteersLogin />} />
+          <Route path="/volunteers_home" element={[<Volnavbar/>,<Rescuehome />]} />
+          <Route path="/volunteers_emergencyalert" element={[<Volnavbar/>,<Volviewemgalert />]} />
+         
 
           {/* Common */}
           <Route path="/user_footer" element={[<Footer/>,<FooterSecond/>]} />
@@ -66,6 +78,10 @@ function App() {
           {/* RescueTeam */}
           <Route path="/rescueperson_signup" element={<RescueTeamReg />} />
           <Route path="/rescueperson_login" element={<RescueTeamLogin />} />
+          <Route path="/rescueperson_home" element={[<RescueNav/>,<Rescuehome />]} />
+          <Route path="/rescuemergencyalerts" element={[<RescueNav/>,<Viewemrgalert />]} />
+         
+
         </Routes>
       </div>
     </BrowserRouter>

@@ -9,7 +9,7 @@ function Footer() {
       <div className='row'>
         <div  className='col-lg-4 col-md-6 col-sm-12 logo-text-style'>
           <img src={logo} alt='WebGaurd-Logo'/>
-          WEB GAURD
+          WEB GUARD
         </div>
         <div  className='col-lg-3 col-md-6 col-sm-12'>
           <ul className='list-style'>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import fireimg from "../../Assets/rescue.png";
 import logo from '../../Assets/WebGuard-Logo.png'
 import "./RescueTeamLogin.css"
@@ -19,6 +19,7 @@ function RescueTeamLogin() {
   const [data, setData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({ email: '', password: '' });
   const [formIsValid, setFormIsValid] = useState(true);
+  const navigate=useNavigate()
 
 
   const handleChange = (event) => {
@@ -63,7 +64,8 @@ if (formIsValid) {
             if (response.data.status === 200) {
                 console.log("Login Successful");
                 alert("Login Successful");
-                // localStorage.setItem('junioradvocateId',response.data.data._id)
+                localStorage.setItem('rescueId',response.data.data._id)
+                navigate("/rescueperson_home")
             } else {
                 console.log("Login Failed");
                 alert(response.data.msg);

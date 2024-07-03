@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../AdminDashboard/Viewalerts.css";
 import axiosInstance from "../../Constants/Baseurl";
+import { useNavigate } from "react-router-dom";
+import Acptrjtreq from "../Requests/Acptrjtreq";
+import { Modal } from "react-bootstrap";
 
 function Viewalerts() {
   const [alerts, setAlerts] = useState([]);
@@ -18,6 +21,21 @@ function Viewalerts() {
         console.error('Error fetching data:', error);
       });
   }, []);
+//modal open functionality
+const [show, setShow] = useState(false);
+const [openRequests, setOpenRequests] = useState(false);
+const [selectedAlertId, setSelectedAlertId] = useState(null);
+const navigate = useNavigate();
+
+const handleClose = () =>{
+  setShow(false);
+  window.location.reload()
+} 
+const handleShow = (alertId) =>{
+  setSelectedAlertId(alertId)
+  setShow(true);
+
+}
 
   return (
     <div className="adminmaindash-container">
@@ -34,9 +52,9 @@ function Viewalerts() {
                   <p>{alert.title}</p>
                   <p>{new Date(alert.date).toLocaleDateString()}</p>
                   <p>{alert.discription}</p>
-                  <p>Security Level : <span className={alert.securitylevel.toLowerCase() === 'critical' ? 'critical-admin-alert' : ''}>{alert.securitylevel}</span></p>
+                  <p>Security Level : <span >{alert.securitylevel}</span></p>
                 </div>
-                <div className="viewmore-dashbox"><p>View More</p></div>
+                <div className="viewmore-dashbox"onClick={() => handleShow(alert._id)}><p>View More</p></div>
               </div>
             </div>
 );
@@ -46,6 +64,12 @@ function Viewalerts() {
 )}
         </div>
       </div>
+      <Modal show={show} onHide={handleClose} centered>
+                <div className='modal-use-postjob'>
+                    <Acptrjtreq close={handleClose}  alertId={selectedAlertId} />
+                </div>
+            </Modal>
+
     </div>
   );
 }
