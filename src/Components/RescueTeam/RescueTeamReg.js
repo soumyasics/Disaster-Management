@@ -13,7 +13,7 @@ function RescueTeamReg() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const navigate=useNavigate()
 
-    const id="6677b94cc459f6115c8a761f"
+    // const id="6677b94cc459f6115c8a761f"
   
     const [data, setData] = useState({
       name: '',
@@ -27,7 +27,7 @@ function RescueTeamReg() {
       email: '',
       password: '',
       confirmPassword: '',
-      volunteerid:id
+      // volunteerid:id
 
     });
   
@@ -148,7 +148,7 @@ function RescueTeamReg() {
     
         try {
           console.log(data)
-          const res = await axiosInstance.post(`/registerrescuemembers/${id}`, formData);
+          const res = await axiosInstance.post(`/registerrescuemembers`, formData);
           console.log(res);
           if (res.data.status === 200) {
             alert('Volunteer registered successfully');

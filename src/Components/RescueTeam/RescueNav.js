@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Rescueprofile from './Profile/Rescueprofile';
 
 
 function RescueNav() {
@@ -25,7 +26,11 @@ function RescueNav() {
       navigate("/");
       window.location.reload()
     };
-  
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -76,7 +81,7 @@ function RescueNav() {
                   <IoPersonCircleOutline size={25} className='profile_icon' />
                 </Link>
                 <ul className="dropdown-menu dropment" aria-labelledby="navbarDropdown">
-                  <li className='dropmentli'><Link className="dropdown-item" >Profile</Link></li>
+                  <li className='dropmentli'><Link className="dropdown-item" onClick={handleShow}>Profile</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" onClick={confirmLogout} >Logout</Link></li>
                 </ul>
               </li>
@@ -86,9 +91,9 @@ function RescueNav() {
       </div>
     </nav>
 
-    {/* <Modal show={show} onHide={handleClose} centered>
-        <Userprofile close={handleClose} />
-    </Modal> */}
+    <Modal show={show} onHide={handleClose} centered>
+        <Rescueprofile close={handleClose} />
+    </Modal>
   </div>
 
   )
