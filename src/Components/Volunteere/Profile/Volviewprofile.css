@@ -1,0 +1,8 @@
+.profile-vol-content p{
+    justify-content: first baseline;
+    text-align: left;
+}
+.vol-profile-button{
+    display: flex;
+    /* justify-content: center; */
+}

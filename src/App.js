@@ -32,6 +32,8 @@ import Volnavbar from "./Components/Volunteere/Navbar/Volnavbar";
 import Volviewemgalert from "./Components/Volunteere/Alerts/Volviewemgalert";
 import Userviewallalert from "./Components/User/Alerts/Userviewallalert";
 import Rescuestatus from "./Components/User/Alerts/Rescuestatus";
+import VolViewprofile from "./Components/Volunteere/Profile/VolViewprofile";
+import Rescueprofile from "./Components/RescueTeam/Profile/Rescueprofile";
 
 function App() {
   return (
@@ -67,7 +69,7 @@ function App() {
           <Route path="/volunteers_login" element={<VolunteersLogin />} />
           <Route path="/volunteers_home" element={[<Volnavbar/>,<Rescuehome />]} />
           <Route path="/volunteers_emergencyalert" element={[<Volnavbar/>,<Volviewemgalert />]} />
-         
+        
 
           {/* Common */}
           <Route path="/user_footer" element={[<Footer/>,<FooterSecond/>]} />
@@ -80,7 +82,7 @@ function App() {
           <Route path="/rescueperson_login" element={<RescueTeamLogin />} />
           <Route path="/rescueperson_home" element={[<RescueNav/>,<Rescuehome />]} />
           <Route path="/rescuemergencyalerts" element={[<RescueNav/>,<Viewemrgalert />]} />
-         
+    
 
         </Routes>
       </div>
