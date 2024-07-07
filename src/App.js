@@ -46,6 +46,9 @@ function App() {
           <Route path="/volunteer-req" element={[<Adminnav/>,<AdminMain data="volunteer-req"/>]} />
           <Route path="/admin-dash" element={[<Adminnav/>,<AdminMain data="admin-dash"/>]} />
           <Route path="/admin-rescuereq" element={[<Adminnav/>,<AdminMain data="admin-rescuereq"/>]} />
+          <Route path="/admin-viewallusers" element={[<Adminnav/>,<AdminMain data="admin-viewallusers"/>]} />
+          <Route path="/admin-viewallrescue" element={[<Adminnav/>,<AdminMain data="admin-viewallrescue"/>]} />
+          <Route path="/admin-viewallvolunteer" element={[<Adminnav/>,<AdminMain data="admin-viewallvolunteer"/>]} />
 
           <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />

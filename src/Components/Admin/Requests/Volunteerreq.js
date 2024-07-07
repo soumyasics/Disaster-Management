@@ -3,6 +3,9 @@ import "./Volunteerreq.css";
 import axiosInstance from "../../Constants/Baseurl";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import imglottiedata from "../../../Assets/lottienodataanimation.json";
+
 
 function Volunteerreq() {
   const [data, setData] = useState([]);
@@ -103,9 +106,10 @@ function Volunteerreq() {
               );
             })
           ) : (
-            <div style={{ color: "red", fontSize: "20px" }}>
-              No Requests Available
-            </div>
+            <div className="counsellornodatareq-lottie">
+  <Lottie animationData={imglottiedata} />
+</div>
+
           )}
         </div>
       </div>

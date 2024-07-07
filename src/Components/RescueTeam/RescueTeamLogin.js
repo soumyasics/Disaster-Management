@@ -95,7 +95,7 @@ if (formIsValid) {
             <form onSubmit={handleSubmit}>
                 <div className='res-logo-section'>
                     <img src={logo} />
-                    <p>Login</p>
+                    <p>Rescue Member Login</p>
                 </div>
             <div className='col-12 pb-3'>
                     <p className='login-res'>Email:</p>

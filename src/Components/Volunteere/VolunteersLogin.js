@@ -91,7 +91,7 @@ const handleSubmit = (event) => {
             <form onSubmit={handleSubmit}>
                 <div className='vol-logo-section'>
                     <img src={logo}/>
-                    <p>Login</p>
+                    <p>Volunteer Login</p>
                 </div>
             <div className='col-12 pb-3'>
                     <p className='login-vol'>Email:</p>
