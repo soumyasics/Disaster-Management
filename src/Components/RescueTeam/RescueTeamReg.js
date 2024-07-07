@@ -151,7 +151,7 @@ function RescueTeamReg() {
           const res = await axiosInstance.post(`/registerrescuemembers`, formData);
           console.log(res);
           if (res.data.status === 200) {
-            alert('Volunteer registered successfully');
+            alert('Rescue Member Registered successfully');
             navigate("/rescueperson_login")
           } else if(res.data.status === 11000) {
             alert(`Volunteer Registration Failed: ${res.data.msg}`);

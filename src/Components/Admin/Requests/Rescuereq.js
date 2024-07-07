@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import axiosInstance from "../../Constants/Baseurl";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import imglottiedata from "../../../Assets/nodatalottie.json";
+
 
 function Rescuereq() {
     const [data, setData] = useState([]);
@@ -69,7 +72,7 @@ function Rescuereq() {
   return (
     <div className="adminmaindash-container">
     <div className="admindash-viewalert col-12" style={{ width: "1000px" }}>
-      <div className="admindash-shrink">Volunteer Requests</div>
+      <div className="admindash-shrink">Rescue Team Requests</div>
       <div className="row d-flex">
         {data && data.length ? (
           data.map((a, index) => {
@@ -103,9 +106,9 @@ function Rescuereq() {
             );
           })
         ) : (
-          <div style={{ color: "red", fontSize: "20px" }}>
-            No Requests Available
-          </div>
+<div className="counsellornodatareq-lottie">
+  <Lottie animationData={imglottiedata} />
+</div>
         )}
       </div>
     </div>

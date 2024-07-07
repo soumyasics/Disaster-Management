@@ -65,9 +65,9 @@ const confirmLogout = () => {
                     </button>
                     {dropdownVisibleUsers && (
                         <div className="dropdown_menu sidebar_dash_drop">
-                            <button className="dropdown_item dashboard_sub_button1 hov">Users</button><br/>
-                            <button className="dropdown_item dashboard_sub_button1 hov">Rescue Team</button><br/>
-                            <button className="dropdown_item dashboard_sub_button1 hov">Volunteers</button><br/>
+                           <Link to="/admin-viewallusers" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Users</button></Link> <br/>
+                           <Link to="/admin-viewallrescue" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Rescue Team</button></Link><br/>
+                           <Link to="/admin-viewallvolunteer" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Volunteers</button></Link> <br/>
                         </div>
                     )}
                 </div>

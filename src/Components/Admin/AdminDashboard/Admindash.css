@@ -1,0 +1,67 @@
+.admin-dash1stbox{
+width: 184px;
+height: 99px;
+padding: 13px;
+flex-direction: column;
+align-items: center;
+gap: 5px;
+border-radius: 20.758px;
+background: #01787E;
+margin-top: 20px;
+}
+.admin-dash1stbox h5{
+    color: #FFF;
+text-align: center;
+font-family: "Noto Sans";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.admin-dash1stbox p{
+    text-align: center;
+    color: #FFF;
+text-align: center;
+font-family: "Noto Sans";
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.admin-dash-boxright{
+    width: 453.315px;
+height: 165px;
+flex-shrink: 0;width: 453.315px;
+height: 165px;
+flex-shrink: 0;
+border-radius: 25px;
+background: #01787E;
+margin-top: 20px;
+
+}
+.admin-dash-image img{
+    width: 185.888px;
+    height: 77.56px;
+    flex-shrink: 0;
+    margin: 20px;
+}
+.admin-dash-date p{
+    text-align: center;
+    color: #FFF;
+text-align: center;
+font-family: "Noto Sans";
+font-size: 12.987px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.admin-dash-degree p{
+    text-align: center;
+    color: #FFF;
+    font-family: "Noto Sans";
+    font-size: 25.579px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 20px;
+}

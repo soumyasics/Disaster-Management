@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../AdminDashboard/Viewalerts.css";
 import axiosInstance from "../../Constants/Baseurl";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Acptrjtreq from "../Requests/Acptrjtreq";
 import { Modal } from "react-bootstrap";
+import Lottie from "lottie-react";
+import imglottiedata from "../../../Assets/nodatalottie.json";
+
 
 function Viewalerts() {
   const [alerts, setAlerts] = useState([]);
@@ -38,6 +41,8 @@ const handleShow = (alertId) =>{
 }
 
   return (
+    <React.Fragment>
+     <Link to="/admin-dash" style={{textDecoration:"none"}}><span className="ri-arrow-left-line back-span"></span></Link> 
     <div className="adminmaindash-container">
       <div className="admindash-viewalert col-12">
         <div className="admindash-shrink">Emergency Alerts</div>
@@ -60,7 +65,9 @@ const handleShow = (alertId) =>{
 );
 })
 ) : (
-<div style={{color:"red",fontSize:"20px"}}>No Requests Available</div>
+<div className="counsellornodatareq-lottie">
+  <Lottie animationData={imglottiedata} />
+</div>
 )}
         </div>
       </div>
@@ -71,6 +78,7 @@ const handleShow = (alertId) =>{
             </Modal>
 
     </div>
+    </React.Fragment>
   );
 }
 

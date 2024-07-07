@@ -96,3 +96,7 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: 1.54px;
 }
+.back-span{
+    padding-left: 80px;
+    font-size: 20px;
+}
