@@ -1,0 +1,57 @@
+.Back_img {
+    width: 20px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.Updatealert_text {
+    color: #016E75;
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 27px */
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+}
+
+.Updatealert_text_status {
+    color: #DC0D00;
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 27px */
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+}
+
+.Alert_img {
+    height: 140px;
+    align-self: stretch;
+}
+
+.Alert_btn {
+    display: flex;
+    width: 124px;
+    height: 33px;
+    padding: 0px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #016E75;
+}
+.Alert_btn_text{
+    color: #FFF;
+font-family: "Noto Sans";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+letter-spacing: -0.5px;
+text-transform: capitalize;
+}

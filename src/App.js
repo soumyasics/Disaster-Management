@@ -35,6 +35,7 @@ import Rescuestatus from "./Components/User/Alerts/Rescuestatus";
 import VolViewprofile from "./Components/Volunteere/Profile/VolViewprofile";
 import Rescueprofile from "./Components/RescueTeam/Profile/Rescueprofile";
 import Updatealert from "./Components/Volunteere/Alerts/Updatealert/Updatealert";
+import UpdateViewalert from "./Components/Volunteere/Alerts/Updatealert/UpdateViewalert";
 
 function App() {
   return (
@@ -73,7 +74,8 @@ function App() {
           <Route path="/volunteers_login" element={<VolunteersLogin />} />
           <Route path="/volunteers_home" element={[<Volnavbar/>,<Rescuehome />]} />
           <Route path="/volunteers_emergencyalert" element={[<Volnavbar/>,<Volviewemgalert />]} />
-          <Route path="/volunteers_editalert" element={[<Volnavbar/>,<Updatealert />]} />
+          <Route path="/volunteers_editalert" element={<Updatealert />} />
+          <Route path="/volunteers_editviewalert" element={<UpdateViewalert />} />
 
 
           {/* Common */}
