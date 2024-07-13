@@ -36,6 +36,8 @@ import VolViewprofile from "./Components/Volunteere/Profile/VolViewprofile";
 import Rescueprofile from "./Components/RescueTeam/Profile/Rescueprofile";
 import Updatealert from "./Components/Volunteere/Alerts/Updatealert/Updatealert";
 import UpdateViewalert from "./Components/Volunteere/Alerts/Updatealert/UpdateViewalert";
+import PrivacyPolicyView from "./Components/Common/PrivacyPolicy/PrivacyPolicyView";
+import PrivacyPolicyUpdate from "./Components/Common/PrivacyPolicy/PrivacyPolicyUpdate";
 
 function App() {
   return (
@@ -82,6 +84,9 @@ function App() {
           <Route path="/user_footer" element={[<Footer/>,<FooterSecond/>]} />
           <Route path="/user_navbar" element={<Navbar/>} />
           <Route path="/forgot-passsword" element={<ForgotPassword/>}/>
+          <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
+          <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
+          <Route path="/Privacy-PolicyUpdate" element={<PrivacyPolicyUpdate/>}/>
 
 
           {/* RescueTeam */}

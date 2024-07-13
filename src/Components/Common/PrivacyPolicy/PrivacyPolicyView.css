@@ -1,0 +1,86 @@
+.Privact_head_text_bg {
+    border-radius: 0px 50px 0px 0px;
+    background: #EC574D;
+    width: 240px;
+    height: 39px;
+    flex-shrink: 0;
+}
+
+.Privact_head_text {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 30px */
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+
+}
+
+.privacy_update_btn_bg {
+    border-radius: 8px;
+    background: #017178;
+    display: flex;
+    width: 255px;
+    height: 43px;
+    padding: 8px 30px;
+
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.Privacy_text {
+    color: #01515B;
+    font-family: "Noto Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 238px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.privacy_update_btn_text {
+    color: #FFF;
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Privacy_body_text {
+    color: #000;
+    font-family: "Noto Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: stretch;
+}
+
+.save_btn_bg {
+    border-radius: 9px;
+    background: #016E75;
+    display: flex;
+    width: 146px;
+    height: 46px;
+    padding: 9px 52px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.save_btn_text {
+    color: #FFF;
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
