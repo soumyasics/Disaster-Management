@@ -38,6 +38,8 @@ import Updatealert from "./Components/Volunteere/Alerts/Updatealert/Updatealert"
 import UpdateViewalert from "./Components/Volunteere/Alerts/Updatealert/UpdateViewalert";
 import PrivacyPolicyView from "./Components/Common/PrivacyPolicy/PrivacyPolicyView";
 import PrivacyPolicyUpdate from "./Components/Common/PrivacyPolicy/PrivacyPolicyUpdate";
+import AdminViewComplaints from "./Components/Admin/Complaints/AdminViewComplaints";
+
 
 function App() {
   return (
@@ -58,6 +60,10 @@ function App() {
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
           <Route path="/admin-acptrjtreq" element={[<Acptrjtreq />]} />
 
+
+          <Route path="/compalints-view" element={[<AdminViewComplaints />]} />
+          
+
  
 
           {/* User */}
@@ -69,6 +75,7 @@ function App() {
           <Route path="/user-home" element={<Userhome/>}/>
           <Route path="/user-viewalert" element={[<UserNavbar/>,<Userviewallalert/>]}/>
           <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
+          
 
           {/* Volunteers */}
 
