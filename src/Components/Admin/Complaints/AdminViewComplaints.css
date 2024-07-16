@@ -89,10 +89,18 @@
 }
 
 .pagination_text {
-    width: 192px;
-    height: 45px;
+    width: 220px;
+    height: 47px;
     flex-shrink: 0;
     border-radius: 11.344px;
     border: 1.418px solid #FFF;
     background: #017177;
+}
+.complineView_text{
+    background-color: white;
+    color: black;
+}
+.complineView_text:hover{
+    background-color: black;
+    color: white;
 }
