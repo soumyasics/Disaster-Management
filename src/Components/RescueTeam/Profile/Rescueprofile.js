@@ -2,90 +2,90 @@ import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../Constants/Baseurl';
 
 function Rescueprofile() {
-    const volid = localStorage.getItem("rescueId");
-    console.log(volid);
-    const [isEditing, setIsEditing] = useState(false);
-    const [userDetails, setUserDetails] = useState({
-      name: "",
-      age: "",
-      city: "",
-      skills: "",
-      address: "",
-      phone: "",
-      email: "",
-    });
-  
-    const [errors, setErrors] = useState({
-      age: "",
-      phone: "",
-      email: "",
-    });
-  
-    const validate = () => {
-      let tempErrors = { ...errors };
-  
-      // Age validation
-      if (userDetails.age < 0 || userDetails.age > 100) {
-        tempErrors.age = "Age must be between 0 and 100.";
-      } else {
-        tempErrors.age = "";
-      }
-  
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(userDetails.email)) {
-        tempErrors.email = "Invalid email format.";
-      } else {
-        tempErrors.email = "";
-      }
-  
-      // Phone number validation
-      const phoneRegex = /^\d{10}$/;
-      if (!phoneRegex.test(userDetails.phone)) {
-        tempErrors.phone = "Phone number must be 10 digits.";
-      } else {
-        tempErrors.phone = "";
-      }
-  
-      setErrors(tempErrors);
-  
-      return Object.values(tempErrors).every(x => x === "");
-    };
-  
-    const handleEditClick = () => {
-      setIsEditing(!isEditing);
-    };
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setUserDetails({ ...userDetails, [name]: value });
-    };
-  
-    const handleSave = (e) => {
-      e.preventDefault();
-      if (validate()) {
-        axiosInstance.post(`updaterescuemember/${volid}`, userDetails)
-          .then((res) => {
-            console.log(res);
-            setIsEditing(false);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      }
-    };
-  
-    useEffect(() => {
-      axiosInstance.post(`viewresquemembersbyid/${volid}`)
+  const volid = localStorage.getItem("rescueId");
+  console.log(volid);
+  const [isEditing, setIsEditing] = useState(false);
+  const [userDetails, setUserDetails] = useState({
+    name: "",
+    age: "",
+    city: "",
+    skills: "",
+    address: "",
+    phone: "",
+    email: "",
+  });
+
+  const [errors, setErrors] = useState({
+    age: "",
+    phone: "",
+    email: "",
+  });
+
+  const validate = () => {
+    let tempErrors = { ...errors };
+
+    // Age validation
+    if (userDetails.age < 0 || userDetails.age > 100) {
+      tempErrors.age = "Age must be between 0 and 100.";
+    } else {
+      tempErrors.age = "";
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userDetails.email)) {
+      tempErrors.email = "Invalid email format.";
+    } else {
+      tempErrors.email = "";
+    }
+
+    // Phone number validation
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(userDetails.phone)) {
+      tempErrors.phone = "Phone number must be 10 digits.";
+    } else {
+      tempErrors.phone = "";
+    }
+
+    setErrors(tempErrors);
+
+    return Object.values(tempErrors).every(x => x === "");
+  };
+
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails({ ...userDetails, [name]: value });
+  };
+
+  const handleSave = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      axiosInstance.post(`updaterescuemember/${volid}`, userDetails)
         .then((res) => {
           console.log(res);
-          setUserDetails(res.data.data);
+          setIsEditing(false);
         })
         .catch((err) => {
           console.log(err);
         });
-    }, [volid]);
-  
+    }
+  };
+
+  useEffect(() => {
+    axiosInstance.post(`viewresquemembersbyid/${volid}`)
+      .then((res) => {
+        console.log(res);
+        setUserDetails(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [volid]);
+
   return (
     <div className='container'>
       <div className='user-profilemain'>
@@ -122,7 +122,7 @@ function Rescueprofile() {
                             type="number"
                             name="age"
                             value={userDetails.age}
-                            onChange={handleChange}required
+                            onChange={handleChange} required
                           />
                           {errors.age && <p className="error">{errors.age}</p>}
                         </div>
@@ -135,7 +135,7 @@ function Rescueprofile() {
                             type="text"
                             name="city"
                             value={userDetails.city}
-                            onChange={handleChange}required
+                            onChange={handleChange} required
                           />
                         </div>
 
@@ -147,7 +147,7 @@ function Rescueprofile() {
                             type="text"
                             name="skills"
                             value={userDetails.skills}
-                            onChange={handleChange}required
+                            onChange={handleChange} required
                           />
                         </div>
 
@@ -159,7 +159,7 @@ function Rescueprofile() {
                             type="text"
                             name="address"
                             value={userDetails.address}
-                            onChange={handleChange}required
+                            onChange={handleChange} required
                           />
                         </div>
 
@@ -171,7 +171,7 @@ function Rescueprofile() {
                             type="text"
                             name="phone"
                             value={userDetails.phone}
-                            onChange={handleChange}required
+                            onChange={handleChange} required
                           />
                           {errors.phone && <p className="error">{errors.phone}</p>}
                         </div>
@@ -184,7 +184,7 @@ function Rescueprofile() {
                             type="email"
                             name="email"
                             value={userDetails.email}
-                            onChange={handleChange}required
+                            onChange={handleChange} required
                           />
                           {errors.email && <p className="error">{errors.email}</p>}
                         </div>

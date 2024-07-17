@@ -1,0 +1,106 @@
+.view_complaints_bg {
+    border-radius: 0px 50px 0px 0px;
+    background: #EC574D;
+    width: 240px;
+    height: 39px;
+    flex-shrink: 0;
+}
+
+.view_complaints_text {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 30px */
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+.Entire_box {
+    border-left: 4px solid #EC574D;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 1238px;
+    height: 380px;
+    flex-shrink: 0;
+}
+
+.box {
+    border-radius: 5px 5px 0px 0px;
+    background: #FFF;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.70);
+    width: 260px;
+    height: 290px;
+    flex-shrink: 0;
+}
+
+.Complaint_details_text {
+    color: #016E75;
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 27px */
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+    align-self: stretch;
+}
+
+.Bottom_bg {
+    background: #017177;
+    width: 260px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.Bottom_bg_btn {
+    border-radius: 9px;
+    background: #FFF;
+    width: 108px;
+    height: 31px;
+    flex-shrink: 0;
+}
+
+.Bottom_bg_btn_text {
+    color: #017177;
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 19.5px */
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+}
+
+.text_color {
+    color: #01515B;
+    font-family: "Noto Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    height: 16px;
+    align-self: stretch;
+}
+
+.pagination_text {
+    width: 220px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 11.344px;
+    border: 1.418px solid #FFF;
+    background: #017177;
+}
+.complineView_text{
+    background-color: white;
+    color: black;
+}
+.complineView_text:hover{
+    background-color: black;
+    color: white;
+}

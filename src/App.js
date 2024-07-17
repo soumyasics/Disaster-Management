@@ -35,6 +35,12 @@ import Rescuestatus from "./Components/User/Alerts/Rescuestatus";
 import VolViewprofile from "./Components/Volunteere/Profile/VolViewprofile";
 import Rescueprofile from "./Components/RescueTeam/Profile/Rescueprofile";
 import Updatealert from "./Components/Volunteere/Alerts/Updatealert/Updatealert";
+import UpdateViewalert from "./Components/Volunteere/Alerts/Updatealert/UpdateViewalert";
+import PrivacyPolicyView from "./Components/Common/PrivacyPolicy/PrivacyPolicyView";
+import PrivacyPolicyUpdate from "./Components/Common/PrivacyPolicy/PrivacyPolicyUpdate";
+import AdminViewComplaints from "./Components/Admin/Complaints/AdminViewComplaints";
+import RescueStatus from "./Components/Admin/Rescue/RescueStatus";
+
 
 function App() {
   return (
@@ -55,6 +61,11 @@ function App() {
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
           <Route path="/admin-acptrjtreq" element={[<Acptrjtreq />]} />
 
+
+          <Route path="/compalints-view" element={[<AdminViewComplaints />]} />
+          <Route path="/rescue-status" element={[<RescueStatus />]} />
+          
+
  
 
           {/* User */}
@@ -66,6 +77,7 @@ function App() {
           <Route path="/user-home" element={<Userhome/>}/>
           <Route path="/user-viewalert" element={[<UserNavbar/>,<Userviewallalert/>]}/>
           <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
+          
 
           {/* Volunteers */}
 
@@ -73,13 +85,17 @@ function App() {
           <Route path="/volunteers_login" element={<VolunteersLogin />} />
           <Route path="/volunteers_home" element={[<Volnavbar/>,<Rescuehome />]} />
           <Route path="/volunteers_emergencyalert" element={[<Volnavbar/>,<Volviewemgalert />]} />
-          <Route path="/volunteers_editalert" element={[<Volnavbar/>,<Updatealert />]} />
+          <Route path="/volunteers_editalert" element={<Updatealert />} />
+          <Route path="/volunteers_editviewalert" element={<UpdateViewalert />} />
 
 
           {/* Common */}
           <Route path="/user_footer" element={[<Footer/>,<FooterSecond/>]} />
           <Route path="/user_navbar" element={<Navbar/>} />
           <Route path="/forgot-passsword" element={<ForgotPassword/>}/>
+          <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
+          <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
+          <Route path="/Privacy-PolicyUpdate" element={<PrivacyPolicyUpdate/>}/>
 
 
           {/* RescueTeam */}
