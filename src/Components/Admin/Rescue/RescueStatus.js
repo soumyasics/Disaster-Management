@@ -11,7 +11,7 @@ function RescueStatus() {
                     <div className='row border-start border-4 border-danger  shadow-lg '>
                         <div className='row'> <p className=' rescue_Status_bg rescue_Status_bg_text d-flex justify-content-center pt-1'>Rescue Status</p></div>
                         <div className='row'>
-                            <div className='col-lg-3 col-md-3 col-sm-3'>
+                            <div className='col-lg-3 col-md-6 col-sm-3'>
                                 <div className='row border ms-2 shadow-lg mt-2 mb-5'>
                                     <p className='d-flex justify-content-end rescue_date_text mt-2'>11/09/2023</p>
                                     <div className='col'>
@@ -112,7 +112,7 @@ function RescueStatus() {
                 </div>
             </div>
             <div className='row d-flex justify-content-center mt-5 mb-5'>
-                <div className='col-10 '>
+                <div className='col-lg-10 col-md-10 col-sm-10'>
                     <div className='row border-start border-4 border-danger shadow-lg '>
                         <div className='row mt-5'>
                             <div className='col-lg-3 col-md-3 col-sm-3'>
@@ -139,7 +139,7 @@ function RescueStatus() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-3'>
+                            <div className='col-lg-3 col-md-3 col-sm-3'>
                                 <div className='row border ms-2 shadow-lg mt-2 mb-3'>
                                     <p className='d-flex justify-content-end rescue_date_text mt-2'>11/09/2023</p>
                                     <div className='col'>
@@ -163,7 +163,7 @@ function RescueStatus() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-3'>
+                            <div className='col-lg-3 col-md-3 col-sm-3'>
                                 <div className='row border ms-2 shadow-lg mt-2 mb-3'>
                                     <p className='d-flex justify-content-end rescue_date_text mt-2'>11/09/2023</p>
                                     <div className='col'>
@@ -187,7 +187,7 @@ function RescueStatus() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-3'>
+                            <div className='col-lg-3 col-md-3 col-sm-3'>
                                 <div className='row border ms-2 shadow-lg mt-2 mb-3'>
                                     <p className='d-flex justify-content-end rescue_date_text mt-2'>11/09/2023</p>
                                     <div className='col'>
