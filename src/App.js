@@ -39,6 +39,7 @@ import UpdateViewalert from "./Components/Volunteere/Alerts/Updatealert/UpdateVi
 import PrivacyPolicyView from "./Components/Common/PrivacyPolicy/PrivacyPolicyView";
 import PrivacyPolicyUpdate from "./Components/Common/PrivacyPolicy/PrivacyPolicyUpdate";
 import AdminViewComplaints from "./Components/Admin/Complaints/AdminViewComplaints";
+import RescueStatus from "./Components/Admin/Rescue/RescueStatus";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
 
 
           <Route path="/compalints-view" element={[<AdminViewComplaints />]} />
+          <Route path="/rescue-status" element={[<RescueStatus />]} />
           
 
  

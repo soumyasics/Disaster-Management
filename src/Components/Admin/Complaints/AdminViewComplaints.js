@@ -209,6 +209,7 @@ function AdminViewComplaints() {
                             <a className="page-link rounded-circle bg-dark text-light" href="#" aria-label="Next">
                                 <span className='ri-contract-right-line'></span>
                             </a>
+                            
                         </li>
                     </ul>
                 </nav>
