@@ -86,6 +86,7 @@
     width: 108px;
     height: 31px;
     flex-shrink: 0;
+    border: white;
 }
 
 .rescue_btn_bg_text {

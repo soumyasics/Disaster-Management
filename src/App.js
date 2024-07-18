@@ -40,6 +40,7 @@ import PrivacyPolicyView from "./Components/Common/PrivacyPolicy/PrivacyPolicyVi
 import PrivacyPolicyUpdate from "./Components/Common/PrivacyPolicy/PrivacyPolicyUpdate";
 import AdminViewComplaints from "./Components/Admin/Complaints/AdminViewComplaints";
 import RescueStatus from "./Components/Admin/Rescue/RescueStatus";
+import AboutUs from "./Components/Common/AboutUs/AboutUs";
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
           <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
           <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
           <Route path="/Privacy-PolicyUpdate" element={<PrivacyPolicyUpdate/>}/>
+          <Route path="/Aboutus" element={<AboutUs/>}/>
 
 
           {/* RescueTeam */}

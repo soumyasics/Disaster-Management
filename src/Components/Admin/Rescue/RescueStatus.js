@@ -6,7 +6,7 @@ function RescueStatus() {
             <div className='row d-flex justify-content-center'>
                 <div className='col-lg-10 col-md-10 col-sm-10 '>
                     <div className='row mt-5'>
-                        <div className='col'><p className='float-end rescue_volunter_task_bg_text rescue_volunter_task_bg'>Volunteers Tasks</p> </div>
+                        <div className='col-lg-12 col-md-6 col-sm-6'><p className='float-end rescue_volunter_task_bg_text rescue_volunter_task_bg text-sm-end sty'>Volunteers Tasks</p> </div>
                     </div>
                     <div className='row border-start border-4 border-danger  shadow-lg '>
                         <div className='row'> <p className=' rescue_Status_bg rescue_Status_bg_text d-flex justify-content-center pt-1'>Rescue Status</p></div>
@@ -163,7 +163,7 @@ function RescueStatus() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-lg-3 col-md-3 col-sm-3'>
+                            <div className='col-lg-3 col-md-3 col-sm-3 '>
                                 <div className='row border ms-2 shadow-lg mt-2 mb-3'>
                                     <p className='d-flex justify-content-end rescue_date_text mt-2'>11/09/2023</p>
                                     <div className='col'>
@@ -207,7 +207,7 @@ function RescueStatus() {
                                             <div className='col-2 rescue_text_col'>:</div>
                                             <div className='col-6 rescue_text_col text-break'>Critical</div>
                                         </div>
-                                        <div className='row'><span className='rescue_bottom_bg d-flex justify-content-center '><button className='rescue_btn_bg rescue_btn_bg_text mt-2'>View More</button></span></div>
+                                        <div className='row'><span className='rescue_bottom_bg d-flex justify-content-center '><button className='rescue_btn_bg rescue_btn_bg_text mt-2 bg-light'>View More</button></span></div>
                                     </div>
                                 </div>
                             </div>

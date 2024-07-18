@@ -1,0 +1,33 @@
+.about_bg {
+    background: #016F76;
+    height: 708px;
+   min-height: 100%;
+   max-height: 100vmax;
+}
+
+.about_text_col {
+    color: #FFF;
+    font-family: "Noto Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.about_img {
+    width: 900px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 35px;
+}
+
+.about_bottom_text {
+    color: #FFF;
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
