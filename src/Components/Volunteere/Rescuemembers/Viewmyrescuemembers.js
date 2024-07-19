@@ -24,8 +24,8 @@ function Viewmyrescuemembers() {
                         </div>
                         <div className="col-1">
                             <p className='manageuser_text_head'>Si No</p>
-                            <p className='manageuser_text_body'>dd</p>
-                            <p className='manageuser_text_body'>dd</p>
+                            <p className='manageuser_text_body'>1</p>
+                            <p className='manageuser_text_body'>2</p>
                         </div>
                         <div className="col-2">
                             <p className='manageuser_text_head'>Username</p>
