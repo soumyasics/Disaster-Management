@@ -41,6 +41,7 @@ import PrivacyPolicyUpdate from "./Components/Common/PrivacyPolicy/PrivacyPolicy
 import AdminViewComplaints from "./Components/Admin/Complaints/AdminViewComplaints";
 import RescueStatus from "./Components/Admin/Rescue/RescueStatus";
 import AboutUs from "./Components/Common/AboutUs/AboutUs";
+import Viewmyrescuemembers from "./Components/Volunteere/Rescuemembers/Viewmyrescuemembers";
 
 
 function App() {
@@ -61,7 +62,6 @@ function App() {
           <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
           <Route path="/admin-acptrjtreq" element={[<Acptrjtreq />]} />
-
 
           <Route path="/compalints-view" element={[<AdminViewComplaints />]} />
           <Route path="/rescue-status" element={[<RescueStatus />]} />
@@ -88,6 +88,8 @@ function App() {
           <Route path="/volunteers_emergencyalert" element={[<Volnavbar/>,<Volviewemgalert />]} />
           <Route path="/volunteers_editalert" element={<Updatealert />} />
           <Route path="/volunteers_editviewalert" element={<UpdateViewalert />} />
+          <Route path="/volunteers_viewmember" element={<Viewmyrescuemembers />} />
+
 
 
           {/* Common */}
