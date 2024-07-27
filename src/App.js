@@ -50,6 +50,7 @@ import Viewrescueforalert from "./Components/User/Rescuestatus/Viewrescueforaler
 import ViewParticipatedalerts from "./Components/Volunteere/Alerts/Updatealert/ViewParticipatedalerts";
 import Viewemrgalrtstatus from "./Components/Volunteere/Alerts/Emrgalrtstatus/Viewemrgalrtstatus";
 import Addrescuestatus from "./Components/RescueTeam/Statusupdate/Addrescuestatus";
+import Viewstatus from "./Components/User/Rescuestatus/Viewstatus";
 
 
 function App() {
@@ -90,6 +91,8 @@ function App() {
           <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
           <Route path="/user-viewemergencycontacts" element={[<Viewallemrgcontact/>]}/>
           <Route path="/user-viewrescuemembers/:id" element={[<UserNavbar/>,<Viewrescueforalert/>]}/>
+          <Route path="/user-viewstatus/:id" element={[<UserNavbar/>,<Viewstatus />]} />
+
 
 
           {/* Volunteers */}
@@ -104,6 +107,7 @@ function App() {
           <Route path="/Volunteer-addrescueforemrg/:id" element={[<Volnavbar/>,<Addrescueforemrg />]} />
           <Route path="/Volunteer-viewparticipatedalerts" element={[<Volnavbar/>,<ViewParticipatedalerts />]} />
           <Route path="/Volunteer-viewemrgalertstatus/:id" element={[<Volnavbar/>,<Viewemrgalrtstatus />]} />
+
 
 
           {/* Common */}

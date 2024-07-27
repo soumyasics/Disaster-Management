@@ -157,6 +157,7 @@ function RescueTeamReg() {
           if (res.data.status === 200) {
             alert('Rescue Member Added successfully');
             // navigate("/rescueperson_login")
+            window.location.reload(false)
           } else if(res.data.status === 11000) {
             alert(`Volunteer Registration Failed: ${res.data.msg}`);
           }
