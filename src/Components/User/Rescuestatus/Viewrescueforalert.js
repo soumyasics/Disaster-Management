@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../Constants/Baseurl";
 import { toast } from "react-toastify";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import ViewrescueStatusSingle from "./ViewrescueStatusSingle";
+import { Modal } from "react-bootstrap";
+
 function Viewrescueforalert() {
     const {id}=useParams()
     const [vol, setVol] = useState([]);
@@ -21,6 +24,23 @@ function Viewrescueforalert() {
     useEffect(() => {
       fetchPendingTasks();
     }, [id]);
+
+  const [show, setShow] = useState(false);
+  const [selectedRescueId, setSelectedRescueId] = useState({ rescueId: null}); // State for storing selected id 
+  const handleRefresh = () => {
+      setShow(false); // Close the modal after refreshing
+    };
+  const handleClose = () => setShow(false);
+  const handleShow = (rescueId) => {
+    setSelectedRescueId(rescueId);
+    setShow(true);
+  };
+
+  const navigate =useNavigate();
+
+  const navigateToViewStatus=(id)=>{
+    navigate(`/user-viewstatus/${id}`)
+  }
   
   return (
     <div className="">
@@ -56,6 +76,7 @@ function Viewrescueforalert() {
                         type="button"
                         className="reject-rescue"
                         // onClick={() => deletefn(alert._id)}
+                        onClick={()=>navigateToViewStatus(alert?.rescueId?._id)}
                       >
                         View Status
                       </button>
@@ -71,6 +92,9 @@ function Viewrescueforalert() {
           </div>
         </div>
       </div>
+      {/* <Modal show={show} onHide={handleClose} centered>
+                    <ViewrescueStatusSingle close={handleClose} rescueId={selectedRescueId} refreshJobList={handleRefresh}/>
+            </Modal> */}
     </div>
   )
 }
