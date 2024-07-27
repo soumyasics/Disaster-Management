@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -40,6 +41,15 @@ import PrivacyPolicyView from "./Components/Common/PrivacyPolicy/PrivacyPolicyVi
 import PrivacyPolicyUpdate from "./Components/Common/PrivacyPolicy/PrivacyPolicyUpdate";
 import AdminViewComplaints from "./Components/Admin/Complaints/AdminViewComplaints";
 import RescueStatus from "./Components/Admin/Rescue/RescueStatus";
+import Viewallemrgcontact from "./Components/User/Contacts/Viewallemrgcontact";
+import AddRescueforemergency from "./Components/Volunteere/RescueParticipation/AddRescueforemergency";
+import Addrescueforemrg from "./Components/Volunteere/RescueMembers/Addrescueforemrg";
+import ViewTasks from "./Components/RescueTeam/Viewtasks/ViewTasks";
+import ViewapprovedTasks from "./Components/RescueTeam/Viewtasks/ViewapprovedTasks";
+import Viewrescueforalert from "./Components/User/Rescuestatus/Viewrescueforalert";
+import ViewParticipatedalerts from "./Components/Volunteere/Alerts/Updatealert/ViewParticipatedalerts";
+import Viewemrgalrtstatus from "./Components/Volunteere/Alerts/Emrgalrtstatus/Viewemrgalrtstatus";
+import Addrescuestatus from "./Components/RescueTeam/Statusupdate/Addrescuestatus";
 
 
 function App() {
@@ -47,6 +57,7 @@ function App() {
     <BrowserRouter basename="/web_guard">
       <div>
         <Routes>
+
           {/* Admin */}
 
           <Route path="/Admin" element={<AdminLogin />} />
@@ -77,7 +88,9 @@ function App() {
           <Route path="/user-home" element={<Userhome/>}/>
           <Route path="/user-viewalert" element={[<UserNavbar/>,<Userviewallalert/>]}/>
           <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
-          
+          <Route path="/user-viewemergencycontacts" element={[<Viewallemrgcontact/>]}/>
+          <Route path="/user-viewrescuemembers/:id" element={[<UserNavbar/>,<Viewrescueforalert/>]}/>
+
 
           {/* Volunteers */}
 
@@ -87,6 +100,10 @@ function App() {
           <Route path="/volunteers_emergencyalert" element={[<Volnavbar/>,<Volviewemgalert />]} />
           <Route path="/volunteers_editalert" element={<Updatealert />} />
           <Route path="/volunteers_editviewalert" element={<UpdateViewalert />} />
+          {/* <Route path="/Volunteer-addrescueforemrg/:id" element={[<Volnavbar/>,<AddRescueforemergency />]} /> */}
+          <Route path="/Volunteer-addrescueforemrg/:id" element={[<Volnavbar/>,<Addrescueforemrg />]} />
+          <Route path="/Volunteer-viewparticipatedalerts" element={[<Volnavbar/>,<ViewParticipatedalerts />]} />
+          <Route path="/Volunteer-viewemrgalertstatus/:id" element={[<Volnavbar/>,<Viewemrgalrtstatus />]} />
 
 
           {/* Common */}
@@ -103,7 +120,10 @@ function App() {
           <Route path="/rescueperson_login" element={<RescueTeamLogin />} />
           <Route path="/rescueperson_home" element={[<RescueNav/>,<Rescuehome />]} />
           <Route path="/rescuemergencyalerts" element={[<RescueNav/>,<Viewemrgalert />]} />
-    
+          <Route path="/rescue-viewpendingtasks" element={[<RescueNav/>,<ViewTasks />]} />
+          <Route path="/rescue-viewapprovedtasks" element={[<RescueNav/>,<ViewapprovedTasks />]} />
+
+          <Route path="/addstatus" element={[<RescueNav/>,<Addrescuestatus />]} />
 
         </Routes>
       </div>

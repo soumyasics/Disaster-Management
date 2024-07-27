@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../Constants/Baseurl'
+import { Link } from 'react-router-dom'
 
 function Rescuestatus() {
     const userid=localStorage.getItem("usersId")
@@ -37,7 +38,7 @@ function Rescuestatus() {
                   <p>{alert?.discription}</p>
                   <p>Security Level : <span >{alert?.securitylevel}</span></p>
                 </div>
-                <div className="viewmore-dashbox viewmore-btnbgrd"><p>View More</p></div>
+               <Link to={`/user-viewrescuemembers/${alert?._id}`}><div className="viewmore-dashbox viewmore-btnbgrd"><p>View More</p></div></Link> 
               </div>
             </div>
  );

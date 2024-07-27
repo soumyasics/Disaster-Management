@@ -85,7 +85,7 @@ const confirmLogout = () => {
                     {dropdownVisibleRequests && (
                         <div className="dropdown_menu sidebar_dash_drop">
                             <button className="dropdown_item dashboard_sub_button1 hov" onClick={volreq}>Volunteer Requests</button><br/>
-                            <button className="dropdown_item dashboard_sub_button1 hov" onClick={rescuereq}>Rescue Team Requests</button><br/>
+                            {/* <button className="dropdown_item dashboard_sub_button1 hov" onClick={rescuereq}>Rescue Team Requests</button><br/> */}
                             {/* <button className="dropdown_item dashboard_sub_button1 hov">Rejected Requests</button><br/> */}
                         </div>
                     )}

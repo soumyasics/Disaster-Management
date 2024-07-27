@@ -132,7 +132,7 @@ if (formIsValid) {
                     <div className='col-12 pb-3'>
                         <button className='btn btn-primary res-btn-style-change' type='submit'>Login</button>
                     </div>
-                    <p className='p-style-vol'>Don't Have an account? <Link to='/rescueperson_signup' className='link-style-change-volen'>Sign Up</Link></p>
+                    {/* <p className='p-style-vol'>Don't Have an account? <Link to='/rescueperson_signup' className='link-style-change-volen'>Sign Up</Link></p> */}
 
             </form>
           </div>

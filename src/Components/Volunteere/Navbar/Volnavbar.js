@@ -65,7 +65,7 @@ function Volnavbar() {
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
-                <Link className="nav-link list-items-style" to="">Task Update</Link>
+                <Link className="nav-link list-items-style" to="/Volunteer-viewparticipatedalerts">Task Update</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
@@ -83,6 +83,7 @@ function Volnavbar() {
                 </Link>
                 <ul className="dropdown-menu dropment" aria-labelledby="navbarDropdown">
                   <li className='dropmentli'><Link className="dropdown-item" onClick={handleShow}>Profile</Link></li>
+                  <li clas  sName='dropmentli'><Link className="dropdown-item" to="/rescueperson_signup"  >Add Rescue Member</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" onClick={confirmLogout} >Logout</Link></li>
                 </ul>
               </li>

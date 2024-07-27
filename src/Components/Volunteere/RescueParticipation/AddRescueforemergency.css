@@ -1,0 +1,36 @@
+.vol-addrescueemrgmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vol-addrescueemrgbox{
+    width: 843px;
+min-height: 592px;
+max-height: fit-content;
+border-radius: 30px;
+background: #caf6ce;
+}
+.vol-addrescueemrg-content{
+    padding: 20px;
+}
+.vol-addrescueemrg-content h5{
+    color: #01515B;
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.vol-addrescueemrg-content span{
+    color: #1c3e43;
+    font-family: "Noto Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    padding: 10px;
+}
+.vol-addrescueemrg-content img{
+    width: 300px;
+    height: 200px;
+}

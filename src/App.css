@@ -36,3 +36,100 @@
     transform: rotate(360deg);
   }
 }
+.approve-rescue{
+  background-color: green;
+  border-radius: 12px;
+  border: none;
+  width: 100px;
+  color: white;
+  font-weight: 600;
+}
+.reject-rescue{
+  background-color: rgb(196, 11, 11);
+  border-radius: 12px;
+  border: none;
+  width: 100px;
+  color: white;
+  font-weight: 600;
+
+}
+.vol-viewemrg-status-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vol-viewemrg-status-box{
+  width: 1200px;
+  min-height: 400px;
+  max-height: fit-content;
+  background-color: rgb(255, 255, 255);
+
+}
+.vol-viewemrg-status-content{
+  padding: 20px;
+  background-color: #268772;
+  border-radius: 18px;
+
+}
+.vol-viewemrg-status-content h5{
+  font-size: 18px;
+  font-weight: 700;
+}
+.vol-viewemrg-status-data{
+  padding: 20px;
+  background-color: #7ee49d;
+  border-radius: 18px;
+
+}
+.add-status-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+}
+.add-status-box{
+  width: 600px;
+  height: 400px;
+  background-color: #8de8d4;
+  border-radius: 12px;
+}
+.add-status-head h5{
+  color: #01515B;
+font-family: "Noto Sans";
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-align: center;
+}
+.add-status-textarea textarea{
+  width: 500px;
+  height: 100px;
+}
+.add-status-textarea{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+.add-status-button button{
+  display: flex;
+width: 124px;
+height: 33px;
+padding: 0px 32px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+border-radius: 12px;
+background: #016E75;
+color: white;
+font-weight: 600;
+}
+.add-status-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+
+}

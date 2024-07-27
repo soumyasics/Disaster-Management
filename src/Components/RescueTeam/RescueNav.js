@@ -56,7 +56,7 @@ function RescueNav() {
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
-                <Link className="nav-link list-items-style" to="">Volunteers</Link>
+                <Link className="nav-link list-items-style" to="/rescue-viewpendingtasks">Tasks</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
@@ -72,7 +72,7 @@ function RescueNav() {
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
-                <Link className="nav-link list-items-style" to="">Contact</Link>
+                <Link className="nav-link list-items-style" to="/user-viewemergencycontacts">Contact</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
