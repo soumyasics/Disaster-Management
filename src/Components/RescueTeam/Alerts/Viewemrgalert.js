@@ -17,9 +17,9 @@ function Viewemrgalert() {
     },[])
   return (
     <div className=''> 
-    <div className='container-reaemgalt'>              
+    {/* <div className='container-reaemgalt'>              
         <div className='adminmaindash-buttontop ri-add-circle-line'>Add Emergency Alerts</div>
-        </div> 
+        </div>  */}
             <div className="adminmaindash-container">
       <div className="admindash-viewalert col-12">
         <div className="admindash-shrink">Emergency Alerts</div>

@@ -6,6 +6,8 @@ import Navbar from '../Common/NavBar/Navbar';
 import Footer from '../Common/Footer/Footer';
 import axiosInstance from '../Constants/Baseurl';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import RescueNav from './RescueNav';
+import Volnavbar from '../Volunteere/Navbar/Volnavbar';
 
 
 function RescueTeamReg() {
@@ -13,7 +15,8 @@ function RescueTeamReg() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const navigate=useNavigate()
 
-    // const id="6677b94cc459f6115c8a761f"
+    const id=localStorage.getItem("volunteerId")
+    console.log(id+"volid");
   
     const [data, setData] = useState({
       name: '',
@@ -27,9 +30,10 @@ function RescueTeamReg() {
       email: '',
       password: '',
       confirmPassword: '',
-      // volunteerid:id
+      volunteerid:id
 
     });
+    console.log(data);
   
     const [errors, setErrors] = useState({
       name: '',
@@ -151,8 +155,8 @@ function RescueTeamReg() {
           const res = await axiosInstance.post(`/registerrescuemembers`, formData);
           console.log(res);
           if (res.data.status === 200) {
-            alert('Rescue Member Registered successfully');
-            navigate("/rescueperson_login")
+            alert('Rescue Member Added successfully');
+            // navigate("/rescueperson_login")
           } else if(res.data.status === 11000) {
             alert(`Volunteer Registration Failed: ${res.data.msg}`);
           }
@@ -176,7 +180,7 @@ function RescueTeamReg() {
   
   return (
     <div>
-        <Navbar/>
+        <Volnavbar/>
       <div className='user-login-header'>
         “Communities rising together from disaster”
       </div>
@@ -288,9 +292,9 @@ function RescueTeamReg() {
                   <div className='text-center pt-3'>
                     <button className='btn btn-primary btn-style-change' type='submit'>Register</button>
                   </div>
-                  <div className='text-center pt-3'>
+                  {/* <div className='text-center pt-3'>
                   <p className='p-style-vol'>Already Have an account? <Link to='/rescueperson_login' className='link-style-change-volen'>Login</Link></p>
-                  </div>
+                  </div> */}
                 </div>
             </form>          </div>
         </div>

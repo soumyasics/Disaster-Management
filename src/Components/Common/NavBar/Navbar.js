@@ -28,9 +28,9 @@ function Navbar() {
                 <Link className="nav-link list-items-style" to="">About Us</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Donate</Link>
-              </li>
+              </li> */}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Contact Us</Link>

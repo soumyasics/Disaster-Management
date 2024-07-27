@@ -62,7 +62,7 @@ function UserNavbar() {
                 </li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li className="nav-item">
-                  <Link className="nav-link list-items-style" to="">Contacts</Link>
+                  <Link className="nav-link list-items-style" to="/user-viewemergencycontacts">Contacts</Link>
                 </li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li className="nav-item dropdown">
