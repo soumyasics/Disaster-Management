@@ -29,6 +29,8 @@ function UserNavbar() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -71,6 +73,7 @@ function UserNavbar() {
                   </Link>
                   <ul className="dropdown-menu dropment" aria-labelledby="navbarDropdown">
                     <li className='dropmentli'><Link className="dropdown-item" onClick={handleShow}>Profile</Link></li>
+                    <li className='dropmentli'><Link className="dropdown-item" to='/user-viewprivacypolicy'>Privacy Policy</Link></li>
                     <li className='dropmentli'><Link className="dropdown-item" onClick={confirmLogout} >Logout</Link></li>
                   </ul>
                 </li>

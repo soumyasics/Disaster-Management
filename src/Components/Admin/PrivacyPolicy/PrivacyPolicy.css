@@ -1,0 +1,31 @@
+.pp-head{
+    width: 240px;
+    height: 39px;
+    border-radius: 0px 50px 0px 0px;
+    background: #EC574D;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 7px;
+
+}
+.pp-update-btn{
+    background: #017178;
+    width: Fixed (255px)px;
+    height: Fixed (43px)px;
+    padding: 8px 30px 8px 30px;
+    border-radius: 8px ;
+    color: #fff;
+    border: none;
+    margin-bottom: 10px;
+    
+
+
+}
+.pp-body{
+    width: 1275px;
+    height: 740px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 1px #00000040;
+    padding: 30px;
+
+}

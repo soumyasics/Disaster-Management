@@ -51,6 +51,12 @@ import ViewParticipatedalerts from "./Components/Volunteere/Alerts/Updatealert/V
 import Viewemrgalrtstatus from "./Components/Volunteere/Alerts/Emrgalrtstatus/Viewemrgalrtstatus";
 import Addrescuestatus from "./Components/RescueTeam/Statusupdate/Addrescuestatus";
 import Viewstatus from "./Components/User/Rescuestatus/Viewstatus";
+import ContactUs from "./Components/Common/ContactUs/ContactUs";
+import PrivacyPolicy from "./Components/Admin/PrivacyPolicy/PrivacyPolicy";
+import EditPrivacyPolicy from "./Components/Admin/PrivacyPolicy/EditPrivacyPolicy";
+import ViewPrivacyPolicy from "./Components/Admin/PrivacyPolicy/ViewPrivacyPolicy";
+import ViewPP from "./Components/Admin/PrivacyPolicy/ViewPP";
+import VolAddAlerts from "./Components/Volunteere/Alerts/AddAlert/VolAddAlerts";
 
 
 function App() {
@@ -72,17 +78,26 @@ function App() {
           <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
           <Route path="/admin-acptrjtreq" element={[<Acptrjtreq />]} />
+          <Route path="/admin-privacypolicy" element={[<Adminnav/>,<PrivacyPolicy />]} />
+          <Route path="/admin-edit-privacypolicy/:id" element={[<Adminnav/>,<EditPrivacyPolicy />]}/>
+          <Route path="/admin-view-privacypolicy" element={[<Adminnav/>,<ViewPrivacyPolicy />]} />
+
+
 
 
           <Route path="/compalints-view" element={[<AdminViewComplaints />]} />
           <Route path="/rescue-status" element={[<RescueStatus />]} />
           
 
- 
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/contactus" element={[<Navbar/>,<ContactUs />]} />
+          <Route path="/viewprivacypolicy" element={[<Navbar/>,<ViewPP />]} />
+
+
 
           {/* User */}
 
-          <Route path="/" element={<LandingPage />} />
+          
           <Route path="/user_signup" element={<SignUp />} />
           <Route path="/user_login" element={[<Login />]} />
           <Route path="/user_addalerts" element={[<UserNavbar/>,<Addalerts/>]}/>
@@ -92,6 +107,8 @@ function App() {
           <Route path="/user-viewemergencycontacts" element={[<Viewallemrgcontact/>]}/>
           <Route path="/user-viewrescuemembers/:id" element={[<UserNavbar/>,<Viewrescueforalert/>]}/>
           <Route path="/user-viewstatus/:id" element={[<UserNavbar/>,<Viewstatus />]} />
+          <Route path="/user-viewprivacypolicy" element={[<UserNavbar/>,<ViewPP />]}/>
+
 
 
 
@@ -107,6 +124,10 @@ function App() {
           <Route path="/Volunteer-addrescueforemrg/:id" element={[<Volnavbar/>,<Addrescueforemrg />]} />
           <Route path="/Volunteer-viewparticipatedalerts" element={[<Volnavbar/>,<ViewParticipatedalerts />]} />
           <Route path="/Volunteer-viewemrgalertstatus/:id" element={[<Volnavbar/>,<Viewemrgalrtstatus />]} />
+          <Route path="/Volunteer-viewprivacypolicy" element={[<Volnavbar/>,<ViewPP />]} />
+          <Route path="/Volunteer-addalerts" element={[<Volnavbar/>,<VolAddAlerts />]} />
+
+
 
 
 
@@ -117,6 +138,7 @@ function App() {
           <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
           <Route path="/Privacy-Policy" element={<PrivacyPolicyView/>}/>
           <Route path="/Privacy-PolicyUpdate" element={<PrivacyPolicyUpdate/>}/>
+          
 
 
           {/* RescueTeam */}
@@ -126,6 +148,7 @@ function App() {
           <Route path="/rescuemergencyalerts" element={[<RescueNav/>,<Viewemrgalert />]} />
           <Route path="/rescue-viewpendingtasks" element={[<RescueNav/>,<ViewTasks />]} />
           <Route path="/rescue-viewapprovedtasks" element={[<RescueNav/>,<ViewapprovedTasks />]} />
+          <Route path="/rescue-viewprivacypolicy" element={[<RescueNav/>,<ViewPP />]} />
 
           <Route path="/addstatus" element={[<RescueNav/>,<Addrescuestatus />]} />
 
