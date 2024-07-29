@@ -10,6 +10,7 @@ import { MdOutlineBarChart } from "react-icons/md";
 import { LuLogOut } from "react-icons/lu";
 import { VscRequestChanges } from "react-icons/vsc";
 import { Link, useNavigate } from 'react-router-dom';
+import axiosInstance from '../Constants/Baseurl';
 
 function AdminSidebar() {
     const [dropdownVisibleUsers, setDropdownVisibleUsers] = useState(false);
@@ -33,6 +34,41 @@ const rescuereq=(()=>{
 const admindash=(()=>{
     navigate("/admin-dash")
 })
+
+// privacy policy ****
+
+const [condition, setCondition] = useState(1);
+
+useEffect(()=>{
+    axiosInstance.post('privatepolicycount')
+    .then((data)=>{
+        setCondition(data.data.data)
+        console.log(data);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
+
+console.log('condition',condition);
+
+const editprivacypolicy =(()=>{
+    navigate("/admin-view-privacypolicy")
+})
+
+const addprivacypolicy =(()=>{
+    navigate("/admin-privacypolicy")
+})
+
+const handleConditionClick = () => {
+    if (condition === 1) {
+        editprivacypolicy()
+    } else if (condition === 0) {
+        addprivacypolicy()
+    }
+  };
+
+// **********
 
 const adminid=localStorage.getItem("adminid")
 console.log(adminid);
@@ -103,7 +139,7 @@ const confirmLogout = () => {
                     </button>
                 </div>
                 <div className='admin_dash_div'>
-                    <button className="dashboard_sub_button">
+                    <button className="dashboard_sub_button" onClick={handleConditionClick}>
                         <span className="icon"> <MdOutlinePrivacyTip className='admin_sub_icon'/></span>
                         <span className="text admin_sub_text">Privacy Policy</span>
                     </button>

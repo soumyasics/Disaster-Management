@@ -82,6 +82,7 @@ function RescueNav() {
                 </Link>
                 <ul className="dropdown-menu dropment" aria-labelledby="navbarDropdown">
                   <li className='dropmentli'><Link className="dropdown-item" onClick={handleShow}>Profile</Link></li>
+                  <li className='dropmentli'><Link className="dropdown-item" to='/rescue-viewprivacypolicy'>Privacy Policy</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" onClick={confirmLogout} >Logout</Link></li>
                 </ul>
               </li>

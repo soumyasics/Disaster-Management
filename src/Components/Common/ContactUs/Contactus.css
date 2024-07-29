@@ -1,0 +1,24 @@
+.contact-details{
+    display: flex;
+    gap: 80px;
+    
+}
+.contact-details-phone{
+    background: #FCFCFC;
+    box-shadow: 0px 2.68px 2.68px 0px #00000040;
+    width: 249px;
+    height: 224px;
+    border-radius: 13.38px ;
+    padding-top: 40px;
+    text-align: center;
+
+}
+.contact-details-mail{
+    background: #FCFCFC;
+    box-shadow: 0px 2.68px 2.68px 0px #00000040;
+    width: 249px;
+    height: 224px;
+    border-radius: 13.38px ;
+    padding-top: 40px;
+
+}
