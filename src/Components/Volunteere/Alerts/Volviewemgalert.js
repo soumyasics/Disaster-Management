@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../Constants/Baseurl'
 import { Link } from 'react-router-dom'
 
+
+
 function Volviewemgalert() {
     const[alerts,setAlerts]=useState([])
 
@@ -32,8 +34,10 @@ function Volviewemgalert() {
             <div  className="col-3">
               <div className="admin-alert-boxinside">
                 <div className="admin-alert-content">
-                  <p>{alert?.userid?.name} {alert?.userid?.phone}</p>
-                  <p>{new Date(alert.date).toLocaleDateString()}</p>
+                { alert?.userid  && <p>{alert?.userid?.name} {alert?.userid?.phone}</p>}
+                { alert?.volid  && <p>{alert?.volid?.name} {alert?.volid?.phone}</p>}
+                { alert?.rescueid  && <p>{alert?.rescueid?.name} {alert?.rescueid?.phone}</p>}
+                <p>{new Date(alert.date).toLocaleDateString()}</p>
                   <p>{alert?.discription}</p>
                   <p>Security Level : <span >{alert?.securitylevel}</span></p>
                 </div>

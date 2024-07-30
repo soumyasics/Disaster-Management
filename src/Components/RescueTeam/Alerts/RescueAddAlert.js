@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react'
-import './VolAddAlerts.css'
+import './RescueAddAlert.css'
 import { TbArrowBackUp } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import axiosInstance from '../../../Constants/Baseurl';
+import axiosInstance from '../../Constants/Baseurl';
+import { toast } from 'react-toastify';
 
 
-function VolAddAlerts() {
-
-  const volid = localStorage.getItem("volunteerId")
+function RescueAddAlert() {
+    const rescueid = localStorage.getItem("rescueId")
   const fileInputRef = useRef(null);
   const [data, setData] = useState({
     
@@ -19,7 +19,7 @@ function VolAddAlerts() {
     needs: "",
     securitylevel: "",
     image: "",
-    volid: volid,
+    rescueid: rescueid,
   });
   const [errors, setErrors] = useState({
     title: "",
@@ -99,10 +99,10 @@ function VolAddAlerts() {
       formData.append("needs", data.needs);
       formData.append("securitylevel", data.securitylevel);
       formData.append("image", data.image);
-      formData.append("volid",data.volid);
+      formData.append("rescueid",data.rescueid);
 
       axiosInstance
-        .post("/volregisteremergency", formData, {
+        .post("/rescueregisteremergency", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -110,7 +110,11 @@ function VolAddAlerts() {
         .then((response) => {
           console.log("Response:", response.data);
           if(response.data.status==200){
-            alert("Alert added successfully!");
+            toast.success("Alert added successfully!");
+            setTimeout(()=>{
+                window.location.reload(false)
+            },3000)
+            
 
           }
           else{
@@ -296,4 +300,4 @@ function VolAddAlerts() {
   )
 }
 
-export default VolAddAlerts
+export default RescueAddAlert
