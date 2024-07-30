@@ -57,6 +57,7 @@ import EditPrivacyPolicy from "./Components/Admin/PrivacyPolicy/EditPrivacyPolic
 import ViewPrivacyPolicy from "./Components/Admin/PrivacyPolicy/ViewPrivacyPolicy";
 import ViewPP from "./Components/Admin/PrivacyPolicy/ViewPP";
 import VolAddAlerts from "./Components/Volunteere/Alerts/AddAlert/VolAddAlerts";
+import RescueAddAlert from "./Components/RescueTeam/Alerts/RescueAddAlert";
 
 
 function App() {
@@ -149,6 +150,8 @@ function App() {
           <Route path="/rescue-viewpendingtasks" element={[<RescueNav/>,<ViewTasks />]} />
           <Route path="/rescue-viewapprovedtasks" element={[<RescueNav/>,<ViewapprovedTasks />]} />
           <Route path="/rescue-viewprivacypolicy" element={[<RescueNav/>,<ViewPP />]} />
+          <Route path="/rescue-addalerts" element={[<RescueNav/>,<RescueAddAlert />]} />
+
 
           <Route path="/addstatus" element={[<RescueNav/>,<Addrescuestatus />]} />
 
