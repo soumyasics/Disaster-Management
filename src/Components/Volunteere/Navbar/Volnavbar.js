@@ -55,21 +55,24 @@ function Volnavbar() {
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="/volunteers_emergencyalert">Emergency Alerts</Link>
               </li>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <li className="nav-item">
-                <Link className="nav-link list-items-style" to="/Volunteer-addalerts">Add Alert</Link>
-              </li>
+              
+              {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+              
               {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Volunteers</Link>
               </li> */}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Manage Disaster</Link>
-              </li>
+              </li> */}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="/Volunteer-viewparticipatedalerts">Task Update</Link>
+              </li>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li className="nav-item">
+                <Link className="nav-link list-items-style" to="/Volunteer-viewvolrescuestatus">Rescue Status</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
@@ -87,6 +90,7 @@ function Volnavbar() {
                 </Link>
                 <ul className="dropdown-menu dropment" aria-labelledby="navbarDropdown">
                   <li className='dropmentli'><Link className="dropdown-item" onClick={handleShow}>Profile</Link></li>
+                  <li className="dropmentli"><Link className="dropdown-item" to="/Volunteer-addalerts">Add Alert</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to="/rescueperson_signup">Add Rescue Member</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to='/Volunteer-viewprivacypolicy'>Privacy Policy</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" onClick={confirmLogout}>Logout</Link></li>

@@ -58,6 +58,9 @@ import ViewPrivacyPolicy from "./Components/Admin/PrivacyPolicy/ViewPrivacyPolic
 import ViewPP from "./Components/Admin/PrivacyPolicy/ViewPP";
 import VolAddAlerts from "./Components/Volunteere/Alerts/AddAlert/VolAddAlerts";
 import RescueAddAlert from "./Components/RescueTeam/Alerts/RescueAddAlert";
+import ViewVolRescueStatus from "./Components/Volunteere/RescueStatus/ViewVolRescueStatus";
+import ViewVolalertStatus from "./Components/Volunteere/RescueStatus/ViewVolalertStatus";
+import ViewVolAlertResueStatus from "./Components/Volunteere/RescueStatus/ViewVolAlertResueStatus";
 
 
 function App() {
@@ -107,7 +110,7 @@ function App() {
           <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
           <Route path="/user-viewemergencycontacts" element={[<Viewallemrgcontact/>]}/>
           <Route path="/user-viewrescuemembers/:id" element={[<UserNavbar/>,<Viewrescueforalert/>]}/>
-          <Route path="/user-viewstatus/:id" element={[<UserNavbar/>,<Viewstatus />]} />
+          <Route path="/user-viewstatus/:rescueid/:alertId" element={[<UserNavbar/>,<Viewstatus />]} />
           <Route path="/user-viewprivacypolicy" element={[<UserNavbar/>,<ViewPP />]}/>
 
 
@@ -125,6 +128,9 @@ function App() {
           <Route path="/Volunteer-addrescueforemrg/:id" element={[<Volnavbar/>,<Addrescueforemrg />]} />
           <Route path="/Volunteer-viewparticipatedalerts" element={[<Volnavbar/>,<ViewParticipatedalerts />]} />
           <Route path="/Volunteer-viewemrgalertstatus/:id" element={[<Volnavbar/>,<Viewemrgalrtstatus />]} />
+          <Route path="/Volunteer-viewvolrescuestatus" element={[<Volnavbar/>,<ViewVolRescueStatus />]} />
+          <Route path="/Volunteer-viewvolalertstatus/:id" element={[<Volnavbar/>,<ViewVolalertStatus />]} />
+          <Route path="/Volunteer-viewvolalertresuestatus/:rescueid/:alertId" element={[<Volnavbar/>,<ViewVolAlertResueStatus />]} />
           <Route path="/Volunteer-viewprivacypolicy" element={[<Volnavbar/>,<ViewPP />]} />
           <Route path="/Volunteer-addalerts" element={[<Volnavbar/>,<VolAddAlerts />]} />
 
