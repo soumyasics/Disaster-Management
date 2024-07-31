@@ -5,6 +5,8 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Rescueprofile from './Profile/Rescueprofile';
+import { Dropdown, NavDropdown } from 'react-bootstrap';
+
 
 
 function RescueNav() {
@@ -55,17 +57,29 @@ function RescueNav() {
                 <Link className="nav-link list-items-style" to="/rescuemergencyalerts">Emergency Alerts</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link list-items-style" to="/rescue-addalerts">Add Alert</Link>
-              </li>
+              </li> */}
+              <li className="nav-item">
+                            <Dropdown>
+                                <Dropdown.Toggle variant="link" className="nav-link list-items-style" id="dropdown-requests">
+                                    Alerts
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item as={Link} to="/rescue-addalerts">Add Alert</Dropdown.Item>
+                                    <Dropdown.Item as={Link} to="/rescue-viewmyalerts">View My Alert</Dropdown.Item>
+
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="/rescue-viewpendingtasks">Tasks</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Rescue Status</Link>
-              </li>
+              </li> */}
               {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Task Update</Link>

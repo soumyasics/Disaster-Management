@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../Constants/Baseurl";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { Modal, Button, Dropdown } from 'react-bootstrap';
 import Addrescuestatus from "../Statusupdate/Addrescuestatus";
 
@@ -33,6 +33,12 @@ function ViewapprovedTasks() {
     setModalContent({ alertId, volunteerId });
     setShow(true);
   };
+
+  const navigate =useNavigate();
+
+  const navigateToViewAlertStatus=(id)=>{
+    navigate(`/rescue-viewalertstatus/${id}`)
+  }
 
   return (
     <div className="">
@@ -66,6 +72,14 @@ function ViewapprovedTasks() {
                         onClick={() => handleShow(alert.alertId._id, alert.volunteerId._id)}
                       >
                         Add Update 
+                      </button>
+                      <button
+                        type="button"
+                        className="reject-rescue mx-2"
+                        style={{background:'green'}}
+                        onClick={() => navigateToViewAlertStatus(alert.alertId._id)}
+                      >
+                        View  
                       </button>
                     </div>
                   </div>

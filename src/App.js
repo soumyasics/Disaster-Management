@@ -61,6 +61,10 @@ import RescueAddAlert from "./Components/RescueTeam/Alerts/RescueAddAlert";
 import ViewVolRescueStatus from "./Components/Volunteere/RescueStatus/ViewVolRescueStatus";
 import ViewVolalertStatus from "./Components/Volunteere/RescueStatus/ViewVolalertStatus";
 import ViewVolAlertResueStatus from "./Components/Volunteere/RescueStatus/ViewVolAlertResueStatus";
+import ViewAlertStatus from "./Components/RescueTeam/Statusupdate/ViewAlertStatus";
+import ViewMyAlerts from "./Components/RescueTeam/Alerts/ViewMyAlerts";
+import ViewRescuemembersstatus from "./Components/RescueTeam/Alerts/ViewRescuemembersstatus";
+import ViewMyAlertStatus from "./Components/RescueTeam/Alerts/ViewMyAlertStatus";
 
 
 function App() {
@@ -155,11 +159,18 @@ function App() {
           <Route path="/rescuemergencyalerts" element={[<RescueNav/>,<Viewemrgalert />]} />
           <Route path="/rescue-viewpendingtasks" element={[<RescueNav/>,<ViewTasks />]} />
           <Route path="/rescue-viewapprovedtasks" element={[<RescueNav/>,<ViewapprovedTasks />]} />
+          <Route path="/rescue-viewalertstatus/:id" element={[<RescueNav/>,<ViewAlertStatus />]} />
           <Route path="/rescue-viewprivacypolicy" element={[<RescueNav/>,<ViewPP />]} />
           <Route path="/rescue-addalerts" element={[<RescueNav/>,<RescueAddAlert />]} />
 
 
           <Route path="/addstatus" element={[<RescueNav/>,<Addrescuestatus />]} />
+          <Route path="/rescue-viewmyalerts" element={[<RescueNav/>,<ViewMyAlerts />]} />
+          <Route path="/rescue-viewrescustatus/:id" element={[<RescueNav/>,<ViewRescuemembersstatus />]} />
+          <Route path="/rescue-viewmyalertstatus/:rescueId/:alertId" element={[<RescueNav/>,<ViewMyAlertStatus />]} />
+
+
+
 
         </Routes>
       </div>
