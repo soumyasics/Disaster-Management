@@ -51,6 +51,7 @@ function ViewapprovedTasks() {
                 <div className="col-3" key={index}>
                   <div className="admin-alert-boxinside">
                     <div className="admin-alert-content">
+                    <p>{alert?.alertId?.title}</p>
                       <p>{alert?.alertId?.caterory}</p>
                       <p>
                         {new Date(alert?.alertId?.date).toLocaleDateString()}

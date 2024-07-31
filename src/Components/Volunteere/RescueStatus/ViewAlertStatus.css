@@ -1,0 +1,30 @@
+.vol-viewemrg-status-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .vol-viewemrg-status-box{
+    width: 1200px;
+    min-height: 400px;
+    max-height: fit-content;
+    background-color: rgb(255, 255, 255);
+  
+  }
+  .vol-viewemrg-status-head1{
+    padding: 20px;
+    background: linear-gradient( #004A54 8.42%, #00787E 90.96%);
+    /* background-color: #268772; */
+    border-radius: 18px;
+    color: #fff;
+  
+  }
+  .vol-viewemrg-status-content h5{
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .vol-viewemrg-status-data{
+    padding: 20px;
+    background-color: #aab6ad;
+    border-radius: 18px;
+  
+  }

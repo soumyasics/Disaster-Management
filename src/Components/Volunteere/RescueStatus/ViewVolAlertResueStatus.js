@@ -1,14 +1,15 @@
 import React,{useState,useEffect} from 'react'
+import { useParams, } from 'react-router-dom'
 import axiosInstance from '../../Constants/Baseurl'
-import { useParams } from 'react-router-dom'
+import './ViewAlertStatus.css'
 
-function Viewstatus() {
+function ViewVolAlertResueStatus() {
     const {rescueid}=useParams()
     const {alertId}=useParams()
     console.log(rescueid,'rescueid');
     console.log(alertId,'alertid');
     const [data,setData]=useState([])
-
+   
     useEffect(()=>{
         axiosInstance.post(`viewAlertStatusByrescueId/${rescueid}`,{alertId})
         .then((res)=>{
@@ -23,7 +24,7 @@ function Viewstatus() {
     <>
         <div className='vol-viewemrg-status-main'>
         <div className='vol-viewemrg-status-box'>
-        <div className='row vol-viewemrg-status-content'>
+        <div className='row vol-viewemrg-status-head1'>
             <div className='col-2'>
                 <h5>Date</h5>
             </div>
@@ -39,7 +40,7 @@ function Viewstatus() {
         </div>
         {data && data.length ? (
               data.map((alert, index) => (
-        <div className='row vol-viewemrg-status-data'>
+        <div className='row vol-viewemrg-status-data mt-1'>
             <div className='col-2'>
                 <p> {new Date(alert?.date).toLocaleDateString()}
                 </p>
@@ -68,4 +69,4 @@ function Viewstatus() {
   )
 }
 
-export default Viewstatus
+export default ViewVolAlertResueStatus
