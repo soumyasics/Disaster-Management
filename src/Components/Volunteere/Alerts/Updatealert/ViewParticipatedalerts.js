@@ -4,12 +4,13 @@ import { toast } from "react-toastify";
 import axiosInstance from "../../../Constants/Baseurl";
 
 function ViewParticipatedalerts() {
-    const volid = localStorage.getItem("volunteerId");
+    const id = localStorage.getItem("volunteerId");
+    // console.log(volid);
     const [vol, setVol] = useState([]);
   
     useEffect(() => {
       axiosInstance
-        .post(`viewacceptedemrgforvol/${volid}`)
+        .post(`viewacceptedemrgforvol/${id}`)
         .then((res) => {
           console.log(res);
           setVol(res.data.data);
@@ -17,7 +18,7 @@ function ViewParticipatedalerts() {
         .catch((err) => {
           console.log(err);
         });
-    }, [volid]);
+    }, [id]);
   
   return (
     <div className="">
@@ -42,6 +43,15 @@ function ViewParticipatedalerts() {
                     >
                       <div className="viewmore-dashbox viewmore-btnbgrd">
                         <p>View Status</p>
+                      </div>
+                    </Link>
+                    <Link
+                    to={`/Volunteer-viewrescuemember/${alert?.alertId?._id}`}
+                      style={{ textDecoration: "none" }}
+                    //   onClick={() => handleAddClick(alert?._id)}
+                    >
+                      <div className="viewmore-dashbox viewmore-btnbgrd mt-1">
+                        <p>View Rescue Members</p>
                       </div>
                     </Link>
                   </div>

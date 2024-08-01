@@ -1,17 +1,18 @@
 import React,{useState,useEffect} from 'react'
 import axiosInstance from '../../Constants/Baseurl'
 import { useParams } from 'react-router-dom'
-import UserAddComplaints from './AddComplaints/UserAddComplaints'
 
-function Viewstatus() {
-    const {rescueid}=useParams()
-    const {alertId}=useParams()
-    console.log(rescueid,'rescueid');
-    console.log(alertId,'alertid');
-    const [data,setData]=useState([])
 
-    useEffect(()=>{
-        axiosInstance.post(`viewAlertStatusByrescueId/${rescueid}`,{alertId})
+function ViewMyAlertStatus() {
+  const {rescueId}=useParams()
+  const {alertId}=useParams()
+  console.log(rescueId,'rescueId');
+  console.log(alertId,'alertId');
+
+
+const [data,setData]=useState();
+  useEffect(()=>{
+        axiosInstance.post(`viewAlertStatusByrescueId/${rescueId}`,{alertId})
         .then((res)=>{
             console.log(res);
             setData(res.data.data)
@@ -20,13 +21,11 @@ function Viewstatus() {
             console.log(err);
         }))
     },[])
-
-    
   return (
     <>
-        <div className='vol-viewemrg-status-main'>
+       <div className='vol-viewemrg-status-main'>
         <div className='vol-viewemrg-status-box'>
-        <div className='row vol-viewemrg-status-head1'>
+        <div className='row vol-viewemrg-status-content'>
             <div className='col-2'>
                 <h5>Date</h5>
             </div>
@@ -36,7 +35,7 @@ function Viewstatus() {
             <div className='col-2'>
                 <h5>Contact</h5>
             </div>
-            <div className='col-4'>
+            <div className='col-6'>
                 <h5>Updation</h5>
             </div>
         </div>
@@ -53,10 +52,9 @@ function Viewstatus() {
             <div className='col-2'>
             <p>{alert?.rescueId?.phone}</p>
             </div>
-            <div className='col-4'>
+            <div className='col-6'>
             <p>{alert?.status}</p>
             </div>
-            
         </div>
               ))
             ) : (
@@ -67,10 +65,9 @@ function Viewstatus() {
 
 
         </div>
-    </div>
-    
+    </div> 
     </>
   )
 }
 
-export default Viewstatus
+export default ViewMyAlertStatus

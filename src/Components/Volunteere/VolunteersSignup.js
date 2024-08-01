@@ -18,11 +18,11 @@ function VolunteersSignup() {
   const [data, setData] = useState({
     name: '',
     age: '',
-    gender: '',
+    gender: 'male',
     phone: '',
     address: '',
     city: '',
-    state: '',
+    district: "Thiruvananthapuram",
     skills: '',
     email: '',
     password: '',
@@ -36,7 +36,7 @@ function VolunteersSignup() {
     phone: '',
     address: '',
     city: '',
-    state: '',
+    district: '',
     skills: '',
     email: '',
     password: '',
@@ -62,6 +62,8 @@ function VolunteersSignup() {
       [name]: ''
     }));
   };
+
+  console.log(data,'Data');
 
   function validateString(fieldName, value) {
     const nameRegex = /^[a-zA-Z\s]+$/;
@@ -123,7 +125,7 @@ function VolunteersSignup() {
     errors.phone = validateContact('Phone Number', data.phone);
     errors.address = validateField('Address', data.address);
     errors.city = validateString('City', data.city);
-    errors.state = validateString('State', data.state);
+    errors.district = validateString('district', data.district);
     errors.skills = validateField('Skills/Expertise', data.skills);
     errors.email = validateEmail('Email', data.email);
     errors.password = validateField('Password', data.password);
@@ -207,8 +209,16 @@ function VolunteersSignup() {
                   <div className='row'>
                     <div className='col-6'>
                       <p className='signinuser'>Gender:</p>
-                      <input type='text' className='form-control signup-input-type-change' placeholder='Enter Your Gender' name='gender' value={data.gender} onChange={handleChange}/>
+                      <select type='text' className='form-control signup-input-type-change'
+                      placeholder='Enter Your Gender' name='gender' value={data.gender} onChange={handleChange}
+                      >
+                        <option value='male'>Male</option>
+                        <option value='male'>Female</option>
+                        <option value='male'>Other</option>
+                      </select>
                       {errors.gender && <div className="text-danger">{errors.gender}</div>}
+                      {/* <input type='text' className='form-control signup-input-type-change' placeholder='Enter Your Gender' name='gender' value={data.gender} onChange={handleChange}/> */}
+                      
                     </div>
                     <div className='col-6'>
                       <p className='signinuser'>Phone Number:</p>
@@ -231,9 +241,35 @@ function VolunteersSignup() {
                   <div className='row'>
                     <div className='col-6'>
                       <p className='signinuser'>State:</p>
-                      <input type='text' className='form-control signup-input-type-change' placeholder='Enter State' name='state' value={data.state} onChange={handleChange}/>
-                      {errors.state && <div className="text-danger">{errors.state}</div>}
-                    </div>
+                <select
+                  type="text"
+                  className={`form-control addalert-input-type-change ${
+                    errors.district ? "is-invalid" : ""
+                  }`}
+                  placeholder="Enter Alert Location"
+                  name="district"
+                  value={data.district}
+                  onChange={handleChange}
+                >
+                  <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                  <option value="Kollam">Kollam</option>
+                  <option value="Pathanamthitta">Pathanamthitta</option>
+                  <option value="Alappuzha">Alappuzha</option>
+                  <option value="Kottayam">Kottayam</option>
+                  <option value="Idukki">Idukki</option>
+                  <option value="Ernakulam">Ernakulam</option>
+                  <option value="Thrissur">Thrissur</option>
+                  <option value="Palakkad">Palakkad</option>
+                  <option value="Malappuram">Malappuram</option>
+                  <option value="Kozhikode">Kozhikode</option>
+                  <option value="Wayanad">Wayanad</option>
+                  <option value="Kannur">Kannur</option>
+                  <option value="Kasargod">Kasargod</option>
+                </select>
+                {errors.location && (
+                  <div className="invalid-feedback">{errors.district}</div>
+                )}
+                      </div>
                     <div className='col-6'>
                       <p className='signinuser'>Skills/Expertise:</p>
                       <input type='text' className='form-control signup-input-type-change' placeholder='Enter Skills/Expertise' name='skills' value={data.skills} onChange={handleChange}/>
