@@ -7,6 +7,7 @@ import Rescuereq from './Requests/Rescuereq'
 import AllUsers from './Modules/AllUsers'
 import Allrescueteam from './Modules/Allrescueteam'
 import Allvolunteers from './Modules/Allvolunteers'
+import AdminViewComplaints from './Complaints/AdminViewComplaints'
 
 function AdminMain({data}) {
   return (
@@ -23,6 +24,8 @@ function AdminMain({data}) {
             data==="admin-viewallusers"?(<AllUsers/>):
             data==="admin-viewallrescue"?(<Allrescueteam/>):
            data==="admin-viewallvolunteer"?(<Allvolunteers/>):
+           data==="admin-viewallusercomplaints"?(<AdminViewComplaints/>):
+
       
             <AdminLogin/>
         }

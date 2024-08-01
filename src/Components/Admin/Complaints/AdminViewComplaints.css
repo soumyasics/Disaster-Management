@@ -31,8 +31,9 @@
     border-radius: 5px 5px 0px 0px;
     background: #FFF;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.70);
-    width: 260px;
-    height: 290px;
+    width: 320px;
+    min-height: 180px;
+    max-height: fit-content;
     flex-shrink: 0;
 }
 
@@ -80,12 +81,13 @@
 .text_color {
     color: #01515B;
     font-family: "Noto Sans";
-    font-size: 15px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     height: 16px;
     align-self: stretch;
+    
 }
 
 .pagination_text {

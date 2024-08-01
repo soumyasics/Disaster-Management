@@ -15,7 +15,7 @@ function VolAddAlerts() {
     // date: '',
     discription: "",
     caterory: "",
-    location: "",
+    district: "Thiruvananthapuram",
     needs: "",
     securitylevel: "",
     image: "",
@@ -26,7 +26,7 @@ function VolAddAlerts() {
     // date: '',
     discription: "",
     caterory: "",
-    location: "",
+    district: "",
     needs: "",
     securitylevel: "",
     image: "",
@@ -72,8 +72,8 @@ function VolAddAlerts() {
       formIsValid = false;
     }
 
-    if (!data.location.trim()) {
-      newErrors.location = "Alert Location is required";
+    if (!data.district.trim()) {
+      newErrors.district = "Alert District is required";
       formIsValid = false;
     }
 
@@ -95,7 +95,7 @@ function VolAddAlerts() {
       // formData.append('date', data.date);
       formData.append("discription", data.discription);
       formData.append("caterory", data.caterory);
-      formData.append("location", data.location);
+      formData.append("district", data.district);
       formData.append("needs", data.needs);
       formData.append("securitylevel", data.securitylevel);
       formData.append("image", data.image);
@@ -202,18 +202,33 @@ function VolAddAlerts() {
             <div className="col-5">
               <div className="addalert_title_div">
                 <p>Alert Location</p>
-                <input
+                <select
                   type="text"
                   className={`form-control addalert-input-type-change ${
-                    errors.location ? "is-invalid" : ""
+                    errors.district ? "is-invalid" : ""
                   }`}
                   placeholder="Enter Alert Location"
-                  name="location"
-                  value={data.location}
+                  name="district"
+                  value={data.district}
                   onChange={handleInputChange}
-                />
+                >
+                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Alappuzha">Alappuzha</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Ernakulam">Ernakulam</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Palakkad">Palakkad</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Kozhikode">Kozhikode</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="Kannur">Kannur</option>
+            <option value="Kasargod">Kasargod</option>
+            </select>
                 {errors.location && (
-                  <div className="invalid-feedback">{errors.location}</div>
+                  <div className="invalid-feedback">{errors.district}</div>
                 )}
               </div>
             </div>

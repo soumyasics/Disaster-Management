@@ -65,6 +65,7 @@ import ViewAlertStatus from "./Components/RescueTeam/Statusupdate/ViewAlertStatu
 import ViewMyAlerts from "./Components/RescueTeam/Alerts/ViewMyAlerts";
 import ViewRescuemembersstatus from "./Components/RescueTeam/Alerts/ViewRescuemembersstatus";
 import ViewMyAlertStatus from "./Components/RescueTeam/Alerts/ViewMyAlertStatus";
+import ViewRescumembers from "./Components/Volunteere/ViewRescumembers/ViewRescumembers";
 
 
 function App() {
@@ -82,6 +83,8 @@ function App() {
           <Route path="/admin-viewallusers" element={[<Adminnav/>,<AdminMain data="admin-viewallusers"/>]} />
           <Route path="/admin-viewallrescue" element={[<Adminnav/>,<AdminMain data="admin-viewallrescue"/>]} />
           <Route path="/admin-viewallvolunteer" element={[<Adminnav/>,<AdminMain data="admin-viewallvolunteer"/>]} />
+          <Route path="/admin-viewallusercomplaints" element={[<Adminnav/>,<AdminMain data="admin-viewallusercomplaints"/>]} />
+
 
           <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
@@ -131,6 +134,7 @@ function App() {
           {/* <Route path="/Volunteer-addrescueforemrg/:id" element={[<Volnavbar/>,<AddRescueforemergency />]} /> */}
           <Route path="/Volunteer-addrescueforemrg/:id" element={[<Volnavbar/>,<Addrescueforemrg />]} />
           <Route path="/Volunteer-viewparticipatedalerts" element={[<Volnavbar/>,<ViewParticipatedalerts />]} />
+          <Route path="/Volunteer-viewrescuemember/:id" element={[<Volnavbar/>,<ViewRescumembers />]} />
           <Route path="/Volunteer-viewemrgalertstatus/:id" element={[<Volnavbar/>,<Viewemrgalrtstatus />]} />
           <Route path="/Volunteer-viewvolrescuestatus" element={[<Volnavbar/>,<ViewVolRescueStatus />]} />
           <Route path="/Volunteer-viewvolalertstatus/:id" element={[<Volnavbar/>,<ViewVolalertStatus />]} />

@@ -5,10 +5,27 @@ import { Link } from 'react-router-dom'
 
 
 function Volviewemgalert() {
-    const[alerts,setAlerts]=useState([])
+  const volid=localStorage.getItem("volunteerId")
+    const[alerts,setAlerts]=useState('')
+    const[voldistrict,setVolDistrict]=useState('')
 
     useEffect(()=>{
-        axiosInstance.post(`viewemergencyforallusers`)
+      axiosInstance.post(`viewvolenteerById/${volid}`)
+      .then((data)=>{
+        console.log(data);
+        if(data.status===200){
+          setVolDistrict(data?.data?.data)
+        }
+      })
+    },[volid])
+    console.log(voldistrict,'vol data');
+
+    
+
+const district=voldistrict?.district
+console.log(district);
+    useEffect(()=>{
+        axiosInstance.post(`viewemergencyforallusers/${district}`)
         .then((res)=>{
             console.log(res);
             setAlerts(res.data.data)
@@ -16,7 +33,7 @@ function Volviewemgalert() {
         .catch((err)=>{
             console.log(err);
         })
-    },[])
+    },[district])
 
   return (
     <div className=''> 

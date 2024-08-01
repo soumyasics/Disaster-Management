@@ -14,6 +14,7 @@ function ViewRescuemembersstatus() {
           setVol(res.data.data);
         })
         .catch((err) => {
+            
           console.log(err);
         });
     };

@@ -45,6 +45,15 @@ function ViewParticipatedalerts() {
                         <p>View Status</p>
                       </div>
                     </Link>
+                    <Link
+                    to={`/Volunteer-viewrescuemember/${alert?.alertId?._id}`}
+                      style={{ textDecoration: "none" }}
+                    //   onClick={() => handleAddClick(alert?._id)}
+                    >
+                      <div className="viewmore-dashbox viewmore-btnbgrd mt-1">
+                        <p>View Rescue Members</p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               ))
