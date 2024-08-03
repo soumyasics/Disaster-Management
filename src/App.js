@@ -154,6 +154,8 @@ function App() {
 
 
 
+          <Route path="/Volunteer-viewweather" element={[<Volnavbar/>,<Forecasting />]} />
+          <Route path="/Volunteer-viewforecasting" element={[<Volnavbar/>,<Weatherforecats />]} />
 
 
           {/* Common */}
@@ -183,6 +185,8 @@ function App() {
           <Route path="/rescue-viewrescustatus/:id" element={[<RescueNav/>,<ViewRescuemembersstatus />]} />
           <Route path="/rescue-viewmyalertstatus/:rescueId/:alertId" element={[<RescueNav/>,<ViewMyAlertStatus />]} />
 
+          <Route path="/rescue-viewweather" element={[<RescueNav/>,<Forecasting />]} />
+          <Route path="/rescue-viewforecasting" element={[<RescueNav/>,<Weatherforecats />]} />
 
 
 
