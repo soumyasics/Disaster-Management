@@ -84,10 +84,10 @@ function RescueNav() {
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Task Update</Link>
               </li> */}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="">Complaints</Link>
-              </li>
+              </li> */}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="/user-viewemergencycontacts">Contact</Link>

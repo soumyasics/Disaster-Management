@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../Constants/Baseurl'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -35,13 +35,27 @@ console.log(district);
         })
     },[district])
 
+    const navigate=useNavigate();
+
+    const navigateTorescueMember=()=>{
+      navigate('/Volunteer-viewallrescuemembers')
+    }
+
   return (
     <div className=''> 
+        <div style={{display:'flex',justifyContent:'end',marginRight:'100px',marginTop:'20px'}}>
+          <button style={{border:'none',background:'#01515B',color:'white',width:'200px',borderRadius:'15px'}}
+          onClick={navigateTorescueMember}
+          >
+            View Rescue Members</button>
+        </div>
     {/* <div className='container-reaemgalt'>              
         <div className='adminmaindash-buttontop ri-add-circle-line'>Add Emergency Alerts</div>
         </div>  */}
             <div className="adminmaindash-container">
+              
       <div className="admindash-viewalert col-12">
+        
         <div className="admindash-shrink">Emergency Alerts</div>
         <div className="row d-flex">
 

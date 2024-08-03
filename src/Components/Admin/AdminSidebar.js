@@ -15,6 +15,8 @@ import axiosInstance from '../Constants/Baseurl';
 function AdminSidebar() {
     const [dropdownVisibleUsers, setDropdownVisibleUsers] = useState(false);
     const [dropdownVisibleRequests, setDropdownVisibleRequests] = useState(false);
+    const [dropdownVisibleAlerts, setDropdownVisibleAlerts] = useState(false);
+
 
     const toggleDropdownUsers = () => {
         setDropdownVisibleUsers(!dropdownVisibleUsers);
@@ -23,6 +25,11 @@ function AdminSidebar() {
     const toggleDropdownRequests = () => {
         setDropdownVisibleRequests(!dropdownVisibleRequests);
     };
+
+    const toggleDropdownAlerts = () => {
+        setDropdownVisibleAlerts(!dropdownVisibleAlerts);
+    };
+
 const navigate=useNavigate()
 const volreq=(()=>{
     navigate("/volunteer-req")
@@ -130,17 +137,30 @@ const confirmLogout = () => {
                         </div>
                     )}
                 </div>
-                <div className='admin_dash_div'>
+                {/* <div className='admin_dash_div'>
                     <button className="dashboard_sub_button">
                         <span className="icon"> <MdOutlineTask className='admin_sub_icon'/></span>
                         <span className="text admin_sub_text">Tasks</span>
                     </button>
-                </div>
-                <div className='admin_dash_div'>
+                </div> */}
+                {/* <div className='admin_dash_div'>
                     <button className="dashboard_sub_button">
                         <span className="icon"> <AiOutlineAlert className='admin_sub_icon'/></span>
                        <Link to="/admin-viewalerts" style={{textDecoration:"none",color:"white"}}><span className="text admin_sub_text">Emergency Alerts</span></Link> 
                     </button>
+                </div> */}
+                <div className='admin_dash_div'>
+                    <button className="dashboard_sub_button" onClick={toggleDropdownAlerts}>
+                        <span className="icon"> <AiOutlineAlert className='admin_sub_icon'/></span>
+                        <span className="text admin_sub_text">Emergency Alerts</span>
+                    </button>
+                    {dropdownVisibleAlerts && (
+                        <div className="dropdown_menu sidebar_dash_drop">
+                           <Link to="/admin-viewalerts" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Alert Requests</button></Link> <br/>
+                           <Link to="/admin-viewapprovedalerts" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Approved Alerts</button></Link><br/>
+                           {/* <Link to="/admin-viewallvolunteer" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Volunteers</button></Link> <br/> */}
+                        </div>
+                    )}
                 </div>
                 <div className='admin_dash_div'>
                     <button className="dashboard_sub_button" onClick={handleConditionClick}>
@@ -148,12 +168,12 @@ const confirmLogout = () => {
                         <span className="text admin_sub_text">Privacy Policy</span>
                     </button>
                 </div>
-                <div className='admin_dash_div'>
+                {/* <div className='admin_dash_div'>
                     <button className="dashboard_sub_button">
                         <span className="icon"> <MdOutlineBarChart className='admin_sub_icon'/></span>
                         <span className="text admin_sub_text">Reports</span>
                     </button>
-                </div>
+                </div> */}
                 <div className='admin_dash_div'>
                     <button className="dashboard_sub_button" onClick={confirmLogout}>
                         <span className="icon"> <LuLogOut className='admin_sub_icon'/></span>

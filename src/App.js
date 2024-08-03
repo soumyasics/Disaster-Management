@@ -68,6 +68,9 @@ import ViewMyAlertStatus from "./Components/RescueTeam/Alerts/ViewMyAlertStatus"
 import ViewRescumembers from "./Components/Volunteere/ViewRescumembers/ViewRescumembers";
 import Forecasting from "./Components/User/Weatherforecasting/Forecasting";
 import Weatherforecats from "./Components/User/Weatherforecasting/Weatherforecats";
+import ViewRescueMembers from "./Components/Volunteere/RescueMembers/ViewRescueMembers";
+import ViewApprovedAlerts from "./Components/Admin/ViewApprovedAlerts/ViewApprovedAlerts";
+import ViewAlertStatusAdmin from "./Components/Admin/ViewApprovedAlerts/ViewAlertStatusAdmin";
 
 
 function App() {
@@ -86,9 +89,11 @@ function App() {
           <Route path="/admin-viewallrescue" element={[<Adminnav/>,<AdminMain data="admin-viewallrescue"/>]} />
           <Route path="/admin-viewallvolunteer" element={[<Adminnav/>,<AdminMain data="admin-viewallvolunteer"/>]} />
           <Route path="/admin-viewallusercomplaints" element={[<Adminnav/>,<AdminMain data="admin-viewallusercomplaints"/>]} />
-
+          
 
           <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
+          <Route path="/admin-viewapprovedalerts" element={[<Adminnav/>,<ViewApprovedAlerts />]} />
+          <Route path="/admin-viewalertstatus/:id" element={[<Adminnav/>,<ViewAlertStatusAdmin />]} />
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
           <Route path="/admin-acptrjtreq" element={[<Acptrjtreq />]} />
           <Route path="/admin-privacypolicy" element={[<Adminnav/>,<PrivacyPolicy />]} />
@@ -145,6 +150,7 @@ function App() {
           <Route path="/Volunteer-viewvolalertresuestatus/:rescueid/:alertId" element={[<Volnavbar/>,<ViewVolAlertResueStatus />]} />
           <Route path="/Volunteer-viewprivacypolicy" element={[<Volnavbar/>,<ViewPP />]} />
           <Route path="/Volunteer-addalerts" element={[<Volnavbar/>,<VolAddAlerts />]} />
+          <Route path="/Volunteer-viewallrescuemembers" element={[<Volnavbar/>,<ViewRescueMembers />]} />
 
 
 
