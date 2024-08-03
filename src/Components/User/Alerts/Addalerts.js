@@ -111,6 +111,10 @@ function Addalerts() {
           if(response.data.status==200){
             alert("Alert added successfully!");
 
+            setTimeout(() => {
+              window.location.reload(false)
+            }, 1000);
+
           }
           else{
             alert("Something Went Wrong")
