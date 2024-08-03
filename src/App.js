@@ -66,6 +66,8 @@ import ViewMyAlerts from "./Components/RescueTeam/Alerts/ViewMyAlerts";
 import ViewRescuemembersstatus from "./Components/RescueTeam/Alerts/ViewRescuemembersstatus";
 import ViewMyAlertStatus from "./Components/RescueTeam/Alerts/ViewMyAlertStatus";
 import ViewRescumembers from "./Components/Volunteere/ViewRescumembers/ViewRescumembers";
+import Forecasting from "./Components/User/Weatherforecasting/Forecasting";
+import Weatherforecats from "./Components/User/Weatherforecasting/Weatherforecats";
 
 
 function App() {
@@ -119,6 +121,8 @@ function App() {
           <Route path="/user-viewrescuemembers/:id" element={[<UserNavbar/>,<Viewrescueforalert/>]}/>
           <Route path="/user-viewstatus/:rescueid/:alertId" element={[<UserNavbar/>,<Viewstatus />]} />
           <Route path="/user-viewprivacypolicy" element={[<UserNavbar/>,<ViewPP />]}/>
+          <Route path="/weatherforecasting" element={[<UserNavbar/>,<Forecasting />]}/>
+          <Route path="/weatherforecastingdays" element={[<UserNavbar/>,<Weatherforecats />]}/>
 
 
 
