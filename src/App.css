@@ -133,3 +133,8 @@ font-weight: 600;
   padding-top: 50px;
 
 }
+
+.user-viewallalerts-select select{
+  background-color:#EC574D;
+  border: none;
+}
