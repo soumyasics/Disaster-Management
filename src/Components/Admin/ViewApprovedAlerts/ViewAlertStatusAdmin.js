@@ -45,10 +45,14 @@ function ViewAlertStatusAdmin() {
                 </p>
             </div>
             <div className='col-2'>
-                <p>{alert?.rescueId?.name}</p>
+            {alert?.rescueId ? <p>{alert?.rescueId?.name}</p>
+                : <p>{alert?.volunteerId?.name}</p>}
+
             </div>
             <div className='col-2'>
-            <p>{alert?.rescueId?.phone}</p>
+            {/* <p>{alert?.rescueId?.phone}</p> */}
+            {alert?.rescueId ? <p>{alert?.rescueId?.phone}</p>
+                : <p>{alert?.volunteerId?.phone}</p>}
             </div>
             <div className='col-6'>
             <p>{alert?.status}</p>

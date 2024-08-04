@@ -124,7 +124,7 @@ function App() {
           <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
           <Route path="/user-viewemergencycontacts" element={[<Viewallemrgcontact/>]}/>
           <Route path="/user-viewrescuemembers/:id" element={[<UserNavbar/>,<Viewrescueforalert/>]}/>
-          <Route path="/user-viewstatus/:rescueid/:alertId" element={[<UserNavbar/>,<Viewstatus />]} />
+          <Route path="/user-viewstatus/:rescueid/:alertId/:volId" element={[<UserNavbar/>,<Viewstatus />]} />
           <Route path="/user-viewprivacypolicy" element={[<UserNavbar/>,<ViewPP />]}/>
           <Route path="/weatherforecasting" element={[<UserNavbar/>,<Forecasting />]}/>
           <Route path="/weatherforecastingdays" element={[<UserNavbar/>,<Weatherforecats />]}/>

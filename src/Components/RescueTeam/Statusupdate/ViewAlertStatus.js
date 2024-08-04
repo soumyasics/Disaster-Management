@@ -54,7 +54,7 @@ function ViewAlertStatus() {
             <p>{alert?.alertId?.discription}</p>
             </div>
             <div className='col-2'>
-            <p>{alert?.alertId?.location}</p>
+            <p>{alert?.alertId?.district}</p>
             </div>
             <div className='col-4'>
             <p>{alert?.status}</p>

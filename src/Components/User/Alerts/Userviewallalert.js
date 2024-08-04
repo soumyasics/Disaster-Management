@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../Constants/Baseurl';
+import { Modal } from 'react-bootstrap';
+import ViewSingleAlert from '../../RescueTeam/Alerts/ViewSingleAlert';
 
 function Userviewallalert() {
     const [alerts, setAlerts] = useState([]);
@@ -20,6 +22,15 @@ function Userviewallalert() {
 
     const handleDistrictChange = (event) => {
         setDistrict(event.target.value);
+    };
+
+    const [show, setShow] = useState(false);
+    const [openRequests, setOpenRequests] = useState(false);
+    const [selectedId, setSelectedId] = useState({ rescueId: null}); // State for storing selected job and customer IDs
+    const handleClose = () => setShow(false);
+    const handleShow = (rescueId) => {
+    setSelectedId(rescueId);
+    setShow(true);
     };
 
     return (
@@ -58,7 +69,8 @@ function Userviewallalert() {
                                             <p>Location: {alert?.district}</p>
                                             <p>Security Level: <span>{alert?.securitylevel}</span></p>
                                         </div>
-                                        <div className="viewmore-dashbox viewmore-btnbgrd"><p>View More</p></div>
+                                        <button onClick={()=>handleShow(alert?._id)} style={{border:'none'}}>
+                                        <div className="viewmore-dashbox viewmore-btnbgrd"><p>View More</p></div></button>
                                     </div>
                                 </div>
                             ))
@@ -72,6 +84,13 @@ function Userviewallalert() {
                         <Acptrjtreq close={handleClose} alertId={selectedAlertId} />
                     </div>
                 </Modal> */}
+
+<Modal show={show} onHide={handleClose} centered>
+                <div className='modal-use-postjob'>
+                    <ViewSingleAlert close={handleClose}  alertId={selectedId} />
+                </div>
+            </Modal>
+
             </div>
         </div>
     );

@@ -57,6 +57,24 @@ function ViewSingleAlert({close,alertId}) {
         <Col className="user-info-value moredata-value">: {alert?.discription}</Col>
       </Row>
       <Row className="user-info-row">
+        <Col className="user-info-label">Contact</Col>
+        <Col className="user-info-value moredata-value">:
+        {
+    alert?.volid ? (
+      <>{alert.volid.phone}</>
+    ) : alert?.rescueid ? (
+      <>{alert.rescueid.phone}</>
+    ) : alert?.userid ? (
+      <>{alert.userid.phone}</>
+    ) : (
+      <>No phone number available</>
+    )
+  }
+         
+         </Col>
+      </Row>
+
+      <Row className="user-info-row">
         <Col className="user-info-label">Photos</Col>
         <Col className="user-info-value"> <img src={`${url}/${alert.image?.filename}`} width="400px" height="150px"/></Col>
       </Row>
