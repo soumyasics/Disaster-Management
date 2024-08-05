@@ -124,7 +124,7 @@ function App() {
           <Route path="/user-viewreqstatus" element={[<UserNavbar/>,<Rescuestatus/>]}/>
           <Route path="/user-viewemergencycontacts" element={[<Viewallemrgcontact/>]}/>
           <Route path="/user-viewrescuemembers/:id" element={[<UserNavbar/>,<Viewrescueforalert/>]}/>
-          <Route path="/user-viewstatus/:rescueid/:alertId" element={[<UserNavbar/>,<Viewstatus />]} />
+          <Route path="/user-viewstatus/:rescueid/:alertId/:volId" element={[<UserNavbar/>,<Viewstatus />]} />
           <Route path="/user-viewprivacypolicy" element={[<UserNavbar/>,<ViewPP />]}/>
           <Route path="/weatherforecasting" element={[<UserNavbar/>,<Forecasting />]}/>
           <Route path="/weatherforecastingdays" element={[<UserNavbar/>,<Weatherforecats />]}/>
@@ -154,6 +154,8 @@ function App() {
 
 
 
+          <Route path="/Volunteer-viewweather" element={[<Volnavbar/>,<Forecasting />]} />
+          <Route path="/Volunteer-viewforecasting" element={[<Volnavbar/>,<Weatherforecats />]} />
 
 
           {/* Common */}
@@ -183,6 +185,8 @@ function App() {
           <Route path="/rescue-viewrescustatus/:id" element={[<RescueNav/>,<ViewRescuemembersstatus />]} />
           <Route path="/rescue-viewmyalertstatus/:rescueId/:alertId" element={[<RescueNav/>,<ViewMyAlertStatus />]} />
 
+          <Route path="/rescue-viewweather" element={[<RescueNav/>,<Forecasting />]} />
+          <Route path="/rescue-viewforecasting" element={[<RescueNav/>,<Weatherforecats />]} />
 
 
 

@@ -74,14 +74,15 @@ function Volnavbar() {
               <li className="nav-item">
                 <Link className="nav-link list-items-style" to="/Volunteer-viewvolrescuestatus">Rescue Status</Link>
               </li>
-              {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
-                <Link className="nav-link list-items-style" to="">Complaints</Link>
-              </li> */}
-              {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link className="nav-link list-items-style" to="/Volunteer-viewweather">Weather</Link>
+              </li>
+
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
-                <Link className="nav-link list-items-style" to="">Contact</Link>
-              </li> */}
+                <Link className="nav-link list-items-style" to="/Volunteer-viewforecasting">Weather Forecasting</Link>
+              </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
               <li className="nav-item dropdown">

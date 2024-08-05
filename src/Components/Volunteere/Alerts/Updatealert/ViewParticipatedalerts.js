@@ -34,7 +34,7 @@ function ViewParticipatedalerts() {
                       <p> {alert?.alertId?.title}</p>
                       <p>{new Date(alert?.alertId?.date).toLocaleDateString()}</p>
                       <p>SecurityLevel: {alert?.alertId?.securitylevel}</p>
-                      <p>Location: {alert?.alertId?.location}</p>
+                      <p>Location: {alert?.alertId?.district}</p>
                     </div>
                     <Link
                     to={`/Volunteer-viewemrgalertstatus/${alert?.alertId?._id}`}

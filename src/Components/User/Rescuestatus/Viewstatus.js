@@ -6,9 +6,12 @@ import UserAddComplaints from './AddComplaints/UserAddComplaints'
 function Viewstatus() {
     const {rescueid}=useParams()
     const {alertId}=useParams()
+    const {volId}=useParams()
     console.log(rescueid,'rescueid');
     console.log(alertId,'alertid');
     const [data,setData]=useState([])
+    const [vol,setVol]=useState([])
+
 
     useEffect(()=>{
         axiosInstance.post(`viewAlertStatusByrescueId/${rescueid}`,{alertId})
@@ -19,7 +22,16 @@ function Viewstatus() {
         .catch(((err)=>{
             console.log(err);
         }))
+        axiosInstance.post(`viewAlertStatusforuserByvolId/${volId}`,{alertId})
+        .then((res)=>{
+            console.log(res);
+            setVol(res.data.data)
+        })
+        .catch(((err)=>{
+            console.log(err);
+        }))
     },[])
+
 
     
   return (
@@ -61,10 +73,33 @@ function Viewstatus() {
               ))
             ) : (
               <div style={{ color: "red", fontSize: "20px" }}>
+                No Status Updated
+              </div>
+            )}
+ {vol && vol.length ? (
+              vol.map((a, index) => (
+        <div className='row vol-viewemrg-status-data'>
+            <div className='col-2'>
+                <p> {new Date(a?.date).toLocaleDateString()}
+                </p>
+            </div>
+            <div className='col-2'>
+                <p>{a?.volunteerId?.name}</p>
+            </div>
+            <div className='col-2'>
+            <p>{a?.volunteerId?.phone}</p>
+            </div>
+            <div className='col-4'>
+            <p>{a?.status}</p>
+            </div>
+            
+        </div>
+              ))
+            ) : (
+              <div style={{ color: "red", fontSize: "20px" }}>
                 No Requests Available
               </div>
             )}
-
 
         </div>
     </div>

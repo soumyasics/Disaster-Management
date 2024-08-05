@@ -74,6 +74,19 @@ function RescueNav() {
                         </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <li className="nav-item">
+                            <Dropdown>
+                                <Dropdown.Toggle variant="link" className="nav-link list-items-style" id="dropdown-requests">
+                                    Weather
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item as={Link} to="/rescue-viewweather">Weather Details</Dropdown.Item>
+                                    <Dropdown.Item as={Link} to="/rescue-viewforecasting">Weather Forecasting</Dropdown.Item>
+
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </li>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li className="nav-item">
                 <Link className="nav-link list-items-style" to="/rescue-viewpendingtasks">Tasks</Link>
               </li>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

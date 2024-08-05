@@ -77,7 +77,7 @@ const handleShow = (rescueId) => {
          );
         })
          ) : (
-         <div style={{color:"red",fontSize:"20px"}}>No Requests Available</div>
+         <div style={{color:"red",fontSize:"20px"}}>No RescueMembers Available</div>
          )} 
                 </div>
               </div>

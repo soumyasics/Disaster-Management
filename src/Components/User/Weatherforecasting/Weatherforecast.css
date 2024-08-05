@@ -25,7 +25,7 @@
     min-height: 300px;
     max-height: fit-content;
     width: 200px;
-    background-color: rgba(127, 223, 255, 0.475);
+    background-color: rgba(127, 255, 165, 0.475);
     margin: 20px;
     border-radius: 20px;
 
@@ -34,12 +34,33 @@
     text-align: center;
     font-size: 27px;
     font-weight: 600;
-    color: rgb(255, 255, 255);
+    color: rgb(73, 6, 181);
     padding-top: 20px;
+    text-shadow: 2px 2px 4px rgba(97, 221, 223, 0.8);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
 }
+
 .forecast-cloudimg{
     display: flex;
     align-items: center;
     justify-content: center;
 
+}
+.forecats-box1 h3{
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+}
+
+.forecats-box1 p{
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+}
+.city-info p{
+    font-size: 18px;
+    font-weight: 600;
+    color: azure;
 }

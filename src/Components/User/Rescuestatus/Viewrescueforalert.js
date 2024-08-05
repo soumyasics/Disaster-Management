@@ -38,8 +38,8 @@ function Viewrescueforalert() {
 
   const navigate =useNavigate();
 
-  const navigateToViewStatus=(rescueid,alertId)=>{
-    navigate(`/user-viewstatus/${rescueid}/${alertId}`)
+  const navigateToViewStatus=(rescueid,alertId,volId)=>{
+    navigate(`/user-viewstatus/${rescueid}/${alertId}/${volId}`)
   }
   
   return (
@@ -76,7 +76,7 @@ function Viewrescueforalert() {
                         type="button"
                         className="reject-rescue"
                         // onClick={() => deletefn(alert._id)}
-                        onClick={()=>navigateToViewStatus(alert?.rescueId?._id,alert?.alertId?._id)}
+                        onClick={()=>navigateToViewStatus(alert?.rescueId?._id,alert?.alertId?._id,alert?.volunteerId?._id)}
                       >
                         View Status
                       </button>
