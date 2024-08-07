@@ -31,7 +31,7 @@ function ViewRescumembers() {
                 console.log(data);
                 toast.info(data.data.msg)
                 setTimeout(() => {
-                    window.location.reload(false)
+                    window.location.reload()
                 }, 3000);
             }
         })
@@ -72,7 +72,7 @@ function ViewRescumembers() {
               ))
             ) : (
               <div style={{ color: "red", fontSize: "20px" }}>
-                No Requests Available
+                No Members Accept  Your Request
               </div>
             )}
           </div>

@@ -20,7 +20,7 @@ function AdminDash() {
     const fetchWeather = async () => {
       try {
         const response = await axios.get(
-         " https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m"    
+         " https://api.open-meteo.com/v1/forecast?latitude=8.5241&longitude=76.9366&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m"    
         // " api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=2f1d16b236a763b9268ec43f95ed1a5a"
       );       
         setWeather(response.data);
