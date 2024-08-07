@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../Constants/Baseurl'
 import { Modal } from 'react-bootstrap'
+import { toast } from 'react-toastify'
 
 function ViewAlertStatusAdmin() {
     const {id}=useParams()
     const [data,setData]=useState([])
+    const navigate=useNavigate()
 
     useEffect(()=>{
         axiosInstance.post(`viewStatusByalertId/${id}`)
@@ -18,10 +20,27 @@ function ViewAlertStatusAdmin() {
         }))
     },[])
 
+    const deletefn=(()=>{
+        axiosInstance.post(`deactivateAlertbyadmin/${id}`)
+        .then((res)=>{
+            console.log(res);
+           if(res.data.status==200){
+            toast.success("Removed Successfully")
+            navigate("/admin-viewapprovedalerts")
+           }
+        })
+        .catch(((err)=>{
+            console.log(err);
+        }))
+
+    })
   return (
     <>
+            <div className='viewalertstatus-adminbtn'>
+            <button type='button' onClick={deletefn}>Delete Alert</button>
+        </div>
+
         <div className='vol-viewemrg-status-main mt-3'>
-        
         <div className='vol-viewemrg-status-box'>
         <div className='row vol-viewemrg-status-content mb-1'>
             <div className='col-2'>

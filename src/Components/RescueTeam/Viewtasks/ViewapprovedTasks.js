@@ -62,7 +62,7 @@ function ViewapprovedTasks() {
                       <p>
                         {new Date(alert?.alertId?.date).toLocaleDateString()}
                       </p>
-                      <p>Location: {alert?.alertId?.location}</p>
+                      <p>Location: {alert?.alertId?.district}</p>
                       <p>Needs: {alert?.alertId?.needs}</p>
                     </div>
                     <div className="d-flex viewmore-dashbox">

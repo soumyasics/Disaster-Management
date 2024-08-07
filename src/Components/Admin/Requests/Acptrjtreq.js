@@ -73,7 +73,7 @@ const acceptfn = (id) => {
       </Row>
       <Row className="user-info-row">
         <Col className="user-info-label">Location</Col>
-        <Col className="user-info-value">: {alert?.location}</Col>
+        <Col className="user-info-value">: {alert?.district}</Col>
       </Row>
       <Row className="user-info-row">
         <Col className="user-info-label">Immediate Needs</Col>

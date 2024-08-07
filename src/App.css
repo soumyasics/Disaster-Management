@@ -138,3 +138,11 @@ font-weight: 600;
   background-color:#EC574D;
   border: none;
 }
+.viewalertstatus-adminbtn button{
+margin: 30px;
+background-color: rgb(232, 66, 66);
+width: 100px;
+border-radius: 12px;
+color: white;
+border: none;
+}

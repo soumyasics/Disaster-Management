@@ -17,6 +17,8 @@ function ViewApprovedAlerts() {
   useEffect(() => {
     axiosInstance.post(`/viewemergencyforallusers/${district}`)
       .then(response => {
+        console.log(response);
+        
         if (response.data.status === 200) {
           setAlerts(response.data.data);
         } else {
