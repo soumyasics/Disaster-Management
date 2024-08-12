@@ -158,6 +158,7 @@ const confirmLogout = () => {
                         <div className="dropdown_menu sidebar_dash_drop">
                            <Link to="/admin-viewalerts" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Alert Requests</button></Link> <br/>
                            <Link to="/admin-viewapprovedalerts" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Approved Alerts</button></Link><br/>
+                           <Link to="/admin-viewcompletedalerts" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Completed Alerts</button></Link><br/>
                            {/* <Link to="/admin-viewallvolunteer" style={{textDecoration:"none",color:"white"}}><button className="dropdown_item dashboard_sub_button1 hov">Volunteers</button></Link> <br/> */}
                         </div>
                     )}

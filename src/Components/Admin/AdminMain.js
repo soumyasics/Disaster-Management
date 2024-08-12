@@ -8,6 +8,12 @@ import AllUsers from './Modules/AllUsers'
 import Allrescueteam from './Modules/Allrescueteam'
 import Allvolunteers from './Modules/Allvolunteers'
 import AdminViewComplaints from './Complaints/AdminViewComplaints'
+import Viewalerts from './AdminDashboard/Viewalerts'
+import ViewApprovedAlerts from './ViewApprovedAlerts/ViewApprovedAlerts'
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
+import ViewPrivacyPolicy from './PrivacyPolicy/ViewPrivacyPolicy'
+import EditPrivacyPolicy from './PrivacyPolicy/EditPrivacyPolicy'
+import AdminViewCompletedAlerts from './AdminViewCompletedAlerts'
 
 function AdminMain({data}) {
   return (
@@ -25,6 +31,12 @@ function AdminMain({data}) {
             data==="admin-viewallrescue"?(<Allrescueteam/>):
            data==="admin-viewallvolunteer"?(<Allvolunteers/>):
            data==="admin-viewallusercomplaints"?(<AdminViewComplaints/>):
+           data==="admin-viewalerts"?(<Viewalerts/>):
+           data==="admin-viewapprovedalerts"?(<ViewApprovedAlerts/>):
+           data==="admin-privacypolicy"?(<PrivacyPolicy/>):
+           data==="admin-view-privacypolicy"?(<ViewPrivacyPolicy/>):
+           data==="admin-edit-privacypolicy"?(<EditPrivacyPolicy/>):
+           data==="admin-viewcompletedalerts"?(<AdminViewCompletedAlerts/>):
 
       
             <AdminLogin/>

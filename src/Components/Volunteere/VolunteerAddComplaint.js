@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 import { toast } from 'react-toastify';
-import axiosInstance from '../../../Constants/Baseurl';
+import axiosInstance from '../Constants/Baseurl';
 
-function UserAddComplaints({close}) {
-    const userId=localStorage.getItem("usersId")
+function VolunteerAddComplaint({close}) {
+
+    const userId=localStorage.getItem("volunteerId")
     const [compalints, setComplaints] = useState({ 
-        userId: userId,
+        voluneteerId: userId,
         complaintSubject: ""
       });
     
@@ -19,7 +20,7 @@ function UserAddComplaints({close}) {
       const submitfn = async (e) => {
         e.preventDefault();
         try {
-          const res = await axiosInstance.post(`addcomplaint`, compalints);
+          const res = await axiosInstance.post(`addcomplaintbyVolunteer`, compalints);
           console.log(res);
           if (res.data.status === 200) {
             toast.success(res.data.msg);
@@ -33,6 +34,7 @@ function UserAddComplaints({close}) {
           toast.error("An error occurred while Register Complaints");
         }
       };
+
   return (
     <>
          <div className="container add-status-main">
@@ -60,4 +62,4 @@ function UserAddComplaints({close}) {
   )
 }
 
-export default UserAddComplaints
+export default VolunteerAddComplaint

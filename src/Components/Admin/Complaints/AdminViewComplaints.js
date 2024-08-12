@@ -37,12 +37,12 @@ function AdminViewComplaints() {
                                     <div className='row mt-4'>
                                         <div className='col-4'><p className='text_color'>User Name</p></div>
                                         <div className='col-1'><p className='text_color'>:</p></div>
-                                        <div className='col-6' ><p className='text_color'>{a?.userId?.name}</p></div>
+                                        <div className='col-6' ><p className='text_color'>{a?.userId?.name||a?.rescueId?.name||a?.volunteerId?.name}</p></div>
                                     </div>
                                     <div className='row'>
                                         <div className='col-5'><p className='text_color'>User Contact</p></div>
                                         <div className='col-1'><p className='text_color'>:</p></div>
-                                        <div className='col-6'><p className='text_color'>{a?.userId?.phone}</p></div>
+                                        <div className='col-6'><p className='text_color'>{a?.userId?.phone||a?.rescueId?.phone||a?.volunteerId?.phone}</p></div>
                                     </div>
                                     <div className='row'>
                                         <div className='col-4'><p className='text_color'>Complaint</p></div>

@@ -5,7 +5,7 @@
     background: #EC574D;
     color: #fff;
     padding-left: 30px;
-    padding-top: 7px;
+    /* padding-top: 7px; */
 
 }
 .pp-update-btn{
@@ -22,7 +22,7 @@
 
 }
 .pp-body{
-    width: 1275px;
+    /* width: 1275px; */
     height: 740px;
     border-radius: 15px;
     box-shadow: 0px 0px 20px 1px #00000040;

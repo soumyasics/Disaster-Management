@@ -93,6 +93,7 @@ function Volnavbar() {
                   <li className='dropmentli'><Link className="dropdown-item" onClick={handleShow}>Profile</Link></li>
                   <li className="dropmentli"><Link className="dropdown-item" to="/Volunteer-addalerts">Add Alert</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to="/rescueperson_signup">Add Rescue Member</Link></li>
+                  <li className='dropmentli'><Link className="dropdown-item" to="/Volunteer-viewallrescuemembers">View Rescue Member</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to='/Volunteer-viewprivacypolicy'>Privacy Policy</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" onClick={confirmLogout}>Logout</Link></li>
                 </ul>
@@ -101,7 +102,7 @@ function Volnavbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </nav> 
 
     <Modal show={show} onHide={handleClose} centered>
         <VolViewprofile close={handleClose} />

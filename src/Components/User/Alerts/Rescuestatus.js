@@ -13,7 +13,7 @@ function Rescuestatus() {
         axiosInstance.post(`viewemergencybyuserid/${userid}`)
         .then((res)=>{
             console.log(res);
-            setAlerts(res.data.data)
+            setAlerts(res.data.data) 
         })
         .catch((err)=>{
             console.log(err);

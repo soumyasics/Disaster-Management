@@ -20,7 +20,7 @@ function ViewApprovedAlerts() {
         console.log(response);
         
         if (response.data.status === 200) {
-          setAlerts(response.data.data);
+          setAlerts(response.data.data.reverse());
         } else {
           console.error('Failed to fetch data');
         }
@@ -50,7 +50,7 @@ const navigatetoviewstatus=(id)=>{
   return (
     <>
     <React.Fragment>
-     <Link to="/admin-dash" style={{textDecoration:"none"}}><span className="ri-arrow-left-line back-span"></span></Link> 
+     {/* <Link to="/admin-dash" style={{textDecoration:"none"}}><span className="ri-arrow-left-line back-span"></span></Link>  */}
     <div className="adminmaindash-container">
       <div className="admindash-viewalert col-12">
         <div className="admindash-shrink">Emergency Alerts</div>

@@ -96,7 +96,7 @@ function PrivacyPolicy() {
                 <h6 style={{color:'#017178'}}>
                     Privacy policy 
                 </h6>
-                <textarea style={{width:'1200px',height:'500px'}} 
+                <textarea style={{width:'100%',height:'500px'}} 
                 onChange={handleChange}
                 name='privacypolicy'
                 />

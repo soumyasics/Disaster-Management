@@ -77,7 +77,7 @@ function VolViewprofile() {
   };
 
   useEffect(() => {
-    axiosInstance.post(`viewvolunteerById/${volid}`)
+    axiosInstance.post(`viewvolenteerById/${volid}`)
       .then((res) => {
         console.log(res);
         setUserDetails(res.data.data);
