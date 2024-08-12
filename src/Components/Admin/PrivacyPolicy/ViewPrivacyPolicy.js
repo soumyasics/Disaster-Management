@@ -30,7 +30,7 @@ function ViewPrivacyPolicy() {
         <div className='container'>
             <div style={{display:'flex',marginTop:'50px',gap:'900px'}}>
                 <div className='pp-head'>
-                    <h5>Privacy Policy</h5>
+                    <h5 className='fs-6' >Privacy Policy</h5>
                 </div>
                 <div >
                     <button className='pp-update-btn' onClick={()=>navigateToEdit(data?._id)}>

@@ -37,7 +37,7 @@ function ViewAlertStatusAdmin() {
   return (
     <>
             <div className='viewalertstatus-adminbtn'>
-            <button type='button' onClick={deletefn}>Delete Alert</button>
+            <button type='button' onClick={deletefn}>Complete Alert</button>
         </div>
 
         <div className='vol-viewemrg-status-main mt-3'>

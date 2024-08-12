@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "../AdminDashboard/Viewalerts.css";
-import axiosInstance from "../../Constants/Baseurl";
 import { Link, useNavigate } from "react-router-dom";
-import Acptrjtreq from "../Requests/Acptrjtreq";
 import { Modal } from "react-bootstrap";
 import Lottie from "lottie-react";
-import imglottiedata from "../../../Assets/nodatalottie.json";
+import imglottiedata from "../../Assets/nodatalottie.json";
+import axiosInstance from "../Constants/Baseurl";
+import Acptrjtreq from "./Requests/Acptrjtreq";
+function AdminViewCompletedAlerts() {
 
-function Viewalerts() {
-  const [alerts, setAlerts] = useState([]);
+    const [alerts, setAlerts] = useState([]);
 
   useEffect(() => {
     axiosInstance
-      .post("/viewemergencyforadmin")
+      .post("/viewcompletedemergencies")
       .then((response) => {
         if (response.data.status === 200) {
           setAlerts(response.data.data.reverse());
@@ -80,12 +79,12 @@ function Viewalerts() {
         </div>
         <Modal show={show} onHide={handleClose} centered>
           <div className="modal-use-postjob">
-            <Acptrjtreq close={handleClose} alertId={selectedAlertId} isAction />
+            <Acptrjtreq close={handleClose} alertId={selectedAlertId} />
           </div>
         </Modal>
       </div>
     </React.Fragment>
-  );
+  )
 }
 
-export default Viewalerts;
+export default AdminViewCompletedAlerts

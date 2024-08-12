@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import axiosInstance from '../../Constants/Baseurl';
 import { toast } from 'react-toastify';
 
-function Acptrjtreq({close,alertId}) {
+function Acptrjtreq({close,alertId,isAction}) {
     console.log(alertId);
     const[alert,setAlert]=useState({})
     const url = axiosInstance.defaults.url;
@@ -91,7 +91,8 @@ const acceptfn = (id) => {
         <Col className="user-info-label">Photos</Col>
         <Col className="user-info-value"> <img src={`${url}/${alert.image?.filename}`} width="400px" height="150px"/></Col>
       </Row>
-      <Row className="button-group">
+      {
+        isAction&&<Row className="button-group">
         <Col>
           <Button variant="success" className="w-100" onClick={acceptfn}>Approve</Button>
         </Col>
@@ -99,6 +100,8 @@ const acceptfn = (id) => {
           <Button variant="danger" className="w-100 ml-2" onClick={rejectfn}>Reject</Button>
         </Col>
       </Row>
+      }
+      
     </Container>
         </div>
     </div>

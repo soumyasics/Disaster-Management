@@ -50,6 +50,13 @@ function Viewallemrgcontact() {
       <div className="adminmaindash-container">
         <div className="admindash-viewalert col-12">
           <div className="admindash-shrink">Emergency Contacts</div>
+          {/* <div style={{display:'flex',justifyContent:'end',marginRight:'120px',marginTop:'20px'}}>
+              <button
+                style={{border:'none',borderRadius:'5px',width:'190px',color:'#fff',background:'red'}}
+                onClick={handleShow}
+                >Register Complaints
+              </button>
+            </div> */}
           <div className="row d-flex">
             {/* <div className="col-12 "> */}
               {volunteers && volunteers.length ? (

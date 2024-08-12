@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UserNavbar from "../User/Navbar/UserNavbar";
 import img from "../../Assets/disasterboat.jpg";
 import "./Rescuehome.css";
@@ -11,13 +11,36 @@ import img1 from "../../Assets/studyinfo.png";
 import img22 from "../../Assets/searchpp.png";
 import img3 from "../../Assets/elipsics.png";
 import img4 from "../../Assets/searchh.png";
+import { Modal } from 'react-bootstrap'
+import RescueAddComplaint from "./RescueAddComplaint";
 
-function Rescuehome() {
+
+function Rescuehome({data}) {
+
+  const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => {
+    setShow(true);
+    };
+
   return (
     <div>
+       
       <div className="admin-login-header">
         “Communities rising together from disaster”
+        
       </div>
+      {
+        data=='rescue'? <div style={{display:'flex',justifyContent:'end',marginRight:'120px',marginTop:'20px'}}>
+              <button
+                style={{border:'none',borderRadius:'5px',width:'190px',color:'#fff',background:'red'}}
+                onClick={handleShow}
+                className="mb-2"
+                >Register Complaints
+              </button>
+            </div>:''
+      }
+     
       <div className="warning-container landing-alert">
         <div className="warning homelanding-warning">
           <p className="p1">
@@ -195,6 +218,13 @@ function Rescuehome() {
           </h6>
           {/* </div> */}
         </div>
+        <Modal show={show} onHide={handleClose} centered>
+        <div className=''>
+          <RescueAddComplaint 
+            close={handleClose} 
+          />
+        </div>
+      </Modal>
       </div>
       <Footer />
       <FooterSecond />

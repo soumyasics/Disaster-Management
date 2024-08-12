@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../Constants/Baseurl'
 import { Link, useNavigate } from 'react-router-dom'
+import { Modal } from 'react-bootstrap'
+import VolunteerAddComplaint from '../VolunteerAddComplaint'
+
 
 
 
@@ -41,18 +44,31 @@ console.log(district);
       navigate('/Volunteer-viewallrescuemembers')
     }
 
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => {
+    setShow(true);
+    };
+
   return (
     <div className=''> 
-        <div style={{display:'flex',justifyContent:'end',marginRight:'100px',marginTop:'20px'}}>
+        {/* <div style={{display:'flex',justifyContent:'end',marginRight:'100px',marginTop:'20px'}}>
           <button style={{border:'none',background:'#01515B',color:'white',width:'200px',borderRadius:'15px'}}
           onClick={navigateTorescueMember}
           >
             View Rescue Members</button>
-        </div>
+        </div> */}
     {/* <div className='container-reaemgalt'>              
-        <div className='adminmaindash-buttontop ri-add-circle-line'>Add Emergency Alerts</div>
+        <div className='adminmaindash-buttontop ri-add-circle-line'>Add Complaint</div>
         </div>  */}
-            <div className="adminmaindash-container">
+        <div style={{display:'flex',justifyContent:'end',marginRight:'120px',marginTop:'20px'}}>
+              <button
+                style={{border:'none',borderRadius:'5px',width:'190px',color:'#fff',background:'red'}}
+                onClick={handleShow}
+                >Register Complaints
+              </button>
+            </div>
+            <div className="adminmaindash-contair">
               
       <div className="admindash-viewalert col-12">
         
@@ -87,6 +103,14 @@ console.log(district);
                     <Acptrjtreq close={handleClose}  alertId={selectedAlertId} />
                 </div>
             </Modal> */}
+            <Modal show={show} onHide={handleClose} centered>
+        <div className=''>
+          <VolunteerAddComplaint 
+            close={handleClose} 
+          />
+        </div>
+      </Modal>
+
 
     </div>
 

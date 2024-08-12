@@ -26,7 +26,11 @@ console.log(userDetails);
     axiosInstance.post(`editusrprofile/${userid}`, userDetails)
       .then((res) => {
         console.log(res);
-        setIsEditing(false);
+        if(res.data.status==200){
+          setIsEditing(false);
+          alert('Profile Updated')
+        }
+        
       })
       .catch((err) => {
         console.log(err);

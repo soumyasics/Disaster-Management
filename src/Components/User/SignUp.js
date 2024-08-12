@@ -123,7 +123,23 @@ const navigate=useNavigate()
               const res = await axiosInstance.post('/registeruser', formData);
               if (res.data.status === 200) {
                 alert('User registered successfully');
-                navigate("/user_login")
+                axiosInstance.post('/userlogin', {email:res.data.data.email,password:res.data.data.password})
+                .then(response => {
+                    console.log("Response:", response);
+                    if (response.data.status === 200) {
+                        console.log("Login Successful");
+                        localStorage.setItem("usersId", response.data.data._id);
+                        // alert("Login Successful");
+                        navigate("/user-home");
+                    } else {
+                        console.log("Login Failed");
+                        alert(response.data.msg);
+                    }
+                })
+                .catch(error => {
+                    console.error("There was an error!", error);
+                });
+                // navigate("/user_login")
               } else {
                 alert(`User Registration Failed: ${res.data.msg}`);
               }

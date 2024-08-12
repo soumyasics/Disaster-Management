@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; 
 import 'remixicon/fonts/remixicon.css'
 import Home from "./Components/Common/Home/Home";
 import SignUp from "./Components/User/SignUp";
@@ -71,6 +71,7 @@ import Weatherforecats from "./Components/User/Weatherforecasting/Weatherforecat
 import ViewRescueMembers from "./Components/Volunteere/RescueMembers/ViewRescueMembers";
 import ViewApprovedAlerts from "./Components/Admin/ViewApprovedAlerts/ViewApprovedAlerts";
 import ViewAlertStatusAdmin from "./Components/Admin/ViewApprovedAlerts/ViewAlertStatusAdmin";
+import AboutUs from "./Components/Common/AboutUs";
 
 
 function App() {
@@ -91,14 +92,17 @@ function App() {
           <Route path="/admin-viewallusercomplaints" element={[<Adminnav/>,<AdminMain data="admin-viewallusercomplaints"/>]} />
           
 
-          <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} />
-          <Route path="/admin-viewapprovedalerts" element={[<Adminnav/>,<ViewApprovedAlerts />]} />
+          {/* <Route path="/admin-viewalerts" element={[<Adminnav/>,<Viewalerts />]} /> */}
+          <Route path="/admin-viewalerts" element={[<Adminnav/>,<AdminMain data='admin-viewalerts' />]} />
+          <Route path="/admin-viewapprovedalerts" element={[<Adminnav/>,<AdminMain data='admin-viewapprovedalerts' />]} />
+          <Route path="/admin-viewcompletedalerts" element={[<Adminnav/>,<AdminMain data='admin-viewcompletedalerts' />]} />
+          {/* <Route path="/admin-viewapprovedalerts" element={[<Adminnav/>,<ViewApprovedAlerts />]} /> */}
           <Route path="/admin-viewalertstatus/:id" element={[<Adminnav/>,<ViewAlertStatusAdmin />]} />
           <Route path="/reset-password/:id" element={[<Adminnav/>,<ResetPassword />]} />
           <Route path="/admin-acptrjtreq" element={[<Acptrjtreq />]} />
-          <Route path="/admin-privacypolicy" element={[<Adminnav/>,<PrivacyPolicy />]} />
-          <Route path="/admin-edit-privacypolicy/:id" element={[<Adminnav/>,<EditPrivacyPolicy />]}/>
-          <Route path="/admin-view-privacypolicy" element={[<Adminnav/>,<ViewPrivacyPolicy />]} />
+          <Route path="/admin-privacypolicy" element={[<Adminnav/>,<AdminMain data='admin-privacypolicy' />]} />
+          <Route path="/admin-edit-privacypolicy/:id" element={[<Adminnav/>,<AdminMain data='admin-edit-privacypolicy' />]}/>
+          <Route path="/admin-view-privacypolicy" element={[<Adminnav/>,<AdminMain data='admin-view-privacypolicy' />]} />
 
 
 
@@ -109,6 +113,7 @@ function App() {
 
           <Route path="/" element={<LandingPage />} />
           <Route path="/contactus" element={[<Navbar/>,<ContactUs />]} />
+          <Route path="/about" element={[<Navbar/>,<AboutUs />]} />
           <Route path="/viewprivacypolicy" element={[<Navbar/>,<ViewPP />]} />
 
 
@@ -171,7 +176,7 @@ function App() {
           {/* RescueTeam */}
           <Route path="/rescueperson_signup" element={<RescueTeamReg />} />
           <Route path="/rescueperson_login" element={<RescueTeamLogin />} />
-          <Route path="/rescueperson_home" element={[<RescueNav/>,<Rescuehome />]} />
+          <Route path="/rescueperson_home" element={[<RescueNav/>,<Rescuehome data='rescue' />]} />
           <Route path="/rescuemergencyalerts" element={[<RescueNav/>,<Viewemrgalert />]} />
           <Route path="/rescue-viewpendingtasks" element={[<RescueNav/>,<ViewTasks />]} />
           <Route path="/rescue-viewapprovedtasks" element={[<RescueNav/>,<ViewapprovedTasks />]} />
