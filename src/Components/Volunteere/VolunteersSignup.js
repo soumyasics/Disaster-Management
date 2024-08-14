@@ -21,7 +21,7 @@ function VolunteersSignup() {
     gender: 'male',
     phone: '',
     address: '',
-    city: '',
+    // city: '',
     district: "Thiruvananthapuram",
     skills: '',
     email: '',
@@ -35,7 +35,7 @@ function VolunteersSignup() {
     gender: '',
     phone: '',
     address: '',
-    city: '',
+    // city: '',
     district: '',
     skills: '',
     email: '',
@@ -124,7 +124,7 @@ function VolunteersSignup() {
     errors.gender = validateField('Gender', data.gender);
     errors.phone = validateContact('Phone Number', data.phone);
     errors.address = validateField('Address', data.address);
-    errors.city = validateString('City', data.city);
+    // errors.city = validateString('City', data.city);
     errors.district = validateString('district', data.district);
     errors.skills = validateField('Skills/Expertise', data.skills);
     errors.email = validateEmail('Email', data.email);
@@ -232,15 +232,15 @@ function VolunteersSignup() {
                       <input type='text' className='form-control signup-input-type-change' placeholder='Enter Address' name='address' value={data.address} onChange={handleChange}/>
                       {errors.address && <div className="text-danger">{errors.address}</div>}
                     </div>
-                    <div className='col-6'>
+                    {/* <div className='col-6'>
                       <p className='signinuser'>City:</p>
                       <input type='text' className='form-control signup-input-type-change' placeholder='Enter City' name='city' value={data.city} onChange={handleChange}/>
                       {errors.city && <div className="text-danger">{errors.city}</div>}
-                    </div>
+                    </div> */}
                   </div>
                   <div className='row'>
                     <div className='col-6'>
-                      <p className='signinuser'>State:</p>
+                      <p className='signinuser'>District:</p>
                 <select
                   type="text"
                   className={`form-control addalert-input-type-change ${
