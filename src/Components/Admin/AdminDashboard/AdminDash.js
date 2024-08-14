@@ -96,11 +96,11 @@ const volunteerData = (volunteerStats) => ({
 });
 
 const rescueMemberData = (rescueMemberStats) => ({
-  labels: ["Rescue Members - Registered", "Rescue Members - Approved", "Rescue Members - Rejected"],
+  labels: ["Rescue Members", "Customers"],
   datasets: [
     {
-      data: [rescueMemberStats.registered, rescueMemberStats.approved, rescueMemberStats.rejected],
-      backgroundColor: ["#b0c4de", "#ffdab9", "#90ee90"],
+      data: [rescueMemberStats.registered,  rescueMemberStats.rejected],
+      backgroundColor: ["#b0c4de",  "#90ee90"],
       borderWidth: 1,
     }
   ]
@@ -145,12 +145,14 @@ const options = {
             });
       
             const rescueMemberRegistered = await axiosInstance.post('viewallresquemembers');
-            const rescueMemberApproved = await axiosInstance.post('viewallrescuereq');
-            const rescueMemberRejected = await axiosInstance.post('viewallrescuereq');
+            // const rescueMemberApproved = await axiosInstance.post('viewallresquemembers');
+            const rescueMemberRejected = await axiosInstance.post('viewallusers');
+            console.log(rescueMemberRegistered,'reg');
+            
       
             setRescueMemberStats({
               registered: rescueMemberRegistered.data.data.length,
-              approved: rescueMemberApproved.data.data.length,
+              // approved: rescueMemberApproved.data.data.length,
               rejected: rescueMemberRejected.data.data.length,
             });
           } catch (error) {
@@ -160,6 +162,9 @@ const options = {
       
         fetchStats();
       }, []);
+
+      console.log(rescueMemberStats);
+      
       
 
   return (
