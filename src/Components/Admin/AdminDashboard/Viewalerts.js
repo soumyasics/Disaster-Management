@@ -46,10 +46,10 @@ function Viewalerts() {
       </Link> */}
       <div className="adminmaindash-container">
         <div className="admindash-viewalert col-12">
-          <div className="admindash-shrink">Emergency Alerts</div>
+          <div className="admindash-shrink"> Alert Request</div>
           <div className="row d-flex">
             {alerts && alerts.length ? (
-              alerts.map((alert, index) => {
+              alerts.slice().reverse().map((alert, index) => {
                 return (
                   <div key={index} className="col-3">
                     <div className="admin-alert-boxinside">

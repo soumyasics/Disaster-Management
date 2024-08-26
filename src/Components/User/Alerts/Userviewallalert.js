@@ -59,7 +59,7 @@ function Userviewallalert() {
 
                     <div className="row d-flex">
                         {alerts && alerts.length ? (
-                            alerts.map((alert, index) => (
+                            alerts.slice().reverse().map((alert, index) => (
                                 <div className="col-3" key={index}>
                                     <div className="admin-alert-boxinside">
                                         <div className="admin-alert-content">

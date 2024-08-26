@@ -55,7 +55,7 @@ function AdminDash() {
     .catch((err)=>{
       console.log(err);
     })
-    axiosInstance.post(`viewallalerts`)
+    axiosInstance.post(`viewallemergencyforadminlength`)
     .then((result)=>{
       // console.log(result);
       setAlerts(result.data.data)

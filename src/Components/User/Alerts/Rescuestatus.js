@@ -47,7 +47,7 @@ function Rescuestatus() {
         <div className="row d-flex">
 
         {alerts && alerts.length ? (
-          alerts.map((alert,index) => {
+          alerts.slice().reverse().map((alert,index) => {
             return (
             <div  className="col-3">
               <div className="admin-alert-boxinside">

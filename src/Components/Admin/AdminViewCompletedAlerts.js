@@ -45,7 +45,7 @@ function AdminViewCompletedAlerts() {
       </Link> */}
       <div className="adminmaindash-container">
         <div className="admindash-viewalert col-12">
-          <div className="admindash-shrink">Emergency Alerts</div>
+          <div className="admindash-shrink">Completed Alerts</div>
           <div className="row d-flex">
             {alerts && alerts.length ? (
               alerts.map((alert, index) => {

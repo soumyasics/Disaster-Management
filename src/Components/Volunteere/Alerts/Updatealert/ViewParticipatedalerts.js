@@ -27,7 +27,7 @@ function ViewParticipatedalerts() {
           <div className="admindash-shrink">Emergencies </div>
           <div className="row d-flex">
             {vol && vol.length ? (
-              vol.map((alert, index) => (
+              vol.slice().reverse().map((alert, index) => (
                 <div className="col-3" key={index}>
                   <div className="admin-alert-boxinside">
                     <div className="admin-alert-content">
