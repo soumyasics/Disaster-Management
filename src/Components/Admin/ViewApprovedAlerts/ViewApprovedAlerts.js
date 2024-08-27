@@ -53,7 +53,7 @@ const navigatetoviewstatus=(id)=>{
      {/* <Link to="/admin-dash" style={{textDecoration:"none"}}><span className="ri-arrow-left-line back-span"></span></Link>  */}
     <div className="adminmaindash-container">
       <div className="admindash-viewalert col-12">
-        <div className="admindash-shrink">Emergency Alerts</div>
+        <div className="admindash-shrink">Approved Alerts</div>
         <div style={{display:'flex',justifyContent:'end',marginTop:'-30px',marginRight:'30px'}}>
           <select 
           style={{background:'#EC574D',color:'#fff',outline:'none'}}
@@ -77,7 +77,7 @@ const navigatetoviewstatus=(id)=>{
         <div className="row d-flex">
 
         {alerts && alerts.length ? (
-          alerts.map((alert,index) => {
+          alerts.slice().reverse().map((alert,index) => {
             return (
             <div key={index} className="col-3">
               <div className="admin-alert-boxinside">

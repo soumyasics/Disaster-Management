@@ -118,7 +118,7 @@ function App() {
 
 
 
-          {/* User */}
+          {/* Users */}
 
           
           <Route path="/user_signup" element={<SignUp />} />

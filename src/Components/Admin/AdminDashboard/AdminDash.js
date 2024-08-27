@@ -55,7 +55,7 @@ function AdminDash() {
     .catch((err)=>{
       console.log(err);
     })
-    axiosInstance.post(`viewallalerts`)
+    axiosInstance.post(`viewallemergencyforadminlength`)
     .then((result)=>{
       // console.log(result);
       setAlerts(result.data.data)
@@ -120,7 +120,7 @@ const options = {
 
       // const volunteerRegistered = await axiosInstance.post('viewallvolunteers');
       // const volunteerApproved = await axiosInstance.post('adminviewvolreq');
-      // const volunteerRejected = await axiosInstance.post('adminviewvolreq');
+      // const volunteerRejected = await axiosInstance.post('adminviewvolreq');hello
 
 
       // const rescueMemberRegistered = await axiosInstance.post('viewallresquemembers');

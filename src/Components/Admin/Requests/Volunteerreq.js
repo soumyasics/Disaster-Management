@@ -75,7 +75,7 @@ function Volunteerreq() {
         <div className="admindash-shrink">Volunteer Requests</div>
         <div className="row d-flex">
           {data && data.length ? (
-            data.map((a, index) => {
+            data.slice().reverse().map((a, index) => {
               return (
                 <div className="col-4">
                   <div className="admin-alert-boxinside">
