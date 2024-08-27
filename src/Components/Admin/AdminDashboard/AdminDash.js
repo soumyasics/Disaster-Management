@@ -120,7 +120,7 @@ const options = {
 
       // const volunteerRegistered = await axiosInstance.post('viewallvolunteers');
       // const volunteerApproved = await axiosInstance.post('adminviewvolreq');
-      // const volunteerRejected = await axiosInstance.post('adminviewvolreq');hai
+      // const volunteerRejected = await axiosInstance.post('adminviewvolreq');hello
 
 
       // const rescueMemberRegistered = await axiosInstance.post('viewallresquemembers');
