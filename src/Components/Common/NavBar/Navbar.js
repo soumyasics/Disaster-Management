@@ -46,7 +46,7 @@ function Navbar() {
                   <li className='dropmentli'><Link className="dropdown-item" to="/user_login">User</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to="/volunteers_login">Volunteer</Link></li>
                   <li className='dropmentli'><Link className="dropdown-item" to="/rescueperson_login">Rescue Member</Link></li>
-                  <li className='dropmentli'><Link className="dropdown-item" to='/viewprivacypolicy'>Privacy Policy</Link></li>
+                  {/* <li className='dropmentli'><Link className="dropdown-item" to='/viewprivacypolicy'>Privacy Policy</Link></li> */}
                   
                 </ul>
               </li>

@@ -86,7 +86,7 @@ function Viewrescueforalert() {
               ))
             ) : (
               <div style={{ color: "red", fontSize: "20px" }}>
-                No Requests Available
+                No Members Available
               </div>
             )}
           </div>

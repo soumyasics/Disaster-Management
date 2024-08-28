@@ -130,7 +130,7 @@ const navigate=useNavigate()
                         console.log("Login Successful");
                         localStorage.setItem("usersId", response.data.data._id);
                         // alert("Login Successful");
-                        navigate("/user-home");
+                        navigate("/user_login");
                     } else {
                         console.log("Login Failed");
                         alert(response.data.msg);
